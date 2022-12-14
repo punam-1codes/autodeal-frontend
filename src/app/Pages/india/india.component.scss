@@ -1,0 +1,40 @@
+.row{
+    padding: 0%;
+    margin: 0%;
+}
+.india{
+    padding: 40px 0;
+    .card{
+        padding: 0rem 4.5rem;
+        box-shadow: 0px 0px 5px 0px #7c7c7c80;
+        .icon{
+            width           : 50px;
+            color           : #5B2067;
+            height          : 50px;
+            display         : inline-block;
+            font-size       : 30px;
+            text-align      : center;
+            line-height     : 50px;
+            border-radius   : 50%;
+            background-color: #7070701C;
+        }
+    
+        .content{
+            display: inline-block;
+            p{
+                color      : #474747;
+                line-height: 15px;
+                margin-left: 8px;
+            }
+        }
+    }   
+}
+
+@media only screen and (min-width: 320px) and (max-width:600px){
+    .col-lg-3{
+        margin-top: 15px;
+    }
+    .col-lg-3:first-child{
+        margin-top: 0;
+    }
+}

@@ -1,0 +1,32 @@
+.banner{
+    margin: 10px 0;
+    h4{
+        color      : #5B2067;
+        font-weight: 700;
+        i{
+            color         : #707070;
+            font-size     : 15px;
+            margin-left   : 8px;
+            vertical-align: middle;
+        }
+    }
+    .fa-star{
+        color       : #FF8F10;
+        margin-right: 4px;
+    }
+    .grey{
+        color: #707070;
+    }
+    span{
+        color      : #707070;
+        margin-left: 20px;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width:600px) {
+    .banner{
+        .fa-star{
+            margin-bottom: 10px;
+        }
+    }
+}

@@ -1,0 +1,83 @@
+.btn1{
+    width: 20%;
+    background-color: #FF8F10;
+}
+
+.images{
+    width: 100%;
+}
+
+img.images{
+    opacity: 0.5;
+}
+
+img.images:focus {
+    opacity: 1;
+}
+
+
+
+.fimages{
+    width: 100%;
+}
+
+img.fimages{
+    opacity: 0.5;
+}
+
+img.fimages:focus {
+    opacity: 1;
+}
+
+.modal-title{
+    color        : #5B2067;
+    font-weight  : 700;
+    border-bottom: 1px solid #5B2067;
+}
+
+.modal-header{
+    padding-bottom: 0% !important;
+    border-bottom: none !important;
+    display: flex;
+    justify-content: center;
+}
+
+.modal-body{
+    padding-top: 0% !important;
+    display: flex;
+    text-align: center;
+}
+
+.modal-content{
+    border-radius: 1%;
+    
+}
+
+.bcrossbtn{
+    display: flex;
+    justify-content: end;
+    margin: -2rem 1rem 0rem 0rem;
+}
+
+.mcrossbtn{
+    display: flex;
+    justify-content: end;
+    margin: -2rem 1rem 0rem 0rem;
+}
+
+.fcrossbtn{
+    display: flex;
+    justify-content: end;
+    margin: -2rem 1rem 0rem 0rem;
+}
+
+#sgbtn{
+    margin: 0px 35px 0px 0px;
+    font-weight: 500;
+    color: white;
+}
+
+
+#mbthree{
+    display: contents;
+}

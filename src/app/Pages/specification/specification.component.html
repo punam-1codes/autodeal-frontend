@@ -1,0 +1,368 @@
+<!-- <app-banner></app-banner> -->
+
+<section class="tabs">
+    <div class="container">
+        <div class="row" *ngFor="let c of cardata">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="specs" role="tabpanel" aria-labelledby="specs-tab">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-5 col-lg-5 mt-4">
+                                <div>
+                                    <div class="float-right">
+                                        <img src="https://img.icons8.com/ios-glyphs/24/000000/like--v1.png" />
+                                        <img src="https://img.icons8.com/material-sharp/24/000000/share.png" />
+                                    </div>
+                                    <div class="mt-5" *ngFor="let c of cardata">
+                                        <swiper [config]="configCarImages" [navigation]="{ clickable: true }">
+                                            <ng-template *ngFor="let s of slideimage" swiperSlide>
+                                                <div>
+                                                    <img class="img-fluid imgslide d-block"
+                                                        src="http://api.dealcars.in/{{c?.brand}}/{{c?.model}}/{{c?.model}} {{s}}.jpg"
+                                                        alt="{{c?.model}}">
+                                                </div>
+                                            </ng-template>
+                                        </swiper>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 col-md-7 col-lg-7 details mt-4">
+                                <h5 class="m-0">{{c?.price_print}}*</h5>
+                                <a href="#">Get on Road Price</a>
+                                <p>*Ex-showroom Price in <a href="#">New Delhi</a></p>
+                                <p>
+                                    <strong style="font-weight: 500;">Variant : {{c?.varient}}</strong>
+                                </p>
+                                <div class="emi-part">
+                                    <div class="row" style="font-weight: 500;">
+                                        <div class="col-sm-12 col-md-6">
+                                            <ul>
+                                                <li>Emission Standard : {{c?.factors_emission_standard}}</li>
+                                                <li>Transmission : {{c?.transmission}} </li>
+                                                <li>Max Torque : {{c?.performance_peak_torque_nm_max_rpm}}</li>
+                                                <li>Engine Displ. : {{c?.engine}}</li>
+                                                <li>Automatic Climate Control : {{c?.key_features_climate_control}}</li>
+                                                <li>Cruise Control : {{c?.key_features_cruise_control}}</li>
+                                                <li>ESP : NA</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-12 col-md-6">
+                                            <ul>
+                                                <li>Fuel Type : {{c?.fuel_type}}</li>
+                                                <li>Max Power : {{c?.performance_peak_power_bhp_max_rpm}}</li>
+                                                <li>Mileage : {{c?.mileage_print}}</li>
+                                                <li>Rear AC Ducts : {{c?.key_features_rear_ac_vent}}</li>
+                                                <li>Audio Control : NA</li>
+                                                <li>Fog Lamps : NA</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn" style="font-weight: 500;" routerLink="/Selectmodals">VIEW
+                                    OFFER</button>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="specification">
+    <div class="container" *ngFor="let c of cardata">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                <h5 class="heading text-trans">{{c?.model}} SPECIFICATIONS</h5>
+            </div>
+        </div>
+
+        <div class="outer-box mt-4">
+            <div class="row">
+                <div class="col-sm-12 col-md-3 col-lg-3 pr-1">
+                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link active" id="v-pills-factors-tab" data-toggle="pill" href="#v-pills-factors"
+                            role="tab" aria-controls="v-pills-factors" aria-selected="true"
+                            style="font-weight: 500;">FACTORS</a>
+                        <a class="nav-link" id="v-pills-performance-tab" data-toggle="pill" href="#v-pills-performance"
+                            role="tab" aria-controls="v-pills-performance" aria-selected="false"
+                            style="font-weight: 500;">PERFORMANCE</a>
+                        <a class="nav-link" id="v-pills-dimensions-tab" data-toggle="pill" href="#v-pills-dimensions"
+                            role="tab" aria-controls="v-pills-dimensions" aria-selected="false"
+                            style="font-weight: 500;">DIMENSIONS</a>
+                        <a class="nav-link" id="v-pills-key-tab" data-toggle="pill" href="#v-pills-key" role="tab"
+                            aria-controls="v-pills-key" aria-selected="false" style="font-weight: 500;">KEY FEATURES</a>
+                        <a class="nav-link" id="v-pills-safety-tab" data-toggle="pill" href="#v-pills-safety" role="tab"
+                            aria-controls="v-pills-safety" aria-selected="false" style="font-weight: 500;">SAFETY
+                            FEATURES</a>
+                        <a class="nav-link" id="v-pills-capacities-tab" data-toggle="pill" href="#v-pills-capacities"
+                            role="tab" aria-controls="v-pills-capacities" aria-selected="false"
+                            style="font-weight: 500;">CAPACITIES</a>
+                        <a class="nav-link" id="v-pills-wheels-tab" data-toggle="pill" href="#v-pills-wheels" role="tab"
+                            aria-controls="v-pills-wheels" aria-selected="false" style="font-weight: 500;">WHEELS AND
+                            TYRES</a>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-9 col-lg-9 pl-0">
+                    <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade show active" id="v-pills-factors" role="tabpanel"
+                            aria-labelledby="v-pills-factors-tab">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 style="font-weight: 500;">FACTORS</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-md-6 col-lg-6">
+                                            <ul>
+                                                <li>Body Type</li>
+                                                <li>Fuel Type</li>
+                                                <li>Segment</li>
+                                                <li>Transmission</li>
+                                                <li>Engine</li>
+                                                <li>No of Gears</li>
+                                                <li>Displacement (cc)</li>
+                                                <li>Emission Standard</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="col-sm-6 col-md-6 col-lg-6">
+                                            <ul>
+                                                <li>{{c?.factors_body_type}}</li>
+                                                <li>{{c?.fuel_type}}</li>
+                                                <li>{{c?.factors_segment}}</li>
+                                                <li>{{c?.transmission}}</li>
+                                                <li>{{c?.factors_engine}}</li>
+                                                <li>{{c?.factors_no_of_gears}}</li>
+                                                <li>{{c?.factors_displacement_cc}}</li>
+                                                <li>{{c?.factors_emission_standard}}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-performance" role="tabpanel"
+                            aria-labelledby="v-pills-performance-tab">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 style="font-weight: 500;">PERFORMANCE</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-md-6 col-lg-6">
+                                            <ul>
+                                                <li>Mileage (ARAI)</li>
+                                                <li>Mileage City Highway In kmpl</li>
+                                                <li>Peak Power</li>
+                                                <li>Peak Torque</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="col-sm-6 col-md-6 col-lg-6">
+                                            <ul>
+                                                <li>{{c?.mileage_print}}</li>
+                                                <li>{{c?.performance_mileage_city_highway_in_kmpl}}</li>
+                                                <li>{{c?.performance_peak_power_bhp_max_rpm}}</li>
+                                                <li>{{c?.performance_peak_torque_nm_max_rpm}}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-dimensions" role="tabpanel"
+                            aria-labelledby="v-pills-dimensions-tab">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 style="font-weight: 500;">DIMENSIONS & CAPACITIES</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-md-6 col-lg-6">
+                                            <ul>
+                                                <li>Length (mm)</li>
+                                                <li>Width (mm)</li>
+                                                <li>Height (mm)</li>
+                                                <li>Boot Space (Litres)</li>
+                                                <li>Seating Capacity</li>
+                                                <li>Ground Clearance (Laden)</li>
+                                                <li>Wheel Base (mm)</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="col-sm-6 col-md-6 col-lg-6">
+                                            <ul>
+                                                <li>{{c?.dimensions_length_mm}}</li>
+                                                <li>{{c?.dimensions_width_mm}}</li>
+                                                <li>{{c?.dimensions_height_mm}}</li>
+                                                <li>{{c?.dimensions_boot_space_l}}</li>
+                                                <li>{{c?.seating_capacity}}</li>
+                                                <li>{{c?.dimensions_ground_clearance_mm}}</li>
+                                                <li>{{c?.dimensions_weelbase_mm}}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-key" role="tabpanel" aria-labelledby="v-pills-key-tab">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 style="font-weight: 500;">KEY FEATURES</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-md-6 col-lg-6">
+                                            <ul>
+                                                <li>Air Quality Control</li>
+                                                <li>Power Steering</li>
+                                                <li>Power Windows</li>
+                                                <li>CD Player</li>
+                                                <li>Central Locking</li>
+                                                <li>Climate Control</li>
+                                                <li>Cruise Control</li>
+                                                <li>Electrically Adjustable Driver Seat</li>
+                                                <li>Electrically Adjustable Mirrors</li>
+                                                <li>Leather Seats</li>
+                                                <li>Rear AC Vent</li>
+                                                <li>Rear Wiper</li>
+                                                <li>Remote Controlled Boot</li>
+                                                <li>Steering Adjustment Rake Reach</li>
+                                                <li>Steering Mounted Controls</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="col-sm-6 col-md-6 col-lg-6">
+                                            <ul>
+                                                <li>{{c?.key_features_air}}</li>
+                                                <li>{{c?.key_features_power_steering}}</li>
+                                                <li>{{c?.key_features_power_windows}}</li>
+                                                <li>{{c?.key_features_cd_player}}</li>
+                                                <li>{{c?.key_features_central_locking}}</li>
+                                                <li>{{c?.key_features_climate_control}}</li>
+                                                <li>{{c?.key_features_cruise_control}}</li>
+                                                <li>{{c?.key_features_electrically_adjustable_driver_seat}}</li>
+                                                <li>{{c?.key_features_electrically_adjustable_mirrors}}</li>
+                                                <li>{{c?.key_features_leather_seats}}</li>
+                                                <li>{{c?.key_features_rear_ac_vent}}</li>
+                                                <li>{{c?.key_features_rear_wiper}}</li>
+                                                <li>{{c?.key_features_remote_controlled_boot}}</li>
+                                                <li>{{c?.key_features_steering_adjustment_rake_reach}}</li>
+                                                <li>{{c?.key_features_steering_mounted_controls}}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-safety" role="tabpanel"
+                            aria-labelledby="v-pills-safety-tab">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 style="font-weight: 500;">SAFETY FEATURES</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-md-6 col-lg-6">
+                                            <ul>
+                                                <li>Airbag</li>
+                                                <li>Anti Lock Braking System abs</li>
+                                                <li>Parking Sensors</li>
+                                                <li>Traction Control</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="col-sm-6 col-md-6 col-lg-6">
+                                            <ul>
+                                                <li>{{c?.safety_features_airbag}}</li>
+                                                <li>{{c?.safety_features_anti_lock_braking_system_abs}}</li>
+                                                <li>{{c?.safety_features_parking_sensors}}</li>
+                                                <li>{{c?.safety_features_traction_control}}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-wheels" role="tabpanel"
+                            aria-labelledby="v-pills-wheels-tab">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 style="font-weight: 500;">WHEELS AND TYRES</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-md-6 col-lg-6">
+                                            <ul>
+                                                <li>Wheels and tyres_Tyre_specs_front</li>
+                                                <li>Wheels and tyres_Tyre_specs_rear</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="col-sm-6 col-md-6 col-lg-6">
+                                            <ul>
+                                                <li>{{c?.wheels_and_tyres_Tyre_specs_front}}</li>
+                                                <li>{{c?.wheels_and_tyres_Tyre_specs_rear}}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="container">
+    <app-offers></app-offers>
+</div>
+
+
+<section class="other mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                <h5 class="heading text-trans" style="letter-spacing: 1px;">GET OFFERS ON {{this.cardata.brand}} AND
+                    SIMILAR CARS</h5>
+                <div class="container mt-5">
+                    <swiper [config]="config">
+                        <ng-template swiperSlide *ngFor="let c of car_comparison">
+                            <div class="card shadow  w-auto" id="cardone" style="height: 300px !important;">
+                                <div>
+                                    <img src="http://api.dealcars.in/{{c?.brand}}/{{c?.model}}/{{c?.model}} 1.jpg"
+                                        class="img-responsive imgres" alt="{{c?.model}}">
+                                    <div class="p-3 text-left" style="position: absolute;bottom: 0;">
+                                        <h6 class="mt-1">{{c?.model}}</h6>
+                                        <h6 class="color m-0"><strong>{{c?.price_print}}*</strong></h6>
+                                        <p class="mt-0"><small>Ex-showroom, Delhi</small> </p>
+                                        <div class="mt-3">
+                                            <button type="submit"
+                                                class="btn btn-sm m-auto d-block font-weight-normal">VIEW
+                                                OFFER</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </swiper>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<div class="container">
+    <app-newssection></app-newssection>
+</div>

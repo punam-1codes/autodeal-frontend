@@ -1,0 +1,46 @@
+<div class="container mb-5" id="testdrivelocation">
+    <div>
+        <div class="modal-header m-0 p-0 border-0">
+            <button type="button" class="close float-right" data-dismiss="modal">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <button type="button" class="close float-left" data-dismiss="modal"
+                (click)="modalService.hide()">&times;</button>
+        </div>
+        <div class="text-center">
+            <h5 class="color font-weight-bold mb-0">TEST DRIVE LOCATION</h5>
+        </div>
+        <div class="modal-content border-0">
+            <div class="modal-footer border-0 justify-content-center px-0 pb-0">
+                <form>
+                    <div class="form-group row">
+                        <div class="col-8">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">
+                                        <div class="dot"></div>
+                                        <img src="../../../assets/loactionandtime/green-circle.png"
+                                            style="width: 13px;">
+                                    </span>
+                                </div>
+                                <!-- aria-label="Username" -->
+                                <input type="text" class="form-control" placeholder="Enter test drive location"
+                                    aria-label="Location" aria-describedby="basic-addon1" value="{{dLocation}}"
+                                    (keyup)="keyLocation($event)" required="">
+                                <!-- [(ngModel)]="dLocation" -->
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <button class="btn" type="submit" data-toggle="modal" data-target="#date"
+                                data-dismiss="modal" (click)="updateLocation(dLocation)" id="locationDisable"
+                                disabled>CONTINUE</button>
+                        </div>
+                    </div>
+                </form>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120562.19154963724!2d72.93141930796347!3d19.21404075236611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b8fcfe76fd59%3A0xcf367d85f7c50283!2sThane%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1639131097974!5m2!1sen!2sin"
+                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" class="m-0"></iframe>
+            </div>
+        </div>
+    </div>
+</div>

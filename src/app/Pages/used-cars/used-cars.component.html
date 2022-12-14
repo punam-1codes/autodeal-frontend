@@ -1,0 +1,312 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 col-md-3 col-lg-2 fixed-sidebar">
+            <h5 class="text-secondary my-2 pb-2 font-weight-bold">Filters</h5>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light"
+                style="box-shadow: 0px 1px 4px 2px #00000029 !important;">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="true">
+                                Owner
+
+                            </a>
+                            <div class="dropdown-menu dropright custom-slider " aria-labelledby="navbarDropdown"
+                                (click)="$event.stopPropagation()" style="position:initial;">
+                                <ngx-slider (click)="getOwnertype()" [formControl]="owner" [options]="options"></ngx-slider>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                Brand and Model
+                            </a>
+
+                            <div class="dropdown-menu dropright w-100 " aria-labelledby="navbarDropdown"
+                                (click)="$event.stopPropagation()" style="position:initial;">
+                                <div class="form">
+                                    <div class="input-group">
+                                        <input id="carType" [(ngModel)]="searchText" type="search" class="form-control"
+                                            placeholder="Search by Brands ">
+                                    </div>
+                                </div>
+                                <ul class="car-list" style="padding: 0% !important;">
+                                    <li *ngFor="let c of Brands|filter:searchText" class="car-item">
+                                        <input type="checkbox" name="cars" value="{{c._id}}" (change)="getSelected($event)"
+                                            [(ngModel)]="c.selected"/>
+                                        <span>{{c._id}}</span>
+                                        <ul *ngIf="c.selected" style="padding-left: 10% !important;">
+                                            <li *ngFor="let cm of c.model" class="car-item text">
+                                                <input type="checkbox" name="cars" value="{{cm.name}}"
+                                                    (change)="getSelectedmodel(cm)" [(ngModel)]="cm.selected" />
+                                                <span>{{cm?.name}}</span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="true">
+                                Price Range
+
+                            </a>
+                            <div class="dropdown-menu dropright custom-slider " aria-labelledby="navbarDropdown"
+                                (click)="$event.stopPropagation()" style="position:initial;">
+                                <ul class="car-list" style="padding: 0% !important;">
+                                    <li *ngFor="let c of car_budget" class="car-item">
+                                        <input (change)="getSelected()" type="checkbox" name="cars" value="{{c.id}}"
+                                            [(ngModel)]="c.selected" />
+                                        <span>{{c.price}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                Year
+                            </a>
+                            <div class="dropdown-menu dropright w-100 " aria-labelledby="navbarDropdown"
+                                (click)="$event.stopPropagation()" style="position:initial;">
+                                <ul class="car-list" style="padding: 0% !important;">
+                                    <li *ngFor="let y of Year" class="car-item">
+                                        <input type="checkbox" name="cars" value="{{y.year}}" (change)="getSelected()"
+                                            [(ngModel)]="y.selected" />
+                                        <span>{{y.year}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                Kilometer
+                            </a>
+                            <div class="dropdown-menu dropright w-100 " aria-labelledby="navbarDropdown"
+                                (click)="$event.stopPropagation()" style="position:initial;">
+                                <ul class="car-list" style="padding: 0% !important;">
+                                    <li *ngFor="let k of Kilometer" class="car-item">
+                                        <input type="checkbox" name="cars" value="{{k.mail}}" (change)="getSelected()"
+                                            [(ngModel)]="k.selected" />
+                                        <span>{{k.mail}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                Gear Type
+                            </a>
+                            <div class="dropdown-menu dropright w-100 " aria-labelledby="navbarDropdown"
+                                (click)="$event.stopPropagation()" style="position:initial;">
+                                <ul class="car-list" style="padding: 0% !important;">
+                                    <li *ngFor="let g of Gear_Type" class="car-item">
+                                        <input  type="checkbox" name="cars" value="{{g.mail}}"
+                                            [(ngModel)]="g.selected" />
+                                        <span>{{g.mail}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li> -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                Fuel Type
+                            </a>
+                            <div class="dropdown-menu dropright w-100 " aria-labelledby="navbarDropdown"
+                                (click)="$event.stopPropagation()" style="position:initial;">
+                                <ul class="car-list" style="padding: 0% !important;">
+                                    <li *ngFor="let f of FuelType" class="car-item">
+                                        <input type="checkbox" name="cars" value="{{f.name}}" (change)="getSelected()"
+                                            [(ngModel)]="f.selected" />
+                                        <span>{{f.name}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        
+                        <!-- <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                Traction Type
+                            </a>
+                            <div class="dropdown-menu dropright w-100 " aria-labelledby="navbarDropdown"
+                                (click)="$event.stopPropagation()" style="position:initial;">
+                                <ul class="car-list" style="padding: 0% !important;">
+                                    <li *ngFor="let t of Traction_Type" class="car-item">
+                                        <input  type="checkbox" name="cars" value="{{t.name}}"
+                                            [(ngModel)]="t.selected" />
+                                        <span>{{t.name}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li> -->
+                        <!-- <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                Body Type
+                            </a>
+                            <div class="dropdown-menu dropright w-100 " aria-labelledby="navbarDropdown"
+                                (click)="$event.stopPropagation()" style="position:initial;">
+                                <ul class="car-list" style="padding: 0% !important;">
+                                    <li *ngFor="let b of Body_Type" class="car-item">
+                                        <input type="checkbox" name="cars" value="{{b.name}}"
+                                            [(ngModel)]="b.selected" />
+                                        <span>{{b.name}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li> -->
+                        <!-- <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                Features
+                            </a>
+                            <div class="dropdown-menu dropright w-100 " aria-labelledby="navbarDropdown"
+                                (click)="$event.stopPropagation()" style="position:initial;">
+                                <ul class="car-list" style="padding: 0% !important;">
+                                    <li *ngFor="let f of Features" class="car-item">
+                                        <input  type="checkbox" name="cars" value="{{f.name}}"
+                                            [(ngModel)]="f.selected" />
+                                        <span>{{f.name}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li> -->
+                        <!-- <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                Doors and Seats
+                            </a>
+                            <div class="dropdown-menu dropright w-100 " aria-labelledby="navbarDropdown"
+                                (click)="$event.stopPropagation()" style="position:initial;">
+                                <ul class="car-list" style="padding: 0% !important;">
+                                    <li *ngFor="let d of Doors_Seats" class="car-item">
+                                        <input  type="checkbox" name="cars"
+                                            value="{{d.emission}}" [(ngModel)]="d.selected" />
+                                        <span>{{d.emission}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li> -->
+                        <!-- <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                Colors
+                            </a>
+                            <div class="dropdown-menu dropright w-100 " aria-labelledby="navbarDropdown"
+                                (click)="$event.stopPropagation()" style="position:initial;">
+                                <ul class="car-list" style="padding: 0% !important;">
+                                    <li *ngFor="let c of Colors" class="car-item">
+                                        <input type="checkbox" name="cars" value="{{c.name}}"
+                                        (change)="getSelected()" [(ngModel)]="c.selected" />
+                                        <span>{{c.name}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li> -->
+                        <!-- <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                Number Plate
+                            </a>
+                            <div class="dropdown-menu dropright w-100 " aria-labelledby="navbarDropdown"
+                                (click)="$event.stopPropagation()" style="position:initial;">
+                                <ul class="car-list" style="padding: 0% !important;">
+                                    <li *ngFor="let n of NumberPlate" class="car-item">
+                                        <input  type="checkbox" name="cars"
+                                            value="{{n.emission}}" [(ngModel)]="n.selected" />
+                                        <span>{{n.emission}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li> -->
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="col-md-9 col-lg-10">
+            <img src="http://api.dealcars.in/homeImg/homeImg 1.jpg" style="width: 100%" (click)="bannerclick()" alt="">
+
+            <div class="mt-4">
+                <div class="text-center mt-5" *ngIf="UsedCars.length===0">
+                    <h4>Ooops!!!</h4>
+                    <p>No Data Found</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-lg-3 mb-4"
+                        *ngFor="let u of UsedCars| paginate: { itemsPerPage: 8, currentPage: p }">
+                        <div class=" card shadow" (click)="Usedcardetails(u)">
+                            <img class="card-img-top imgres" src="{{u.sellcar_img}}" alt="">
+                            <div class="card-body">
+                                <h6 class="m-0">{{trimString(u?.model,25)}}</h6>
+                                <p class="card-text mb-0"><small>
+                                        {{u?.month}},{{u?.year}}|{{u?.kd_Done}}km|{{u?.transmission}}|{{u?.fueltype}}</small>
+                                </p>
+                                <h5 class="card-title color">&#x20B9; {{u?.estimated_price}}*</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <section class="text-center">
+                    <pagination-controls (pageChange)="p = $event" class="m-auto"></pagination-controls>
+                </section>
+            </div>
+
+            <div class="mt-4">
+                <h4 class="color font-weight-bold mb-4">MOST VIEWED USED CARS</h4>
+                <swiper [config]="config" (slideChange)="onSlideChange()">
+                    <ng-template swiperSlide *ngFor="let m of MostViewedUsedCars">
+                        <div class=" card shadow">
+                            <img class="card-img-top imgres" src="{{m.sellcar_img}}" style="height: 180px;" alt="">
+                            <div class="card-body">
+                                <h6 class="m-0">{{trimString(m?.model,28)}}</h6>
+                                <p class="card-text mb-0"><small>
+                                        {{m?.month}},{{m?.year}}|{{m?.kd_Done}}km|{{m?.transmission}}|{{m?.fueltype}}</small>
+                                </p>
+                                <h5 class="card-title color">&#x20B9; {{m?.estimated_price}}*</h5>
+                            </div>
+                        </div>
+                    </ng-template>
+                </swiper>
+            </div>
+
+            <div class="mt-4">
+                <h5 class="color font-weight-bold text-center">LATEST REVIEWS</h5>
+                <hr style="width: 120px;">
+                <swiper [config]="Reviewconfig">
+                    <ng-template swiperSlide *ngFor="let c of CarReview">
+                        <div class="card rounded">
+                            <div class="card-body p-0">
+                                <div class="p-1">
+                                    <p class="mb-0">{{c?.model}}</p>
+                                    <ngb-rating [max]="5" [(rate)]="c.rating" [readonly]="true"></ngb-rating>
+                                    <h6 class="font-weight-bold color">{{c?.title}}</h6>
+                                    <div>
+                                        <p class="my-1 text-dark">
+                                            <small><i>{{trimString(c?.desc,120)}}</i></small>
+                                        </p>
+                                    </div>
+                                </div>
+                                <p class="pl-1 mb-1 color"><small style="font-weight: 500;">Read More</small></p>
+                                <div class="border-top p-1 text-muted">
+                                    <p class="m-0"><small>By
+                                            {{c?.reviews_by}}</small></p>
+                                    <p class="m-0"><small>On:{{c?.date}}|{{c?.views}} Vews</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </swiper>
+            </div>
+        </div>
+    </div>
+    <app-india></app-india>
+</div>

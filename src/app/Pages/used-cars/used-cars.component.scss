@@ -1,0 +1,190 @@
+ngb-rating {
+    font-size: 25px;
+    color: darkorange;
+    margin-top: -8px;
+}
+
+.navbar {
+    box-shadow: 0px 5px 3px 3px #00000029;
+    background-color: #fff;
+    border-bottom-left-radius: 10px;
+}
+
+.navbar-nav>li {
+    width: 100%;
+    display: block;
+}
+
+.navbar-nav {
+    width: 100%;
+}
+
+.navbar button {
+    background-color: white;
+    color: #5b206a;
+    border: none;
+}
+
+.nav-item {
+    font-weight: bold;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(0, 0, 0, .5);
+    margin-top: 10px;
+    // padding: 5px;
+}
+
+.navbar-collapse {
+    padding: 0;
+}
+
+.navbar {
+    padding: 0;
+}
+
+.navbar li:nth-child(even) {
+    background: #efefef;
+
+}
+
+.navbar li:nth-child(odd) {
+    background-color: #ffffff
+}
+
+.dropdown-toggle::after {
+    float: right;
+    margin-top: 12px;
+
+}
+
+
+.input-group .input-group-addon {
+    border: 1px solid #ced4da;
+    padding: 6px 10px;
+    background-color: #fff;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    cursor: pointer;
+
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #ccc;
+
+}
+
+.input-group {
+    width: 100%;
+    margin: 0 0 15px 0;
+}
+
+.dropdown-menu {
+    padding: 10px;
+    font-weight: 500;
+    color: #7a7a7a;
+}
+
+.dropBtnMiddle {
+    color: gray;
+    border: none;
+    text-align: left;
+    font-size: 16px;
+    display: block;
+    font-weight: 500;
+    padding: 8px;
+    outline: none;
+    height: 35px;
+}
+
+.drpIcon {
+    margin-left: 350px;
+}
+
+li.car-item {
+    list-style: none;
+    font-size: 16px;
+}
+
+.text {
+    white-space: nowrap;
+    font-size: 12px !important;
+}
+
+input[type="checkbox" i] {
+    background-color: initial;
+    cursor: default;
+    appearance: auto;
+    box-sizing: border-box;
+    margin: 4px 4px 4px 5px;
+    padding: initial;
+    border: initial;
+}
+
+.color {
+    color: #5b2067;
+}
+
+.car-list {
+    height: 125px;
+    overflow-y: scroll;
+}
+
+.imgres {
+    height: 170px;
+    width: 100%;
+}
+
+.card-body {
+    padding: 10px !important;
+
+    .card-title {
+        margin: 0px;
+        letter-spacing: -1px;
+    }
+
+    h6,
+    h5 {
+        margin: 0px;
+    }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 992px) {
+    .drpIcon {
+        margin-left: 350px;
+        display: inline;
+    }
+
+    .dropBtnMiddle {
+        color: gray;
+        border: none;
+        text-align: left;
+        font-size: 14px;
+        display: block;
+        font-weight: 500;
+        padding: 3px;
+        outline: none;
+        height: 35px;
+
+    }
+}
+
+hr {
+    margin-top: 0rem;
+    border-top: 2px solid #5b2067;
+    width: 120px;
+}
+
+.row {
+    padding: 0%;
+    margin: 0%;
+}
+
+.fixed-sidebar {
+    position: sticky !important;
+    z-index: 999;
+    background: white;
+    height: fit-content;
+    top: 30px;
+}

@@ -1,0 +1,379 @@
+<!-- <app-banner></app-banner>
+
+<section class="tabs">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="brand-tab" data-toggle="tab" href="#brand" role="tab"
+                            aria-controls="brand" aria-selected="true">Swift</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="Price-tab" data-toggle="tab" href="#Price" role="tab"
+                            aria-controls="Price" aria-selected="false">Price</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="compare-tab" data-toggle="tab" href="#compare" role="tab"
+                            aria-controls="compare" aria-selected="false">compare</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="Images-tab" data-toggle="tab" href="#Images" role="tab"
+                            aria-controls="Images" aria-selected="false">Images</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="specs-tab" data-toggle="tab" href="#specs" role="tab"
+                            aria-controls="specs" aria-selected="false">specs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab"
+                            aria-controls="reviews" aria-selected="false">user reviews</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="videos-tab" data-toggle="tab" href="#videos" role="tab"
+                            aria-controls="videos" aria-selected="false">videos</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            more
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">News</a>
+                            <a class="dropdown-item" href="#">Emi Calculator</a>
+                            <a class="dropdown-item" href="#">Car Service Guide</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="#">Home</a>
+                    </li>
+
+                    <li>
+                        <i class="fas fa-chevron-right"></i>
+                    </li>
+
+                    <li class="breadcrumb-item" aria-current="page">
+                        <a href="#">New Cars</a>
+                    </li>
+
+                    <li>
+                        <i class="fas fa-chevron-right"></i>
+                    </li>
+
+                    <li class="breadcrumb-item" aria-current="page">
+                        <a href="#">More</a>
+                    </li>
+
+                    <li>
+                        <i class="fas fa-chevron-right"></i>
+                    </li>
+
+                    <li class="breadcrumb-item active" aria-current="page">EMI Calculator</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<section class="emi-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <h6>Car Loan EMI Calculator</h6>
+                <p>It is very easy to calculate the EMI for your car loan. You will get EMI as soon as you enter the
+                    required loan amount and the interest rate. Installment in EMI calculator is calculated on reducing
+                    balance. As per the rules of financing institutions, processing fee or possible charges may be
+                    applicable which are not shown in the EMI we calculate.</p>
+                <div class="text-center">
+                    <h5 class="heading">MORE CAR OPTIONS TO CONSIDER</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <select class="form-control" [(ngModel)]="selectedBrand" (change)="getallmodels()">
+                    <!-- <option value="Select Brand">Select Brand</option> -->
+                    <option disabled selected value="undefined">{{selectedOldBrand}}</option>
+                    <option value="Hyundai">Hyundai</option>
+                    <option value="Datsun">Datsun</option>
+                    <option value="Rolls Royce">Rolls Royce</option>
+                    <option value="Lamborghini">Lamborghini</option>
+                    <option value="Porsche">Porsche</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="MercedesBenz">MercedesBenz</option>
+                    <option value="Mahindra">Mahindra</option>
+                    <option value="Audi">Audi</option>
+                    <option value="Kia">Kia</option>
+                    <option value="Skoda">Skoda</option>
+                    <option value="Volkswagen">Volkswagen</option>
+                    <option value="Ferrari">Ferrari</option>
+                    <option value="Maserati">Maserati</option>
+                    <option value="Bentley">Bentley</option>
+                    <option value="AstonMartin">AstonMartin</option>
+                    <option value="Isuzu">Isuzu</option>
+                    <option value="Volvo">Volvo</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Maruti">Maruti</option>
+                    <option value="Tata">Tata</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Renault">Renault</option>
+                    <option value="BMW">BMW</option>
+                    <option value="MG">MG</option>
+                    <option value="Jeep">Jeep</option>
+                    <option value="Jaguar">Jaguar</option>
+                    <option value="MINI">MINI</option>
+                    <option value="Lexus">Lexus</option>
+                </select>
+            </div>
+
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <select class="form-control" [(ngModel)]="selectedModel" (change)="getallVarient()">
+                    <option disabled selected value="undefined">{{selectedOldModel}}</option>
+                    <option *ngFor="let modelA of car_brands" [value]="modelA.model">{{modelA.model}}</option>
+                </select>
+            </div>
+
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <select class="form-control" [(ngModel)]="selectedVarient" (change)="getselectedCar()">
+                    <option disabled selected value="undefined">{{selectedOldVariant}}</option>
+                    <option *ngFor="let varientA of car_varients" [value]="varientA.varient">{{varientA.varient}}
+                    </option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <form>
+                    <div class="form-group">
+                        <h6 for="Down down_payment " class="mb-0">Down Payment
+                            <!-- <span class="float-right">₹ {{0}}</span> -->
+                            <span class="float-right">₹ {{ down_payment.value }}</span>
+                        </h6>
+                        <input type="range" id="down_payment" class="form-control p-0" min="100000" max="1000000"
+                            step="5000" value="100000" #down_payment (input)="down_payment.value"
+                            (input)="onDownpayChange($event.target.value)">
+                    </div>
+                    <div class="form-group">
+                        <h6 for="interest_rate" class="mb-0">Bank Interest Rate
+                            <!-- <span class="float-right">{{ 0}} %</span> -->
+                            <span class="float-right">{{ interest_rate.value }} %</span>
+                        </h6>
+                        <input type="range" value="1" id="interest_rate" class="form-control p-0" min="8" max="22"
+                            #interest_rate (input)="interest_rate.value" (input)="onSearchChange($event.target.value)">
+                    </div>
+                    <div class="form-group">
+                        <h6>Loan Period ( {{months}} Months )</h6>
+                        <ul>
+                            <li class="activeli" *ngFor="let x of dataTagListSorted;let i = index;">
+                                <!-- <a (click)="getValue(x, i)">{{x}}</a> -->
+                                <button (click)="getValue(x, i)" class="ulBtn " type="number">{{x}}</button>
+                            </li>
+                            <!-- <li>
+                                <a>2</a>
+                            </li>
+                            <li>
+                                <a>3</a>
+                            </li>
+                            <li>
+                                <a>4</a>
+                            </li>
+                            <li>
+                                <a>5</a>
+                            </li>
+                            <li>
+                                <a>6</a>
+                            </li>
+                            <li>
+                                <a>7</a>
+                            </li>
+                            <li>
+                                <a>8</a>
+                            </li> -->
+                        </ul>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-sm-12 col-md-12 col-lg-12 total-amount">
+                <h6>Total Loan Amount
+                    <span>
+                        <!--Total Loan Amount -->
+                        ₹ {{loanValueNo}}
+                    </span>
+                </h6>
+                <h6>Payable Amount
+                    <span>
+                        <!-- Payable Amount  -->
+                        ₹ {{newPayableAmount}}
+                    </span>
+                </h6>
+                <h6>You''ll pay extra
+                    <span>
+                        <!-- You''ll pay extra -->
+                        ₹ {{newExtraPayAmount}}
+                    </span>
+                </h6>
+            </div>
+        </div>
+        <div class="row on-road-price text-center">
+            <div class="col-sm-12 col-md-6 col-lg-6 border-right">
+                <h2>EMI
+                    <span> ₹ {{ifElseEmiValuePositive}} per month</span>
+                </h2>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <h2>₹ {{amount}}
+                    <span>Calculated On Road Price </span>
+                </h2>
+            </div>
+        </div>
+        <div class="row quotation">
+            <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                <button class="btn mt-4" style="font-weight: 400;">Get Bank Quotation</button>
+                <h6>At AutoDeal, we can help you get the best deal on your loans. Please call us on 1800 200 3000 for
+                    help.</h6>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="price">
+    <div class="container">
+        <div>
+            <div class="text-center">
+                <h5 class="heading" style="margin-bottom: 1.5rem;">SEARCH NEW CARS BY PRICE</h5>
+            </div>
+            <mat-tab-group (selectedTabChange)="onTabClick($event)">
+                <mat-tab *ngFor="let budgetP of car_budgetECEC; let index = index" [label]="budgetP.price">
+                    <div class="container">
+                        <swiper [config]="configOneEC">
+                            <ng-template swiperSlide *ngFor="let budgetCars of budgetdataCarData">
+                                <div class="card shadow">
+                                    <img class="card-img-top imgres"
+                                        src="http://api.dealcars.in/{{budgetCars?.brand}}/{{budgetCars?.model}}/{{budgetCars?.model}} 1.jpg"
+                                        alt="{{budgetCars?.model}}">
+                                    <div class="card-body">
+                                        <p>{{budgetCars.model}}</p>
+                                        <h6>{{budgetCars.price_print}}*</h6>
+                                        <button class="btn">Check {{budgetCars.brand}} EMI</button>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </swiper>
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+            <!-- <div class="col-sm-12 col-md-12 col-lg-12">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" *ngFor="let budgetP of car_budgetEC">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                            aria-controls="home" aria-selected="true"
+                            (click)="gtePriceOfCar(budgetP)">{{budgetP.price}}</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <swiper [config]="configOneEC">
+                            <ng-template swiperSlide *ngFor="let budgetCars of budgetdataCarData">
+                                <div class="card shadow">
+                                    <img class="card-img-top imgres"
+                                        src="http://api.dealcars.in/{{budgetCars?.brand}}/{{budgetCars?.model}}/{{budgetCars?.model}} 1.jpg"
+                                        alt="{{budgetCars?.model}}">
+                                    <div class="card-body">
+                                        <p>{{budgetCars.model}}</p>
+                                        <h6>{{budgetCars.price_print}}*</h6>
+                                        <button class="btn">Check {{budgetCars.brand}} EMI</button>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </swiper>
+                    </div>
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</section>
+
+<section class="brands">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                <h5 class="heading">Search cars by top brands</h5>
+            </div>
+
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <swiper [config]="configThreeBrandsEC" style="width: 100%;">
+                    <ng-template swiperSlide *ngFor="let brands of allBrandPicturesEC">
+                        <div class="ourGroupItem ">
+                            <div class="card">
+                                <div class="card-body">
+                                    <!-- <img src="../../../assets/logo/ferrari.png" alt="img 1" class="img-fluid"> -->
+                                    <img src="{{brands?.path}}" alt="" class="img-fluid"
+                                        style="height: 100px; width:100px;" (click)="onBrandClickEC(brands)">
+                                    <p>13 Offers Available</p>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </swiper>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<app-car-categories></app-car-categories>
+
+
+<section class="review">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                <h5 class="heading">LATEST REVIEWS</h5>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <swiper [config]="configTwoReviewsEC" style="width: 100%;">
+                    <ng-template swiperSlide *ngFor="let cr of car_reviewEC">
+                        <div class="card" style="height: 348px; border: solid #cfcfcf 0.25px;border-radius: 5px;">
+                            <div class="card-body">
+                                <h6>{{cr.cr_car_brand}}</h6>
+                                <ngb-rating [max]="5" [(rate)]="cr.cr_star" [readonly]="true" style="font-size: 25px; color: #ff8   f10;"></ngb-rating>
+                                <h5>{{cr.cr_car_model}}</h5>
+                                <p>
+                                    <i style="font-weight: 600;">{{cr.cr_description}}</i>
+                                </p>
+                                <a>Read More</a>
+                            </div>
+                            <div class="card-footer">
+                                <h6>By {{cr.cr_customer_name}}</h6>
+                                <span>On: {{cr.createdAt}} | 162 Views</span>
+                            </div>
+                        </div>
+                    </ng-template>
+                </swiper>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="emiindia">
+<app-india></app-india>
+</div>

@@ -1,0 +1,73 @@
+hr {
+    margin-top: 0rem;
+    border-top: 2px solid #5b2067;
+    width: 140px;
+}
+
+.color {
+    color: #5b2067;
+}
+
+.border_col {
+    border-right: 1px solid lightgray;
+}
+
+// .position {
+//     position: absolute;
+//     bottom: 0;
+//     margin-left: 10px;
+// }
+
+.comp-details {
+    margin-top: 10px;
+    p {
+        font-size: 80%;
+        margin: 0%;
+        text-align: center;
+        font-weight: 500;
+    }
+}
+
+.imgres {
+    height: 80%;
+    width: 100%;
+}
+
+.slick-slide {
+    width: 335px !important;
+    box-sizing: border-box;
+}
+
+.Readmore {
+    float: right;
+    color: #5b2067;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+.comp-text {
+    font-size: 12px;
+    margin: 0;
+    background: #5b2067;
+    padding: 10px 0px 5px 0px;
+    color: white;
+    border-radius: 0px 0px 4px 4px;
+}
+
+.offertitle {
+    color: #5b2067;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.newsDesc {
+    font-size: 15px;
+}
+
+.btn1 {
+    background: #ff8f10;
+    font-size: 14px;
+    color: white;
+    width: 100%;
+}

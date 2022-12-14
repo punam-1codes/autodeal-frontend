@@ -1,0 +1,67 @@
+ngb-rating {
+    font-size : 25px;
+    color     : darkorange;
+    margin-top: -8px;
+}
+
+.title{
+    color        : #5B2067;
+    font-weight  : 700;
+}
+
+.color{
+    color: #5B2067;
+}
+
+.color1{
+    color: lightslategrey;
+}
+
+.btn1 {
+    background: #ff8f10;
+    font-size : 15px;
+    color     : white;
+    width: 50%;
+    font-weight: 500;
+}
+
+
+.imgres {
+    height: 170px !important;
+    width: 100%;
+}
+
+.Readmore {
+    float: right;
+    color: #5b2067;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.comp-text {
+    font-size: 12px;
+    margin: 0;
+    background: #5b2067;
+    padding: 10px 0px 5px 0px;
+    color: white;
+    border-radius: 0px 0px 4px 4px;
+}
+
+.newsDesc {
+    font-size: 15px;
+}
+
+hr {
+    margin-top: 0rem;
+    border-top: 2px solid #5b2067;
+    width: 140px;
+}
+
+.carserviceimg{
+    display: flex;
+    justify-content: end;
+}
+
+#sgbuttons{
+    margin: 2rem 0rem 0rem 0rem;
+}

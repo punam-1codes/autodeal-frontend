@@ -1,0 +1,53 @@
+<div>
+    <h5 class="color text-trans text-center font-weight-bold mt-5">MARUTI SWIFT NEWS</h5>
+    <hr style="width: 150px !important;">
+    <div *ngIf="!showall">
+        <div class="card shadow my-3" *ngFor="let c of carnews | slice:0:3">
+            <div class="card-body p-0 pr-2">
+                <div class="row">
+                    <div class="col-sm-12 col-md-4 col-lg-4">
+                        <img src="http://api.dealcars.in/{{c?.brand}}/{{c?.model}}/{{c?.model}} 1.jpg" alt=""
+                            style="height: 200px;" class="img-fluid">
+                    </div>
+                    <div class="col-sm-12 col-md-8 col-lg-8 py-2 pl-5 pt-4 pl-md-2">
+                        <h5 class="font-weight-bold">
+                            {{c?.news_cartitle}}</h5>
+                        <p>By <b style="color: #7a7979;">{{c?.news_publisher}}</b> {{c?.news_date| date:'dd-MMM-yyyy, hh:mm a'}} </p>
+                        <p class="newsDesc text-muted">{{c?.news_cardescription}}</p>
+                        <a> <span class="Readmore" (click)="newsdetails(c)">
+                                Read More </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="showall">
+        <div class="card shadow my-3" *ngFor="let c of carnews">
+            <div class="card-body p-0 pr-2">
+                <div class="row">
+                    <div class="col-sm-12 col-md-4 col-lg-4">
+                        <img src="http://api.dealcars.in/{{c?.brand}}/{{c?.model}}/{{c?.model}} 1.jpg" alt=""
+                            style="height: 200px;" class="img-fluid">
+                    </div>
+                    <div class="col-sm-12 col-md-8 col-lg-8 py-2 pl-5 pt-4 pl-md-2">
+                        <h5 class="font-weight-bold">
+                            {{c?.news_cartitle}}</h5>
+                        <p>By <b style="color: #7a7979;">{{c?.news_publisher}}</b> {{c?.news_date| date:'dd-MMM-yyyy, hh:mm a'}} </p>
+                        <p class="newsDesc text-muted">{{c?.news_cardescription}}</p>
+                        <a> <span class="Readmore" (click)="newsdetails(c)">
+                                Read More </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="carnews.length > 3 && !showall">
+    <h6 class="font-weight-bolder py-4 ml-md-5" (click)="showall=true">View All Varients</h6>
+</div>
+
+<div *ngIf="showall">
+    <h6 class="font-weight-bolder py-4 ml-md-5" (click)="showall=false">Hide All Varients</h6>
+</div>

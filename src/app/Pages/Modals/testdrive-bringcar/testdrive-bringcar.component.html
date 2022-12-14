@@ -1,0 +1,35 @@
+<!-- <ng-template #templatefirst> -->
+    <div #templatefirst class="container my-3">
+        <div class="modal-header m-0 p-0 border-0">
+            <button type="button" class="close float-right" data-dismiss="modal">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <button type="button" class="close float-left" data-dismiss="modal" (click)="modalService.hide()">&times;</button>
+        </div>
+        <div class="px-md-5">
+            <h5 class="color font-weight-bold mb-0">WHERE SHOULD WE BRING THE CAR FOR YOU TO TEST DRIVE</h5>
+            <p class="text-muted mt-0">Just a reminder, it's completely free!</p>
+            <hr class="bg-dark">
+        </div>
+        <div class="modal-body">
+            <div class="px-md-5 mx-md-5">
+                <div class="row mt-3" *ngFor="let d of drivedetails" (click)="testdrive(d.code)">
+                    <div class="col-2 m-0" style="background:  #7d3c98;">
+                        <i class="{{d?.icon}} icon"></i>
+                    </div>
+                    <div class="col-8 m-0 py-2" style="background:#dcdcdca8;">
+                        <h6 class="m-0 color"><b>{{d?.head}}</b></h6>
+                        <span><small>{{d?.subhead}}</small></span>
+                    </div>
+                    <div class="col-2 m-0" style="background:#dcdcdca8;">
+                        <i class="fas fa-caret-right icon1"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer text-center">
+            <button class="btn m-auto d-block" type="submit" (click)="locationSign()">CONTINUE</button>
+        </div>
+
+    </div>
+<!-- </ng-template> -->

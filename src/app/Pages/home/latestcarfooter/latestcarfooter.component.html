@@ -1,0 +1,49 @@
+<div class="container pb-5">
+    <div class="row text-center">
+        <div class="col-sm-6 col-md-4 ">
+            <h5 class="color font-weight-bold">NEW CARS IN INDIA</h5>
+            <hr>
+            <!-- <p class="mb-1 cursor" *ngFor="let n of Newcars"><small class="list">{{n?.title}}</small></p> -->
+
+            <!--here we add-->
+            <p class="mb-1 cursor" ><small class="list">Find New Cars</small></p>
+            <p class="mb-1 cursor" ><small class="list">Upcoming New Cars</small></p>
+            <p class="mb-1 cursor" ><small class="list">New Car Insurance</small></p>
+            <p class="mb-1 cursor" ><small class="list">New Car Finance</small></p>
+            <p class="mb-1 cursor" ><small class="list">New Car Offers</small></p>
+            <p class="mb-1 cursor" ><small class="list">New Car Compare</small></p>
+
+
+        </div>
+        <div class="col-sm-6 col-md-4 ">
+            <h5 class="color font-weight-bold">POPULAR NEW CARS</h5>
+            <hr>
+            <!-- <p class="mb-1 cursor" *ngFor="let p of Popularcars"><small class="list">{{p?.title}}</small></p> -->
+
+            <!--here we add-->
+            <p class="mb-1 cursor" (click)="OnClickCarsByBrand('Mercedes')"><small class="list">Buy Mercedes Cars</small></p>
+            <p class="mb-1 cursor" (click)="OnClickCarsByBrand('BMW')"><small class="list">Buy BMW Cars</small></p>
+            <p class="mb-1 cursor" (click)="OnClickCarsByBrand('Audi')"><small class="list">Buy Audi Cars</small></p>
+            <p class="mb-1 cursor" (click)="OnClickCarsByBrand('Maruti')"><small class="list">Buy Maruti Cars</small></p>
+            <p class="mb-1 cursor" (click)="OnClickCarsByBrand('Hyundai')"><small class="list">Buy Hyundai Cars</small></p>
+            <p class="mb-1 cursor" (click)="OnClickCarsByBrand('Honda')"><small class="list">Buy Honda Cars</small></p>
+            
+
+            <!-- <p class="mb-1 cursor" *ngFor="let p of Popularcars" (click)="OnClickPopularCars(p)"><small class="list">{{p?.title}}</small></p> -->
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <h5 class="color font-weight-bold">CARS BY BODY</h5>
+            <hr>
+            <!-- <p class="mb-1 cursor" *ngFor="let c of CarsbyBody" (click)="OnClickCarsByBody(c)"><small class="list">{{c?.title}}</small></p> -->
+
+            <!--here we add -->
+            <p class="mb-1 cursor" (click)="OnClickCarsByCategories('Sedan')"><small class="list">Sedan New Car</small></p>
+            <p class="mb-1 cursor" (click)="OnClickCarsByCategories('SUV')"><small class="list">SUV New Car</small></p>
+            <p class="mb-1 cursor" (click)="OnClickCarsByCategories('MUV')"><small class="list">MUV New Car</small></p>
+            <p class="mb-1 cursor" (click)="OnClickCarsByCategories('Hatchback')"><small class="list">Hatchback New Car</small></p>
+            <p class="mb-1 cursor" (click)="OnClickCarsByCategories('Coupe')"><small class="list">Coupe New Car</small></p>
+            <p class="mb-1 cursor" (click)="OnClickCarsByCategories('Roadster')"><small class="list">Roadster New Car</small></p>
+
+        </div>
+    </div>
+</div>

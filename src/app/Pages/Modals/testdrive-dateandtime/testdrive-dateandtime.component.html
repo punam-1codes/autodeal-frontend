@@ -1,0 +1,35 @@
+<div id="date">
+    <div class="container">
+        <div class="modal-header m-0 p-0 border-0">
+            <button type="button" class="close float-right" data-dismiss="modal">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <button type="button" class="close float-left" data-dismiss="modal"
+                (click)="modalService.hide()">&times;</button>
+        </div>
+        <div class="modal-content border-0">
+            <div class="modal-body border-0">
+                <div class="text-center">
+                    <h4 class="color font-weight-bold mb-0 ">PICK A DATE AND TIME</h4>
+                    <p class="timemsg">{{msgDateandTime}}</p>
+                    <input placeholder="DD\MM\YYYY" class="text-center inputdate" type="text"
+                        onfocus="(this.type='date')" id="dateown" [(ngModel)]="testdriveDate">
+
+                </div>
+                <div class="text-center">
+                    <button class="picktime" *ngFor="let time of timeslots" id="testDriveTimeSlot" disabled>
+                        <label class="p" (click)="testDriveTime(time.time)"
+                            style="margin-top: 8px;">{{time.time}}</label>
+                    </button>
+                </div>
+
+                <div class="mb-3">
+                    <div class="form-group text-center m-auto">
+                        <button type="submit" class="btn" id="successtdBooking" (click)="successTestDrive()"
+                            data-toggle="modal" data-target="#thankyou" data-dismiss="modal">CONTINUE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

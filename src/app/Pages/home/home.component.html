@@ -1,0 +1,138 @@
+<div class="container-fluid">
+    <div>
+        <swiper [config]="configMain">
+            <ng-template swiperSlide *ngFor="let s of sliderImages">
+                <div>
+                    <!-- <img src="s?.img" alt=""> -->
+                    <img class="d-block w-100 imgheight" src="{{s?.img}}" alt="..." style="height:500px;">
+                </div>
+            </ng-template>
+        </swiper>
+    </div>
+    <div class="cardrowwidth">
+        <div class="row cardstyle">
+            <div class="col-md-9 col-lg-7 col-sm-12 col-12 pl-0">
+                <div class="card shadow-lg rounded text-center border border-white" style="margin-top:-40px;">
+                    <div class="card-body">
+                        <h5 class="color">Find Your Right Car</h5>
+                        <hr>
+                        <form class="formstyle">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-6" *ngFor="let f of FindRightCar">
+                                        <div>
+                                            <input id="{{f.label}}" type="radio" value="{{f.label}}" [checked]="f.isCheck"
+                                                name="cardeal" (change)="onselect($event)">
+                                            <label for="{{f.label}}" class="ml-1">{{f?.label}}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="isBudget">
+                                <div class="form-group">
+                                    <select id="inputState" class="form-control formstyle" [formControl]="budget"
+                                        (ngModelChange)="getBudgetValue($event)">
+                                        <option *ngFor="let c of car_budget" value="{{c.price}}">
+                                            {{c?.price}}</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select id="inputState" class="form-control formstyle" [formControl]="vehicle_type"
+                                        (ngModelChange)="getVehicalTypeValue($event)">
+                                        <option *ngFor="let v of VehicleType" value="{{v?.label}}">{{v?.label}}</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn1 btn-sm m-auto d-block" (click)="getbybudget()"
+                                    id="searchBtn" disabled>Search</button>
+                            </div>
+                            <div *ngIf="isBrand">
+                                <div class="form-group">
+                                    <select id="inputState" class="form-control formstyle" [formControl]="brand"
+                                        (ngModelChange)="getBrandTypeValue($event)">
+                                       <option [ngValue]="null" disabled>Select Brand</option>
+                                        <option *ngFor="let c of car_brand" value="{{c._id}}">{{c?._id}}</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn1 btn-sm m-auto d-block" (click)="getBrands()"
+                                    id="searchBtn2" disabled>Search</button>
+                            </div>
+                            <p class="mb-0 mt-2" (click)="GetAdvacedCars()">Advanced Search</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="categories">
+    <app-car-categories></app-car-categories>
+</div>
+<app-searchby-b-b-f></app-searchby-b-b-f>
+
+
+<div class="container-fluid pb-3">
+    <div class="jumbotron jumbotron-fluid shadow">
+        <div class="container" id="moreinfocard">
+            <h5 class="color text-center font-weight-bold mt-3">NEED MORE INFORMATION ON BUY NEW CAR? WE'RE JUST A CLICK
+                AWAY</h5>
+            <hr class="hrline" style="width: 560px;">
+            <div class="py-3" id="moreinfocardicons">
+                <div class="row text-md-center">
+                    <div class="col-md-4 col-sm-6 col-12 border-right border-dark mb-2">
+                        <h6 id="nminfoicontext"><a href="https://familycarehospitals.com/" target="_self" style="color:#212529;"><i style="font-size: 25px;" class="fas fa-globe color"></i> &nbsp; Visit Our Help Center</a>
+                        </h6>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-12 border-right border-dark mb-2">
+                        <h6 id="nminfoicontext"><a href="https://api.whatsapp.com/send/?phone=917777000849&text&app_absent=0" target="_self" style="color:#212529;"><i style="font-size: 25px;" class="fas fa-paper-plane color" ></i> &nbsp; Send a Message</a>
+                        </h6>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-12 mb-2">
+                        <h6 id="nminfoicontext"><a href="tel:012-345-6789" style="color: #212529; outline : none !important;"><i
+                                    style="font-size: 25px;" class="fas fa-mobile-alt color"></i> &nbsp; 0123456789</a>
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <img src="http://api.dealcars.in/bugatti.PNG" alt=""> -->
+<!-- <app-car-comparison></app-car-comparison> -->
+<app-industry-updates></app-industry-updates>
+<div class="py-5">
+    <div class="container">
+        <h5 class="color text-center font-weight-bold mt-3">WHAT OUR CUSTOMERS ARE SAYING</h5>
+        <hr style="width: 270px;">
+       <div class="wocas">
+        <swiper [config]="configReview">
+            <ng-template swiperSlide *ngFor="let c of car_review">
+                <div class="card mb-3" style="height: 250px; border-radius: 10px;">
+                    <div class="card-body" style="margin: 0rem 1.5rem;">
+                        <ngb-rating [max]="5" [(rate)]="c.cr_star" [readonly]="true"></ngb-rating>
+                        <p class="text-muted card-desc" style="width:100%;"><small style="font-style: italic;font-size: 100%;">{{c.cr_description}}</small>
+                        </p>
+                    </div>
+                    <div class="card-footer" style="height: 62px;">
+                        <div class="row">
+                            <div class="col-3"><img src="{{c.cr_customer_img}}" class="avatar" alt=""></div>
+                            <div class="col-5">
+                                <p class="color m-0" style="font-size: 20px;"><b>{{c.cr_publisher}}</b></p>
+                                <p class="m-0" style="font-size: small;">{{c.cr_car_model}}</p>
+                            </div>
+                            <div class="col-4">
+                                <div style="position: absolute;bottom: 0; margin-left: 50px;">
+                                    <p class="color m-0 text-right" style="font-size: 22px;"><b><i
+                                                class="fas fa-map-marker-alt"></i>&nbsp;{{c.cr_location}}</b></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </ng-template>
+        </swiper>
+       </div>
+        </div>
+</div>
+<app-latestcarfooter></app-latestcarfooter>

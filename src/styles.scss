@@ -1,0 +1,175 @@
+@import "~swiper/swiper-bundle";
+// @import "~swiper/scss";
+// @import "~swiper/css/free-mode";
+// @import "~swiper/css/navigation";
+// @import "~swiper/css/thumbs";
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$Dealmoney-AutodealWeb-primary: mat-palette($mat-indigo);
+$Dealmoney-AutodealWeb-accent : mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$Dealmoney-AutodealWeb-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$Dealmoney-AutodealWeb-theme: mat-light-theme((color: (primary: $Dealmoney-AutodealWeb-primary,
+        accent: $Dealmoney-AutodealWeb-accent,
+        warn: $Dealmoney-AutodealWeb-warn,
+      )));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($Dealmoney-AutodealWeb-theme);
+
+/* You can add global styles to this file, and also import other style files */
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-tab-label .mat-tab-label-content {
+  display: initial !important;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar,
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background-color: #5b2067 !important;
+}
+
+.mat-tab-label-active {
+  color: #5b2067;
+  font-weight: bold;
+}
+
+.mat-tab-labels {
+  display: flex;
+  justify-content: center !important;
+}
+
+.custom-slider .ngx-slider.animate .ngx-slider-pointer {
+  transition: .3s linear;
+}
+
+.custom-slider .ngx-slider .ngx-slider-pointer {
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  top: -5px;
+  background-color: white;
+  z-index: 3;
+  border-radius: 16px;
+  border: 1px solid black;
+}
+
+.custom-slider .ngx-slider .ngx-slider-selection {
+  background: #732f86;
+}
+
+.custom-slider .ngx-slider .ngx-slider-pointer .ngx-slider-active {
+  z-index: none;
+}
+
+.custom-slider .ngx-slider .ngx-slider-pointer:after {
+
+  display: none;
+}
+
+
+// slick slide carousal css
+.slick-slide {
+  padding: 5px !important;
+}
+
+.nav-btn {
+  height: 50px;
+  position: absolute;
+  width: 50px;
+  cursor: pointer;
+  top: 120px !important;
+}
+
+.prev-slide.slick-disabled,
+.next-slide.slick-disabled {
+  pointer-events: none;
+  opacity: 0.2;
+}
+
+.prev-slide {
+  background: url(assets/Images/nav-icon.png) no-repeat scroll 0 0;
+  left: 0px;
+  z-index: 999;
+  transform: rotate(180deg);
+}
+
+.next-slide {
+  background: url(assets/Images/nav-icon.png) no-repeat scroll 0px 0px;
+  right: 0px;
+  z-index: 999;
+}
+
+.text-trans {
+  text-transform: uppercase;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: black !important;
+}
+
+// end
+
+.mat-option-text {
+  font-size: 14px !important;
+}
+
+.ngx-slider .ngx-slider-bar {
+  background: #5b206742 !important;
+}
+
+.ngx-slider .ngx-slider-pointer {
+  background-color: #5b2067 !important;
+}
+
+.ngx-slider .ngx-slider-selection {
+  background: #5b2067 !important;
+}
+
+// ::ng-deep .cdk-overlay-container mat-datepicker-content {
+//   z-index: 2000 !important;
+// }
+
+.cdk-overlay-container {
+  z-index: 2000 !important;
+}
+
+.mat-datepicker-content {
+  z-index: 2000 !important;
+}
+
+/* Importing Bootstrap SCSS file. */
+// @import '~bootstrap/scss/bootstrap';

@@ -1,0 +1,409 @@
+.form-control:focus {
+    box-shadow  : none;
+    border-color: #ced4da;
+}
+
+
+.btn-primary,
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled).active, 
+.btn-primary:not(:disabled):not(.disabled):active, 
+.show>.btn-primary.dropdown-toggle,
+.dropdown-item.active, 
+.dropdown-item:active{
+    color           : #fff;
+    border-color    : #5b2067;
+    background-color: #5b2067;
+    box-shadow: none;
+}
+
+.dropdown {
+    .dropdown-menu{
+        padding: 5px 0;
+        .dropdown-item{
+            padding: 5px 10px;
+        }
+    }
+}
+
+.btn-primary:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus{
+    box-shadow: none;
+}
+
+header{
+    padding: 12px 0 0;
+    .top-header{
+        .input-group{
+            .btn{
+                color           : #495057;
+                border          : 1px solid #ced4da;
+                border-left     : 0;
+                background-color: #fff;
+            }
+        }
+    
+        p{
+            color        : #646464;
+            margin-top   : -6px;
+            margin-bottom: 0px;
+            a{
+                color: #646464;
+            }
+        }
+        
+        .btn{
+            i{
+                margin-right: 5px;
+            }
+            label{
+                margin-bottom: 0;
+                cursor: pointer;
+            }
+        }
+
+        ul{
+            padding      : 0;
+            list-style   : none;
+            margin-bottom: 0;
+            li{
+                display     : inline-block;
+                margin-right: 20px;
+                a{
+                    color    : #5b2067;
+                    font-size: 20px;
+                }
+            }
+        }
+        
+    }
+
+    .navigation{
+        background-color: #5b2067;
+        .navbar{
+            li{
+                a{
+                    color         : #fff;
+                    padding       : 7px 50px 7px 0;
+                    font-weight   : 500;
+                    text-transform: uppercase;
+                }
+ 
+                .dropdown-menu{
+                    margin          : -1px;
+                    padding         : 0;
+                    background-color: #5b2067;
+                    a{
+                        padding: 5px 10px;
+                    }
+ 
+                    a:focus,
+                    a:hover{
+                        background-color: #5b2067;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 992px) {  
+    header{
+        text-align: center;
+        img{
+            width: 70%;
+        }
+
+        .input-group{
+            width : 90%;
+            margin: 20px auto;
+        }
+        
+        .top-header{
+            p{
+                margin-top: 10px;
+            }
+        
+            ul{
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+// priyanka
+.btn-primary:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus {
+    box-shadow: none;
+}
+
+.form-control:focus {
+    box-shadow  : none;
+    border-color: #ced4da;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+
+.modal {
+    .modal-content {
+        border       : none;
+        border-radius: 15px;
+
+        .modal-body {
+            padding   : 50px;
+            text-align: center;
+
+            .close {
+                top             : 2%;
+                right           : 2%;
+                color           : #fff;
+                width           : 30px;
+                height          : 30px;
+                opacity         : 1;
+                position        : absolute;
+                line-height     : 5px;
+                border-radius   : 50%;
+                background-color: #545454;
+
+                span {
+                    font-size: 15px;
+                }
+            }
+
+            h5 {
+                color      : #5b2067;
+                font-weight: 700;
+            }
+
+            form {
+                label {
+                    margin-bottom: 5px;
+                }
+
+                .form-control {
+                    border-left     : none;
+                    background-color: #e9ecef;
+                }
+
+                .input-group-prepend {
+                    .input-group-text {
+                        font-weight: 600;
+                    }
+                }
+
+                .btn {
+                    color           : #fff;
+                    padding         : 5px 25px;
+                    font-weight     : 600;
+                    border-color    : #ff8f10;
+                    background-color: #ff8f10;
+                }
+            }
+        }
+
+        p {
+            font-weight: 600;
+
+            a {
+                text-decoration: none;
+
+                i {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+#otp {
+    form {
+        .form-control {
+            border-left: 1px solid #ced4da;
+        }
+
+        .form-group {
+            position: relative;
+
+            .resend {
+                top        : 55%;
+                right      : 2%;
+                color      : #5b2067;
+                position   : absolute;
+                font-weight: 700;
+            }
+        }
+
+        h6 {
+            color      : #5b2067;
+            margin-top : 30px;
+            font-weight: 700;
+        }
+    }
+}
+
+#abc{
+    display: none;
+}
+
+
+
+button.buttoninput.disable{
+    cursor: not-allowed;
+    pointer-events: none;
+ }
+
+ //sell cars form
+
+ #exampleModalLabel{
+     color : #5b2067;
+     font-size: 25px;
+     font-weight: 600;
+ }
+
+ .brandimages{
+    width: 100px;
+ }
+
+ img.brandimages{
+    opacity: 0.5;
+ }
+
+ img.brandimages:focus{
+    opacity: 1;
+  }
+
+
+ .fuelImage{
+    width: 100px;
+ }
+
+ img.fuelImage{
+    opacity: 0.5;
+ }
+
+ img.fuelImage:focus{
+    opacity: 1;
+  }
+
+
+
+ .btn1{
+    width: 20%;
+    background-color: #FF8F10;
+    border-radius: 8px;
+}
+
+.modal-header{
+    display: block;
+}
+
+.selecteCarDate{
+    height: 3rem;
+    width: 16rem;
+    border-radius: 7px;
+}
+
+.selecteCarDateMain{
+    display: flex;
+    justify-content: center;
+}
+
+.dspMYMain{
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+}
+
+.dspMonthYear{
+    border: 1px solid;
+    border-radius: 5px;
+    font-size: 25px;
+    padding: 0rem 1rem 0rem 1rem;
+}
+
+//info
+.mainmi{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.titlemi{
+    width: 64%;
+    text-align: initial;
+}
+
+.cinputmi{
+    width: 35%;
+}
+
+.titletext{
+    font-size: larger;
+}
+
+.inputH{
+    width: 100%;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.selectH{
+    border-radius: 6px;
+}
+
+.radiobtnlabel{
+    margin-left: 5%;
+}
+
+.uploadcarimages{
+    padding: 5%;
+    border-style: dashed;
+    border-color: #cbcbcb;
+}
+
+.uycitext{
+    color : #5b2067;
+}
+
+.uycitextbtn{
+    background-color: #5b2067;
+    color: white;
+    border-radius: 10px;
+    width: 30%;
+    font-weight: 600;
+    width: 220px;
+}
+
+.thankspagsubtitle{
+    font-weight: 300;
+    text-align: center;
+}
+
+.otherservicetitle{
+    text-align: start;
+}
+
+.otherserviceimg{
+    width: 100%;
+    margin: 1.5rem 0rem;
+}
+
+//check user login or not using localstorage 
+// .sellcarsclass{
+//     pointer-events: none;
+//     cursor: default;
+// }
+
+
+
+
+
+
+
+
+ 
+

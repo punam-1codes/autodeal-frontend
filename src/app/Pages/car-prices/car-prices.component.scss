@@ -1,0 +1,63 @@
+hr {
+    margin-top: 0rem;
+    border-top: 2px solid #5b2067;
+    width     : 140px;
+}
+
+@media(min-width:600px){
+    .imgcar{
+        height: 250px;
+        width: 100%;
+    }
+}
+
+a{
+    color: #00589B !important;
+    font-weight: 600;
+}
+
+
+.Readmore {
+    float      : right;
+    color      : #5b2067;
+    cursor     : pointer;
+    font-weight: bold;
+}
+
+.offertitle {
+    color         : #5b2067;
+    font-weight   : bold;
+    text-transform: uppercase;
+}
+
+.newsDesc {
+    font-size: 15px;
+}
+
+.btn1 {
+    background: #ff8f10;
+    font-size : 14px;
+    color     : white;
+    width     : 100%;
+}
+
+.color {
+    color: #5b2067;
+}
+
+.imgres {
+    height: 170px;
+    width : 100%;
+}
+
+.coloredrow{
+    background: #dcdcdca6;
+}
+.comp-text {
+    font-size    : 12px;
+    margin       : 0;
+    background   : #5b2067;
+    padding      : 10px 0px 5px 0px;
+    color        : white;
+    border-radius: 0px 0px 4px 4px;
+}

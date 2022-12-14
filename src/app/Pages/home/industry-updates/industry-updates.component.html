@@ -1,0 +1,115 @@
+<div class="container-fluid">
+    <h5 class="color text-center font-weight-bold" style="letter-spacing: 1px;">LATEST UPDATE IN AUTOMOBILE INDUSTRY</h5>
+    <hr>
+    <div>
+        <mat-tab-group>
+            <mat-tab label="News">
+                <div class="container mt-5">
+                    <swiper [config]="config">
+                        <ng-template swiperSlide *ngFor="let  c of CarNews">
+                            <div class="card shadow h-auto" style="border-radius: 5px;">
+                                <!-- <img src="{{c?.news_img_url}}" class="card-img-top imgres" alt="..."> -->
+                                <img class="card-img-top imgres" src="http://api.dealcars.in/{{c?.brand}}/{{c?.model}}/{{c?.model}} 1.jpg" alt="{{c?.model}}" style="height: 250px; margin-bottom: 1rem;">
+                                <div class="card-body p-1" style="height: 196px; margin: 0rem 0.3rem; ">
+                                    <h6 style="font-size: 15px;" class="card-title mt-1" style="font-size: 20px; margin: 1rem 0rem; height: 50px;">
+                                        {{trimString(c?.news_cartitle,45)}}
+                                    </h6>
+                                    <div style="font-size: 100% !important;" style="font-size: smaller; font-weight: 500; color: rgb(131 126 126 / 87%);">
+                                        <p class="mb-1" style="margin: 1rem 0rem; height: 20px;"><small style="font-size: small; color: rgb(32 24 24 / 87%); font-weight: 500;">{{c?.news_date}} | {{c?.news_publisher}}</small></p>
+                                        <p class="mb-1" style="line-height: 1; margin: 1rem 0rem; line-height: initial;" >
+                                            <small style="font-size: 100%;">{{trimString(c?.news_cardescription,160)}}</small>
+                                        </p>
+                                    </div>
+                                    
+                                </div>
+                                <p class="text-center mb-0 color" style="font-weight: 500; font-size: larger;cursor: pointer; " (click)="newsdetails(c)"><small><b>Read full News</b></small></p>
+                            </div>
+                        </ng-template>
+                    </swiper>
+                   
+                </div>
+            </mat-tab>
+
+            <mat-tab label="Expert Reviews">
+                <div class="container mt-5">
+                    <swiper [config]="config">
+                        <ng-template swiperSlide *ngFor="let c of CarReview">
+                            <div class="card h-auto" style="border-radius: 5px;">
+                                <!-- <img src="{{c?.expert_reviews_img_url}}" class="card-img-top imgres " alt="..."> -->
+                                <img class="card-img-top imgres" src="http://api.dealcars.in/{{c?.brand}}/{{c?.model}}/{{c?.model}} 1.jpg" alt="{{c?.model}}" style="height: 200px; margin-bottom: 1rem;">
+                                <div class="card-body p-0">
+                                    <div class="p-1" style="margin: 0rem 0.5rem; height: 150px;">
+                                        <p style="font-size: 16px;margin: 0%; font-weight: 500; color: rgb(131 126 126 / 87%);">{{c?.model}}</p>
+                                        <ngb-rating [max]="5" [(rate)]="c.expert_reviews_stars" [readonly]="true" style="margin: 0.1rem 0rem;">
+                                        </ngb-rating>
+                                        <div style="font-size: 100% !important;">
+                                            <p class="mb-1" style="line-height: 1;font-style: italic; font-family: cursive;">
+                                                <small style="font-size:100%;">{{trimString(c?.expert_reviews_description,120)}}</small>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <p class="pl-1 mb-1 color" style="margin: 0rem 0.5rem;"><small style="font-weight: 500;font-size: 15px;">Read More</small></p>
+                                    <div class="border-top p-1" style="margin: 1rem 0.5rem; height: 60px;">
+                                        <p class="m-0"><small style="font-weight: 500; font-size: 95%;">By
+                                                {{c?.expert_reviews_by}}</small></p>
+                                        <p style="font-size: 14px;" class="m-0">{{c?.expert_reviews_time}} hr ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </swiper>
+                   
+                    <p class="text-center" style="margin: 1rem 0rem; font-size: 20px;"><small>View All Expert Reviews</small></p>
+
+                </div>
+            </mat-tab>
+
+            <mat-tab label="Car Videos">
+                <div class="container mt-5">
+                    <swiper [config]="config">
+                        <ng-template swiperSlide *ngFor="let c of CarVideo">
+                            <div class="card h-auto" style=" border-radius: 5px;">
+                                <div class="video">
+                                    <!-- <video controls #videoPlayer class="imgres">
+                                        <source src="{{c?.car_videos_link}}" type="video/mp4" />
+                                        Browser not supported
+                                    </video> -->
+                                    <!-- <iframe width="auto" height="180" [src]="c.car_videos_link"
+                                        title="Video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe> -->
+                                        <img class="card-img-top imgres" src="http://api.dealcars.in/{{c?.brand}}/{{c?.model}}/{{c?.model}} 1.jpg" alt="{{c?.model}}" style="height: 250px; margin-bottom: 1rem;">
+                                </div>
+                                <div class="card-body p-0">
+                                    <div class="p-1" style="margin: 0rem 0.5rem;">
+                                        <p class="title" style="font-size: large;">{{trimString(c?.car_videos_title,50)}}
+                                        </p>
+
+                                        <div class="d-flex justify-content-between">
+                                            <p class="m-0"><small style="font-weight: 400;    font-size: 100%;">By
+                                                    {{c?.car_videos_by}}</small></p>
+                                            <p class="m-0"><small
+                                                    style="font-size: 13px !important;">{{c?.car_videos_date}}</small>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="border-top d-flex justify-content-between p-1" style="margin: 0rem 0.5rem;">
+                                        <p class="m-0"><small style="font-size: 13px; word-spacing: 5px;"><i
+                                                    class="far fa-eye"></i>&nbsp;{{c?.car_views}} Views</small>
+                                        </p>
+                                        <p class="m-0"><small style="font-size: 13px !important; word-spacing: 5px;"><i
+                                                    class="far fa-thumbs-up"></i>&nbsp;{{c?.car_likes}} Likes</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </swiper>
+                    <p class="text-center" style="margin: 1rem 0rem;font-size: 20px;"><small>View All Car Videos</small></p>
+
+                </div>
+            </mat-tab>
+
+        </mat-tab-group>
+
+    </div>
+</div>

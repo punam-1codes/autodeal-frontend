@@ -1,0 +1,161 @@
+<div class="container-fluid mt-4">
+    <div class="container">
+        <div class="row" *ngFor="let c of cardata">
+            <div class="col-sm-12 col-md-7 col-lg-6 ">
+                <div class="float-right">
+                    <img src="https://img.icons8.com/ios-glyphs/24/000000/like--v1.png" />
+                    <img src="https://img.icons8.com/material-sharp/24/000000/share.png" />
+                </div>
+                <div>
+                    <!-- <img src="{{colors}}" class="img-fluid"> -->
+                    <img class="img-fluid imgcar"
+                        src="http://api.dealcars.in/{{c?.brand}}/{{c?.model}}/{{c?.model}} 1.jpg" alt="{{c?.model}}">
+                    <!-- <p class="mt-5">{{colors}}</p> -->
+                </div>
+                <div style="justify-content: space-evenly" class="d-flex">
+                    <a><img src="https://img.icons8.com/material-sharp/25/000000/image-gallery.png" /></a>
+                    <a><img src="https://img.icons8.com/material-outlined/25/000000/paint-palette.png" /></a>
+                    <a><img
+                            src="https://img.icons8.com/external-prettycons-lineal-prettycons/25/000000/external-youtube-multimedia-prettycons-lineal-prettycons.png" /></a>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-5 col-lg-6 mt-5">
+                <div>
+                    <h5 class="m-0">{{c?.price_print}}*</h5>
+                    <a href="#">Get on Road Price</a>
+                    <p>*Ex-showroom Price in <a href="#">New Delhi</a></p>
+                    <button type="button" class="btn btn1 btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#register"
+                        style="width: auto !important;">Get A
+                        Test
+                        Drive</button>
+                </div>
+                <div class="mt-4">
+                    <div class="row coloredrow p-2">
+                        <div style="font-size: 14px;" class="col-sm-12 col-md-8 col-lg-8">
+                            <p class="m-0">EMI Starts</p>
+                            <p class="m-0"> <a href="#">&#8377;&nbsp; 12,777/</a> Months</p>
+                            <p class="m-0">Interest calculated at 9.8% for 60 months</p>
+                        </div>
+
+                        <div class="col-sm-12 col-md-4 col-lg-4 m-auto">
+                            <button type="button" class="btn btn1 btn-sm" style="width: auto !important;">View
+                                Finance
+                                Offers</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container mt-5 mb-3">
+              <swiper [config]="configCarVideo">
+            <ng-template swiperSlide *ngFor="let c of CarVideo">
+                <div class="card h-auto">
+                    <div class="px-md-5">
+                        <video controls #videoPlayer class="videoheight px-md-5">
+                            <source src="{{c?.url}} " type="video/mp4" />
+                            Browser not supported
+                        </video>
+                        <!-- <iframe width="auto" height="180" [src]="c.url" title="Video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe> -->
+                    </div>
+                    <div class="card-body p-0 px-md-5">
+                        <div class="p-1 px-md-5">
+                            <h5 class="m-0 font-weight-bold">{{c?.title}}</h5>
+
+                            <div class="d-flex justify-content-between">
+                                <p class="m-0"><small style="font-size: 14px !important;">{{c?.subtitle}}</small>
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </ng-template>
+        </swiper>
+    </div>
+
+    <section class="mt-5">
+        <h5 class="font-weight-bold ml-5">UP NEXT</h5>
+        <hr style="width: 100%;border-top: 1px solid grey !important;">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-6 mb-3"
+                    *ngFor="let u of UpNextCars| paginate: { itemsPerPage: 4, currentPage: p }">
+                    <div class="card shadow">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-4 col-lg-4">
+                                <img src="{{u?.img}}" class="img-fluid" alt="">
+                            </div>
+                            <div class="col-sm-12 col-md-8 col-lg-8">
+                                <div class="py-2 pr-2">
+                                    <h6>{{u?.title}}</h6>
+                                    <p class="text-muted"><small>{{u?.publisher}}</small></p>
+                                    <p class="m-0 text-muted">
+                                        <small>{{u?.views}} Views</small><span
+                                            class="float-right"><small>{{u?.time}}</small></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="text-center m-auto">
+                    <pagination-controls (pageChange)="p = $event" class="m-auto"></pagination-controls>
+                </section>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="container mt-2">
+        <div>
+            <h5 class="color text-center font-weight-bold mt-5">MORE CAR OPTION TO CONSIDER</h5>
+            <hr style="width: 180px !important;">
+        </div>
+       <swiper [config]="config">
+            <ng-template swiperSlide *ngFor="let c of caroptions">
+                <div class="card shadow" style="height: 240px;">
+                    <img src="{{c?.img}}" class="card-img-top imgres" alt="...">
+                    <div class="card-body" (click)="MoreCarOption(c)">
+                        <p class="m-0 text-center"><b>{{c?.title}}</b></p>
+                    </div>
+                </div>
+            </ng-template>
+        </swiper>
+    </div>
+
+    <app-confused></app-confused>
+
+    <div class="container">
+        <app-offers></app-offers>
+    </div>
+
+    <div class="container my-3 mt-5">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-3" *ngFor="let i of IndiaAutoPorta">
+                        <div style="display: flex;">
+                            <div class="color mr-3" style="font-size: 30px;">
+                                <i class="{{i?.icon}}"></i>
+                            </div>
+                            <div>
+                                <p class="mb-0">
+                                    <strong>INDIA’S #1</strong>
+                                    <br><small>Largest Auto porta</small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

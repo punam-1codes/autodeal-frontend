@@ -1,0 +1,1173 @@
+<div *ngFor="let c of cardata">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-4 col-lg-4 my-auto">
+                <h5 class="color">{{c?.model}}
+                    <i class="fas fa-info-circle"></i>
+                </h5>
+                <ngb-rating [max]="5" [(rate)]="rating" [readonly]="true">
+                </ngb-rating>
+                <span>
+                    13 Reviews |
+                    Write a review
+                </span>
+            </div>
+
+            <div class="col-sm-12 col-md-8 col-lg-8">
+                <img src="../../../assets/banner.png" class="img-fluid" alt="banner">
+            </div>
+        </div>
+    </div>
+    <mat-tab-group class="mt-4">
+        <mat-tab label="{{c?.brand}}">
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-sm-12 col-md-7 col-lg-6 ">
+                        <div class="float-right">
+                            <img src="https://img.icons8.com/ios-glyphs/24/000000/like--v1.png" />
+                            <img src="https://img.icons8.com/material-sharp/24/000000/share.png" />
+                        </div>
+                        <div>
+                            <!-- <img src="{{colors}}" class="img-fluid"> -->
+                            <img class="img-fluid imgres"
+                                src="http://api.dealcars.in/{{c?.brand}}/{{c?.model}}/{{c?.model}} 1.jpg"
+                                alt="{{c?.model}}">
+                            <!-- <p class="mt-5">{{colors}}</p> -->
+                        </div>
+                        <div style="justify-content: space-evenly" class="d-flex">
+                            <a><img src="https://img.icons8.com/material-sharp/25/000000/image-gallery.png" /></a>
+                            <a><img src="https://img.icons8.com/material-outlined/25/000000/paint-palette.png" /></a>
+                            <a><img
+                                    src="https://img.icons8.com/external-prettycons-lineal-prettycons/25/000000/external-youtube-multimedia-prettycons-lineal-prettycons.png" /></a>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-5 col-lg-6 mt-5">
+                        <div>
+                            <h5 class="m-0">{{c?.price_print}}*</h5>
+                            <a href="#">Get on Road Price</a>
+                            <p>*Ex-showroom Price in <a href="#">New Delhi</a></p>
+                            <!-- <button type="button" class="btn btn1 btn-sm mt-2" style="width: auto !important;"
+                                (click)="GetTestDrive(c)">Get A
+                                Test
+                                Drive</button> -->
+                            <div class="d-flex justify-content-between">
+                                <button type="button" class="btn btn1 btn-sm mt-2" data-toggle="modal"
+                                    data-target="#register" style="width: 100% !important;">Get A
+                                    Test
+                                    Drive</button>
+                                <button type="button" class="btn btn1 btn-sm mt-2 mx-md-4" style="width: 100% !important;">
+                                    Service Guide</button>
+                                <button type="button" class="btn btn1 btn-sm mt-2" style="width: 100% !important;" data-toggle="modal" data-target="#brandModel">
+                                    Sell Car</button>
+                            </div>
+
+                            <!-- <button type="button" class="btn btn1 btn-sm mt-2" data-toggle="modal"
+                            data-target="#brandModel" style="width: auto !important;">
+                            SELL CAR
+                            </button> -->
+                            
+                            <!-- <div>
+                                <app-sellcar-modals></app-sellcar-modals>
+                            </div> -->
+                                   
+                             
+
+                        </div>
+                        <div class="mt-4">
+                            <div class="row coloredrow p-2">
+                                <div style="font-size: 14px;" class="col-sm-12 col-md-8 col-lg-8">
+                                    <p class="m-0">EMI Starts</p>
+                                    <p class="m-0"> <a href="#">&#8377;&nbsp; 12,777/</a> Months</p>
+                                    <p class="m-0">Interest calculated at 9.8% for 60 months</p>
+                                </div>
+
+                                <div class="col-sm-12 col-md-4 col-lg-4 m-auto">
+                                    <button type="button" class="btn btn1 btn-sm" style="width: auto !important;">View
+                                        Finance
+                                        Offers</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <section class="text-center">
+                    <div class="container">
+                        <div>
+                            <h5 class="color text-trans text-center font-weight-bold mt-5">KEY SPECS OF {{c?.model}}
+                            </h5>
+                            <hr style="width: 180px !important;">
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4 col-md-3 col-lg-2 col-6 mb-2" *ngFor="let k of KeySpecs">
+                                <div class="card">
+                                    <div class="card-body p-2">
+                                        <i class="{{k?.icon}} icon"></i>
+                                        <p class="m-0">{{k?.head}}<br>
+                                            <strong style="white-space: nowrap;">{{k?.data||'-'}}</strong>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- <div class="py-4 m-auto">
+                                <button type="button" class="btn btn1" style="width: auto !important;">
+                                    Specs and Features</button>
+                            </div> -->
+                        </div>
+                    </div>
+
+                </section>
+
+                <section>
+                    <div class="text-center">
+                        <div>
+                            <h5 class="color text-trans font-weight-bold mt-5">{{c?.model}} PRICE LIST (VARIANTS)
+                            </h5>
+                            <hr style="width: 220px !important;">
+                        </div>
+                        <!-- <p class="mb-0">The price of Maruti Swift starts at Rs. 5.85 Lakh and goes upto Rs. 8.67
+                            Lakh.
+                            Maruti
+                            Swift is offered in 9 variants - the base model of Swift is LXI and the top variant
+                            Maruti
+                            Swift ZXI
+                            Plus DT AMT which comes at a price tag of Rs. 8.67 Lakh. <b>Uptown Red</b></p> -->
+                    </div>
+
+                    <div class="mt-2">
+                        <mat-tab-group>
+                            <mat-tab label="All Versions">
+                                <div class="table-responsive-sm mt-3">
+                                    <table class="table">
+                                        <thead class="coloredrow">
+                                            <tr>
+                                                <th class="border-0">Variant</th>
+                                                <th class="border-0">Ex-Showroom Price</th>
+                                                <th class="border-0"></th>
+                                                <th class="border-0 text-center">Compare</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <div class="text-center mt-3" *ngIf="Allvrients.length<=0">There is no
+                                                varients of {{c?.model}}</div>
+                                            <tr *ngFor="let p of Allvrients;let i=index"
+                                                [ngClass]="{'coloredrow': (i + 2) % 2 !== 0}">
+                                                <td class="m-auto">
+                                                    <h6 class="color m-0 font-weight-bold">{{p?.model}}</h6>
+                                                    <p class="m-0"><small>{{p?.engine}}, {{p?.transmission}},
+                                                            {{p?.fuel_type}}, {{p?.mileage_print}}</small>
+                                                    </p>
+                                                    <!-- <p>
+                                                        <small class="font-weight-bold">{{p?.timeline}}</small>
+                                                    </p> -->
+                                                </td>
+                                                <td class="m-auto">
+                                                    <h6 class="color m-0 font-weight-bold">{{p?.price_print}}*</h6>
+                                                    <a href="#"><small>Get On Road Price</small></a>
+                                                </td>
+                                                <td class="text-left">
+                                                    <button style="width: auto !important;" class="btn btn1 btn-sm">VIEW
+                                                        DIWALI OFFER</button>
+                                                </td>
+                                                <td class="text-center">
+                                                    <input type="checkbox">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </mat-tab>
+                            <mat-tab label="Petrol Version">
+                                <div class="table-responsive-sm mt-3">
+                                    <table class="table">
+                                        <thead class="coloredrow">
+                                            <tr>
+                                                <th class="border-0">Variant</th>
+                                                <th class="border-0">Ex-Showroom Price</th>
+                                                <th class="border-0"></th>
+                                                <th class="border-0 text-center">Compare</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <div class="text-center mt-3" *ngIf="PetrolVersion.length<=0">There is no
+                                                <u>Petrol Version</u> of {{c?.model}}
+                                            </div>
+                                            <tr *ngFor="let p of PetrolVersion;let i=index"
+                                                [ngClass]="{'coloredrow': (i + 2) % 2 !== 0}">
+                                                <td class="m-auto">
+                                                    <h6 class="color m-0 font-weight-bold">{{p?.model}}</h6>
+                                                    <p class="m-0"><small>{{p?.engine}}, {{p?.transmission}},
+                                                            {{p?.fuel_type}}, {{p?.mileage_print}}</small>
+                                                    </p>
+                                                    <p>
+                                                        <small class="font-weight-bold">{{p?.timeline}}</small>
+                                                    </p>
+                                                </td>
+                                                <td class="m-auto">
+                                                    <h6 class="color m-0 font-weight-bold">{{p?.price_print}}*</h6>
+                                                    <a href="#"><small>Get On Road Price</small></a>
+                                                </td>
+                                                <td class="text-left">
+                                                    <button style="width: auto !important;" class="btn btn1 btn-sm">VIEW
+                                                        DIWALI OFFER</button>
+                                                </td>
+                                                <td class="text-center">
+                                                    <input type="checkbox">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </mat-tab>
+                            <mat-tab label="Diesel Version">
+                                <div class="table-responsive-sm mt-3">
+                                    <table class="table">
+                                        <thead class="coloredrow">
+                                            <tr>
+                                                <th class="border-0">Variant</th>
+                                                <th class="border-0">Ex-Showroom Price</th>
+                                                <th class="border-0"></th>
+                                                <th class="border-0 text-center">Compare</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <div class="text-center mt-3" *ngIf="DieselVersion.length<=0">There is no
+                                                <u>Diesel Version</u> of {{c?.model}}
+                                            </div>
+                                            <tr *ngFor="let p of DieselVersion;let i=index"
+                                                [ngClass]="{'coloredrow': (i + 2) % 2 !== 0}">
+                                                <td class="m-auto">
+                                                    <h6 class="color m-0 font-weight-bold">{{p?.model}}</h6>
+                                                    <p class="m-0"><small>{{p?.engine}}, {{p?.transmission}},
+                                                            {{p?.fuel_type}}, {{p?.mileage_print}}</small>
+                                                    </p>
+                                                    <!-- <p>
+                                                                                                <small class="font-weight-bold">{{p?.timeline}}</small>
+                                                                                            </p> -->
+                                                </td>
+                                                <td class="m-auto">
+                                                    <h6 class="color m-0 font-weight-bold">{{p?.price_print}}*</h6>
+                                                    <a href="#"><small>Get On Road Price</small></a>
+                                                </td>
+                                                <td class="text-left">
+                                                    <button style="width: auto !important;" class="btn btn1 btn-sm">VIEW
+                                                        DIWALI OFFER</button>
+                                                </td>
+                                                <td class="text-center">
+                                                    <input type="checkbox">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </mat-tab>
+                            <mat-tab label="Automatic Version">
+                                <div class="table-responsive-sm mt-3">
+                                    <table class="table">
+                                        <thead class="coloredrow">
+                                            <tr>
+                                                <th class="border-0">Variant</th>
+                                                <th class="border-0">Ex-Showroom Price</th>
+                                                <th class="border-0"></th>
+                                                <th class="border-0 text-center">Compare</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <div class="text-center mt-3" *ngIf="AutomaticVersion.length<=0">There is no
+                                                <u>Automatic Version</u> of {{c?.model}}
+                                            </div>
+                                            <tr *ngFor="let p of AutomaticVersion;let i=index"
+                                                [ngClass]="{'coloredrow': (i + 2) % 2 !== 0}">
+                                                <td class="m-auto">
+                                                    <h6 class="color m-0 font-weight-bold">{{p?.model}}</h6>
+                                                    <p class="m-0"><small>{{p?.engine}}, {{p?.transmission}},
+                                                            {{p?.fuel_type}}, {{p?.mileage_print}}</small>
+                                                    </p>
+                                                    <!-- <p>
+                                                                                                <small class="font-weight-bold">{{p?.timeline}}</small>
+                                                                                            </p> -->
+                                                </td>
+                                                <td class="m-auto">
+                                                    <h6 class="color m-0 font-weight-bold">{{p?.price_print}}*</h6>
+                                                    <a href="#"><small>Get On Road Price</small></a>
+                                                </td>
+                                                <td class="text-left">
+                                                    <button style="width: auto !important;" class="btn btn1 btn-sm">VIEW
+                                                        DIWALI OFFER</button>
+                                                </td>
+                                                <td class="text-center">
+                                                    <input type="checkbox">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </mat-tab>
+                        </mat-tab-group>
+                    </div>
+
+                </section>
+
+                <section>
+                    <div>
+                        <h5 class="color text-trans text-center font-weight-bold mt-5">{{c?.model}} MILEAGE
+                        </h5>
+                        <hr style="width: 180px !important;">
+                    </div>
+                    <p class="text-center">The claimed ARAI mileage: {{c?.model}} {{c?.factors_fuel_type}} is
+                        {{c?.mileage_print}}.
+                        <!-- The claimed ARAI mileage for the automatic variants. -->
+                    </p>
+
+                    <table class="table table-responsive-sm text-center">
+                        <thead class="coloredrow">
+                            <tr>
+                                <th class="border-0">Fuel Type</th>
+                                <th class="border-0">Transmission</th>
+                                <th class="border-0">ARAI Mileage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <h6>{{c?.factors_fuel_type}}</h6>
+                                </td>
+                                <td>
+                                    <h6>{{c?.transmission}}</h6>
+                                </td>
+                                <td>
+                                    <h6>{{c?.mileage_print}}</h6>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section class="text-center">
+                    <div>
+                        <h5 class="color text-center font-weight-bold mt-5">{{c?.model}} COLOURS
+                        </h5>
+                        <hr style="width: 180px !important;">
+                    </div>
+                    <div class="row">
+                        <!--  <div class="col-sm-6 col-md-4 col-lg-2 my-3" *ngFor="let c of colors"> -->
+                        <div class="col-sm-12 col-md-12 col-lg-12 my-3" *ngFor="let c of colors">
+                            <!-- <div class="Carcolor" [style.background-color]="c.color"></div> -->
+                            <p class="mt-1">{{c}}</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="text-center">
+                        <h5 class="color text-trans text-center font-weight-bold mt-5">{{c?.model}} SPECIFICATIONS
+                        </h5>
+                        <hr style="width: 200px !important;">
+                        <p>Note: Specifications for {{c?.model}} have been mentioned</p>
+
+                    </div>
+
+                    <table class="table table-responsive-sm">
+                        <thead class="coloredrow">
+                            <tr>
+                                <th class="border-0 color font-weight-bold" colspan="7">Dimensions, Capacities & Details
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody style="font-size: 15px;">
+                            <tr class="tablewidth">
+                                <td>Length (mm)</td>
+                                <td>{{c?.dimensions_length_mm}}</td>
+                                <td>Wheelbase (mm)</td>
+                                <td>{{c?.dimensions_weelbase_mm}}</td>
+                                <td>Boot Space (L)</td>
+                                <td>{{c?.dimensions_boot_space_l}}</td>
+                            </tr>
+                            <tr class="tablewidth">
+                                <td>Width (mm)</td>
+                                <td>{{c?.dimensions_width_mm}}</td>
+                                <td>Turning Radius (m)</td>
+                                <td>{{c?.dimensions_turning_radius_m}}</td>
+                                <!-- <td>Fuel Capacity (L)</td>
+                                <td>35</td> -->
+                            </tr>
+                            <tr class="tablewidth">
+                                <td>Height (mm)</td>
+                                <td>{{c?.dimensions_height_mm}}</td>
+                                <td>Ground Clearance (mm)</td>
+                                <td>{{c?.dimensions_ground_clearance_mm}}</td>
+                                <td>Seating Capacity</td>
+                                <td>{{c?.capacities_seating_capacity}}</td>
+                            </tr>
+                            <tr>
+                                <td>Colors</td>
+                                <td colspan="7">{{colors}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="mt-2">
+                        <table class="table table-responsive-sm">
+                            <thead class="coloredrow">
+                                <tr>
+                                    <th class="border-0 color font-weight-bold" colspan="7">Performance
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody style="font-size: 15px;">
+                                <tr>
+                                    <td>Displacement (cc)</td>
+                                    <td>{{c?.factors_displacement_cc}}</td>
+                                    <td>Peak Power</td>
+                                    <td>{{c?.performance_peak_power_bhp_max_rpm}}</td>
+                                    <td>Peak Torque</td>
+                                    <td>{{c?.performance_peak_torque_nm_max_rpm}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="mt-2">
+                        <table class="table table-responsive-sm">
+                            <thead class="coloredrow">
+                                <tr>
+                                    <th class="border-0 color font-weight-bold" colspan="7">Key Features
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody style="font-size: 15px;">
+                                <tr>
+                                    <td>Air</td>
+                                    <td>{{c?.key_features_air}}</td>
+                                    <td>Power steering</td>
+                                    <td>{{c?.key_features_power_steering}}</td>
+                                    <td>Power windows</td>
+                                    <td>{{c?.key_features_power_windows}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <div class="mt-2">
+                    <div *ngFor="let c of cardata">
+                        <h5 class="color text-trans text-center font-weight-bold mt-5">OTHER {{c?.brand}} CARS</h5>
+                        <hr style="width: 180px !important;">
+                    </div>
+                    <swiper [config]="slideConfig" [navigation]="{ clickable: true }">
+                        <ng-template *ngFor="let c of cars" swiperSlide>
+                            <div class="card shadow">
+                                <img src="http://api.dealcars.in/{{c?.brand}}/{{c?.model}}/{{c?.model}} 1.jpg"
+                                    class="card-img-top imgbrand" alt="{{c?.model}}">
+                                <div class="card-body">
+                                    <p class="card-text"><b>{{c?.model}}</b></p>
+                                    <h6 class="card-title color m-0">{{c?.price_print}}*</h6>
+                                    <p class="card-text"><small>Ex-showroom,Delhi</small></p>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </swiper>
+                </div>
+                <div class="container mt-5">
+                    <app-newssection></app-newssection>
+                </div>
+
+
+                <!-- <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span class="fas fa-times"></span>
+                                </button>
+                                <h4>MARUTI SWIFT</h4>
+                                <p>Provide your contact details for Test Drive,EMI options, Offers & Exchange Benefits
+                                </p>
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-7 col-7">
+                                        <img src="../../../assets/swift.png" class="img-fluid  mt-3" alt="swift">
+                                    </div>
+                                    <div class="col-sm-12 col-md-5 col-lg-5">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h5>REGISTER</h5>
+                                                <form>
+                                                    <div class="form-group">
+                                                        <label for="name">Full Name</label>
+                                                        <input type="text" id="name" class="form-control"
+                                                            placeholder="Enter Your Name">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="no">Contact No.</label>
+                                                        <input type="number" id="no" class="form-control"
+                                                            placeholder="Enter Your Contact no.">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="no">Email ID</label>
+                                                        <input type="email" id="no" class="form-control"
+                                                            placeholder="Enter Your Email ID">
+                                                    </div>
+                                                    <div class="text-center">
+                                                        <button class="btn" type="submit" data-toggle="modal"
+                                                            data-target="#testotp" data-dismiss="modal">SUBMIT</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="testotp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span class="fas fa-times"></span>
+                                </button>
+                                <h4>MARUTI SWIFT</h4>
+                                <p>Provide your contact details for Test Drive,EMI options, Offers & Exchange Benefits
+                                </p>
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-6 col-6">
+                                        <img src="../../../assets/swift.png" class="img-fluid  mt-3" alt="swift">
+                                    </div>
+                                    <div class="col-sm-12 col-md-6 col-lg-6">
+                                        <div class="card text-center">
+                                            <div class="card-body">
+                                                <h5>OTP VERIFICATION</h5>
+                                                <p>Enter the OTP sent to your mobile 8108093907</p>
+                                                <img src="../../../assets/otp-img.png" class="img-fluid" alt="">
+                                                <form>
+                                                    <div class="form-group row mt-3">
+                                                        <div class="col">
+                                                            <input type="text" id="name" class="form-control">
+                                                        </div>
+                                                        <div class="col">
+                                                            <input type="text" id="name" class="form-control">
+                                                        </div>
+                                                        <div class="col">
+                                                            <input type="text" id="name" class="form-control">
+                                                        </div>
+                                                        <div class="col">
+                                                            <input type="text" id="name" class="form-control">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="text-center">
+                                                        <p>Don't receive the OTP? <a>RESEND OTP</a></p>
+                                                        <button class="btn" type="submit" data-toggle="modal"
+                                                            data-target="#drivelocation" data-dismiss="modal">VERIFY AND
+                                                            PROCEED</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="testdrivelocation" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <button type="button" class="cancel btn" aria-label="Close">
+                                    <span class="fas fa-arrow-left"></span>
+                                </button>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span class="fas fa-times"></span>
+                                </button>
+                                <div class="text-center">
+                                    <h4>TEST DRIVE LOCATION</h4>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer justify-content-center px-0 pb-0">
+                                <form>
+                                    <div class="form-group row">
+                                        <div class="col">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon1">
+                                                        <div class="dot"></div>
+                                                    </span>
+                                                </div>
+                                                <input type="text" class="form-control"
+                                                    placeholder="Enter test drive location" aria-label="Username"
+                                                    aria-describedby="basic-addon1">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <button class="btn" type="submit" data-toggle="modal" data-target="#date"
+                                                data-dismiss="modal">CONTINUE</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120562.19154963724!2d72.93141930796347!3d19.21404075236611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b8fcfe76fd59%3A0xcf367d85f7c50283!2sThane%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1639131097974!5m2!1sen!2sin"
+                                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                                    class="m-0"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="date" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <button type="button" class="cancel btn" aria-label="Close">
+                                    <span class="fas fa-arrow-left"></span>
+                                </button>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span class="fas fa-times"></span>
+                                </button>
+                                <div class="text-center">
+                                    <h4>PICK A DATE AND TIME</h4>
+                                    <p>Test drive now,or shedule for later.</p>
+                                    <input placeholder="DD\MM\YYYY" class="textbox-n text-center" type="text"
+                                        onfocus="(this.type='date')" id="date">
+                                </div>
+                                <div class="row">
+                                    <div col-sm-12 col-md-6 col-lg-6 class="picktime">
+                                        <h6 class="p">9:00AM - 11:00PM</h6>
+
+                                    </div>
+                                    <div col-sm-12 col-md-12 col-lg-12 class="picktime">
+                                        <h6>9:00AM - 11:00PM</h6>
+                                    </div>
+
+
+
+                                </div>
+                                <div class="row">
+                                    <div col-sm-12 col-md-6 col-lg-6 class="picktimee">
+                                        <h6 class="p">9:00AM - 11:00PM</h6>
+                                    </div>
+                                    <div col-sm-12 col-md-12 col-lg-12 class="picktimee">
+                                        <h6>9:00AM - 11:00PM</h6>
+                                    </div>
+
+
+                                </div>
+                                <div class="row">
+                                    <div class="form-group text-center">
+                                        <button type="submit" class="btn btn-primary mr-4">CONTINUE</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="thankyou" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <button type="button" class="cancel btn" aria-label="Close">
+                                            <span class="fas fa-arrow-left"></span>
+                                        </button>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span class="fas fa-times"></span>
+                                        </button>
+                                        <div class="text-center">
+                                            <h4>THANK YOU, SIDDHESH CHAVAN!</h4>
+                                            <p>A car consultant would get in touch with you shortly with assistance on
+                                                your
+                                                purchase</p>
+                                            <img src="../../../assets/swift.png" class="img-fluid" alt="">
+                                            <h6>
+                                                TEST DRIVE SCHEDULE
+                                                <span>Your car is coming home!</span>
+                                            </h6>
+                                        </div>
+
+                                        <h5>MARUTI SUZUKI ERTIGA VDI</h5>
+                                        <p>2013, disel, manual,68,147km</p>
+
+                                        <h5>SCHEDULED FOR</h5>
+                                        <p>30sep, 9:00am to 11:00 am</p>
+
+                                        <h5>LOCATION</h5>
+                                        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                            when an unknown</p>
+
+                                        <h5>OTHER SERVICES</h5>
+
+                                        <img _ngcontent-npl-c27="" src="../../../assets/banner.png" alt="banner"
+                                            class="img-fluid">
+
+                                        <img _ngcontent-npl-c27="" src="../../../assets/banner.png" alt="banner"
+                                            class="img-fluid">
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+            </div>
+        </mat-tab>
+        <mat-tab label="PRICE">
+            <div>
+                <app-car-prices></app-car-prices>
+            </div>
+        </mat-tab>
+        <mat-tab label="COMPARE">
+            <app-comparecars></app-comparecars>
+        </mat-tab>
+        <mat-tab label="IMAGES">
+            <app-car-images></app-car-images>
+        </mat-tab>
+        <mat-tab label="SPECS">
+            <app-specification></app-specification>
+        </mat-tab>
+        <mat-tab label="USER REVIEWS">
+            <app-user-review></app-user-review>
+        </mat-tab>
+        <mat-tab label="VIDEOS">
+            <app-car-video></app-car-video>
+        </mat-tab>
+
+        <mat-tab label="EMI CALCULATOR">
+            <app-emi-calculator></app-emi-calculator>
+        </mat-tab>
+         <mat-tab label="NEWS">
+            <app-car-news></app-car-news>
+        </mat-tab>
+       <mat-tab label="CAR SERVICE GUIDE">
+            <app-car-service-guide></app-car-service-guide>
+        </mat-tab>
+    </mat-tab-group>
+</div>
+<div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body" *ngFor="let cr of cardata">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="fas fa-times"></span>
+                </button>
+                <h4 style="color:#5b2067; font-weight: 600;">{{cr.model}}</h4>
+                <p style="color:#6c757d;">Provide your contact details for Test Drive,EMI options, Offers & Exchange
+                    Benefits</p>
+                <div class="row">
+                    <div class="col-sm-12 col-md-7 col-7">
+                        <img src="http://api.dealcars.in/{{cr?.brand}}/{{cr?.model}}/{{cr?.model}} 1.jpg"
+                            class="img-fluid  mt-3" alt="{{cr?.model}}">
+                    </div>
+                    <div class="col-sm-12 col-md-5 col-lg-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 style="text-align: center; font-weight: 600;">REGISTER</h5>
+                                <form class="was-validated" [formGroup]="getForm" (ngSubmit)="onSubmit()">
+                                    <div class="form-group">
+                                        <label for="name">Full Name</label>
+                                        <input type="text" id="name" class="form-control" placeholder="Enter Your Name"
+                                            formControlName="name" required="">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="mobilenumber">Contact No.</label>
+                                        <input type="tel" maxlength="10" pattern="^\d{10}$" id="no" class="form-control"
+                                            placeholder="Enter Your Contact no." formControlName="mobilenumber"
+                                            required="">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="no">Email ID</label>
+                                        <input type="email" id="no" class="form-control"
+                                            placeholder="Enter Your Email ID" formControlName="email" required="">
+                                    </div>
+                                    <div class="text-center">
+                                        <button class="btn" type="submit" data-toggle="modal" data-target="#testotp"
+                                            data-dismiss="modal" (click)="onSubmit()" [disabled]="getForm.invalid"
+                                            style="color: white; background: #ff8f10;">SUBMIT</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="modal fade" id="testotp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body" *ngFor="let cv of cardata">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="fas fa-times"></span>
+                </button>
+                <h4 style="color:#5b2067; font-weight: 600;">{{cv.model}}</h4>
+                <p style="color:#6c757d;">Provide your contact details for Test Drive,EMI options, Offers & Exchange
+                    Benefits</p>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-6">
+                        <img src="http://api.dealcars.in/{{cv?.brand}}/{{cv?.model}}/{{cv?.model}} 1.jpg"
+                            class="img-fluid  mt-3" alt="{{cv?.model}}">
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <h5>OTP VERIFICATION</h5>
+                                <p>Enter the OTP sent to your mobile {{getformno}}</p>
+                                <img src="../../../assets/otp-img.png" class="img-fluid" alt="">
+                                <form>
+                                    <div class="form-group row mt-3" style="text-align: -webkit-center;">
+                                        <div class="col">
+                                            <input type="number" id="name" class="form-control" [(ngModel)]="otpnoCD"
+                                                (keyup)="verifyOTPCD($event)" style="width: 80px;">
+                                        </div>
+                                        <!-- <div class="col">
+                                                        <input type="text" id="name" class="form-control">
+                                                    </div>
+                                                    <div class="col">
+                                                        <input type="text" id="name" class="form-control">
+                                                    </div>
+                                                    <div class="col">
+                                                        <input type="text" id="name" class="form-control">
+                                                    </div> -->
+                                    </div>
+
+                                    <div class="text-center">
+                                        <p>Don't receive the OTP? <a style="color: #2b57d3; font-weight: 600;">RESEND
+                                                OTP</a></p>
+                                        <button class="btn" type="submit" data-toggle="modal"
+                                            data-target="#locationandtime" data-dismiss="modal" id="votpCD" disabled
+                                            (click)="vandpCall()" style="color: white; background: #ff8f10;">VERIFY AND
+                                            PROCEED</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="modal fade" id="testdrivelocation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="cancel btn" aria-label="Close">
+                    <span class="fas fa-arrow-left"></span>
+                </button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="fas fa-times"></span>
+                </button>
+                <div class="text-center">
+                    <h4 style="color:#5B2067; font-weight: 600;">TEST DRIVE LOCATION</h4>
+                </div>
+            </div>
+
+            <div class="modal-footer justify-content-center px-0 pb-0">
+                <form>
+                    <div class="form-group row">
+                        <div class="col">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">
+                                        <div class="dot"></div>
+                                        <img src="../../../assets/loactionandtime/green-circle.png"
+                                            style="width: 13px;">
+                                    </span>
+                                </div>
+                                <!-- aria-label="Username" -->
+                                <input type="text" class="form-control" placeholder="Enter test drive location"
+                                    aria-label="Location" aria-describedby="basic-addon1" value="{{dLocation}}"
+                                    (keyup)="keyLocation($event)" required="">
+                                <!-- [(ngModel)]="dLocation" -->
+                            </div>
+                        </div>
+                        <div class="col">
+                            <button class="btn" type="submit" data-toggle="modal" data-target="#date"
+                                data-dismiss="modal" (click)="updateLocation(dLocation)" id="locationDisable" disabled
+                                style="color: white; background: #ff8f10;">CONTINUE</button>
+                        </div>
+                    </div>
+                </form>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120562.19154963724!2d72.93141930796347!3d19.21404075236611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b8fcfe76fd59%3A0xcf367d85f7c50283!2sThane%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1639131097974!5m2!1sen!2sin"
+                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" class="m-0"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="modal fade" id="date" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="cancel btn" aria-label="Close">
+                    <span class="fas fa-arrow-left"></span>
+                </button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="fas fa-times"></span>
+                </button>
+                <div class="text-center">
+                    <h4 style="color:#5B2067; font-weight: 600;">PICK A DATE AND TIME</h4>
+                    <p style="color: #6c757d; font-weight: 300;">{{msgDateandTime}}</p>
+                    <input placeholder="DD\MM\YYYY" class="textbox-n text-center" type="text"
+                        onfocus="(this.type='date')" id="dateown" [(ngModel)]="testdriveDate"
+                        style="border: none; height: 40px; width:200px; box-shadow: 1px 1px 6px 3px rgb(0 0 0 / 20%);">
+
+                </div>
+                <div class="row" style="display: block; text-align: center;">
+                    <button col-sm-12 col-md-6 col-lg-6 class="picktime" *ngFor="let time of timeslots"
+                        id="testDriveTimeSlot" disabled
+                        style="background: #dcdcdca6; font-weight: 500; width: 250px; height: 60px; color: black; border: none; margin: 1rem 2rem;">
+                        <label class="p" (click)="testDriveTime(time.time)"
+                            style="margin-top: 8px;">{{time.time}}</label>
+                    </button>
+                    <!-- <div col-sm-12 col-md-12 col-lg-12 class="picktime">
+                                    <h6>9:00AM - 11:00PM</h6>
+                                </div> -->
+
+
+
+                </div>
+
+                <!-- <div class="row">
+                                <div col-sm-12 col-md-6 col-lg-6 class="picktimee">
+                                    <h6 class="p">9:00AM - 11:00PM</h6>
+                                </div>
+                                <div col-sm-12 col-md-12 col-lg-12 class="picktimee">
+                                    <h6>9:00AM - 11:00PM</h6>
+                                </div>
+
+
+                            </div> -->
+
+
+                <div class="row" style="display: flex;justify-content: center;margin: 2rem 0rem 0rem 0rem;">
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-primary mr-4" id="successtdBooking" disabled
+                            (click)="successTestDrive()" data-toggle="modal" data-target="#thankyou"
+                            data-dismiss="modal"
+                            style="color: white; background: #ff8f10; border: none; width: 150px;">CONTINUE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="modal fade" id="thankyou" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <button type="button" class="cancel btn" aria-label="Close">
+                                        <span class="fas fa-arrow-left"></span>
+                                    </button>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span class="fas fa-times"></span>
+                                    </button>
+                                    <div class="text-center">
+                                        <h4>THANK YOU, SIDDHESH CHAVAN!</h4>
+                                        <p>A car consultant would get in touch with you shortly with assistance on your
+                                            purchase</p>
+                                        <img src="../../../assets/swift.png" class="img-fluid" alt="">
+                                        <h6>
+                                            TEST DRIVE SCHEDULE
+                                            <span>Your car is coming home!</span>
+                                        </h6>
+                                    </div>
+
+                                    <h5>MARUTI SUZUKI ERTIGA VDI</h5>
+                                    <p>2013, disel, manual,68,147km</p>
+
+                                    <h5>SCHEDULED FOR</h5>
+                                    <p>30sep, 9:00am to 11:00 am</p>
+
+                                    <h5>LOCATION</h5>
+                                    <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                        when an unknown</p>
+
+                                    <h5>OTHER SERVICES</h5>
+
+                                    <img _ngcontent-npl-c27="" src="../../../assets/banner.png" alt="banner"
+                                        class="img-fluid">
+
+                                    <img _ngcontent-npl-c27="" src="../../../assets/banner.png" alt="banner"
+                                        class="img-fluid">
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div> -->
+    </div>
+</div>
+
+
+
+
+
+
+<div class="modal" id="locationandtime">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <!-- <div class="modal-header">
+          <h4 class="modal-title">WHERE SHOULD WE BRING THE CAR FOR YOU TO TEST DRIVE</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+         -->
+            <!-- Modal body -->
+            <div class="modal-body">
+                <button type="button" class="cancel btn" aria-label="Close">
+                    <span class="fas fa-arrow-left"></span>
+                </button>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <div class="locationtimetext">
+                    <h4 class="modal-title" style="color:#5B2067;">WHERE SHOULD WE BRING THE CAR FOR YOU TO TEST DRIVE</h4>
+                    <p style="color: #6c757d;">Just a reminder, it's completely free!</p>
+                </div>
+                <hr>
+                <div class="locationtimeimages">
+                    <!-- <div style="width: 430px;background-color: #dcdcdca6;height: 65px; position: relative;">
+                        <img src="../../../assets/loactionandtime/location.png"
+                            style="width: 60px;  position: absolute;">
+                        <label style="margin-left: 5rem;">
+                            <p style="color:#5B2067; font-weight: 600;">Choose a location</p>
+                            <p>Your current location, or any other</p>
+                        </label>
+                        <label>
+                            <button data-toggle="modal" data-target="#testdrivelocation" data-dismiss="modal"
+                                (click)="locationSign()">Sing</button>
+                            <img data-toggle="modal" data-target="#testdrivelocation" data-dismiss="modal"
+                                (click)="locationSign()" src="../../../assets/loactionandtime/right-arrow.png "
+                                style="width: 30px; position: inherit; margin-left: 4rem; margin-top: -2.5rem;">
+                        </label>
+                    </div> -->
+                   
+                    <img data-toggle="modal" data-target="#testdrivelocation" data-dismiss="modal"
+                    (click)="locationSign()" src="../../../assets/loactionandtime/locationimg.PNG ">
+                   
+                    <br>
+                    <!-- <div style="width: 430px;background-color: #dcdcdca6; height: 60px; position: relative;">
+                        <img src="../../../assets/loactionandtime/clock.png" style="width: 60px; position: absolute;">
+                        <label style="margin-left: 5rem;">
+                            <p style="color:#5B2067; font-weight: 600;">Choose time</p>
+                            <p>Select slot convenient for you</p>
+                        </label>
+                        <label>
+                            <button data-toggle="modal" data-target="#date"
+                                data-dismiss="modal">Sing</button>
+                            <img src="../../../assets/loactionandtime/right-arrow.png "
+                                style="width: 30px; position: inherit; margin-left: 6rem; margin-top: -2.5rem;"
+                                data-toggle="modal" data-target="#date" data-dismiss="modal">
+                        </label>
+                    </div> -->
+                    
+                        <img  src="../../../assets/loactionandtime/timeimg.PNG ">
+                    
+                </div>
+
+                <!-- <div>
+                <button>CONTINUE</button>
+            </div> -->
+
+                <div class="text-center" style="margin: 2rem 0rem;">
+                    <button class="btn" type="submit" data-toggle="modal" data-target="#testotp" data-dismiss="modal"
+                        style="color: white; background: #ff8f10;" data-toggle="modal" data-target="#testdrivelocation"
+                        data-dismiss="modal" (click)="locationSign()">CONTINUE</button>
+                </div>
+
+            </div>
+
+            <!-- Modal footer -->
+            <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div> -->
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="modal fade" id="thankyou" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content" id="thanksyoumodelid">
+            <div class="modal-body" *ngFor="let cty of cardata">
+                <button type="button" class="cancel btn" aria-label="Close">
+                    <span class="fas fa-arrow-left"></span>
+                </button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="fas fa-times"></span>
+                </button>
+                <div class="text-center">
+                    <h4 style="color:#5B2067; font-size: x-large;font-weight: 600;">THANK YOU, {{scheduledPerson}}!</h4>
+                    <p style="color:#6c757d;">A car consultant would get in touch with you shortly with assistance on
+                        your
+                        purchase</p>
+                    <img src="http://api.dealcars.in/{{cty?.brand}}/{{cty?.model}}/{{cty?.model}} 1.jpg"
+                        class="img-fluid" alt="{{cty?.model}}">
+                    <h6 style="color:#5B2067; font-size: large; font-weight: 600;">
+                        TEST DRIVE SCHEDULE
+                        <span style="color:#6c757d; font-weight: 300;">Your car is coming home!</span>
+                    </h6>
+                    <hr style="width: 250px;">
+                </div>
+
+                <h5 class="tycm">{{cty?.model}}</h5>
+                <p style="text-transform: capitalize">{{cty?.price_print}}, {{cty?.fuel_type}}, {{cty?.factors_transmission}},{{cty?.mileage_print}}</p>
+
+                <h5 class="tycm">SCHEDULED FOR</h5>
+                <p style="text-transform: capitalize">Date {{scheduledDate}}, Time {{scheduledTime}}</p>
+
+                <h5 class="tycm">LOCATION</h5>
+                <p style="text-transform: capitalize">{{scheduledLocation}}</p>
+
+                <h5 class="tycm">OTHER SERVICES</h5>
+
+                <img _ngcontent-npl-c27="" src="../../../assets/banner.png" alt="banner" class="img-fluid"
+                    style="margin:1rem 0rem;">
+
+                <img _ngcontent-npl-c27="" src="../../../assets/banner.png" alt="banner" class="img-fluid"
+                    style="margin:1rem 0rem;">
+            </div>
+
+        </div>
+
+    </div>
+</div>

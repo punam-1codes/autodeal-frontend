@@ -1,0 +1,47 @@
+.breadcrumb{
+    padding-left    : 0;
+    background-color: #fff;
+    li{
+        color: #707070;
+        font-size: 14px;
+        a{
+            color      : #474747;
+            font-weight: 600;
+        }
+        i{
+            margin   : 0px 7px;
+            font-size: 14px;
+        }
+    }
+}
+
+.privacy{
+    h4{
+        color      : #5B2067;
+        font-weight: 700;
+        span{
+            color    : #474747;
+            font-size: 13px;
+        }
+    }
+    li,
+    h5{
+        color: #474747;
+    }
+    li{
+        list-style   : none;
+        margin-bottom: 15px;
+    }
+
+    h5{
+        font-weight: 700;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width:600px) {
+    .privacy{
+        ul{
+            padding: 0;
+        }
+    }
+}

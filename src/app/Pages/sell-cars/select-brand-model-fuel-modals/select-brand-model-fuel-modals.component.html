@@ -1,0 +1,99 @@
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-warning m-auto d-block" data-toggle="modal" data-target="#exampleModal">
+  SERVICE GUIDE
+</button> -->
+
+<div class="collapse navbar-collapse">
+  <ul  class="navbar-nav mr-auto">
+    <li class="nav-item">
+      <a class="nav-link" id="sgbtn" data-toggle="modal" data-target="#exampleModal">
+        SERVICE GUIDE
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-xl modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+          <h5 class="modal-title m-auto text-center" id="exampleModalLabel">Select Car Manufactureres</h5>
+      </div>
+      <div class="bcrossbtn">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+       </div>
+      <div class="modal-body">
+        <div class="container my-5">
+          <div class="row">
+            <div class="col-md-2 col-lg-2 col-sm-3 col-4" *ngFor="let b of car_brands; let i = index">
+              <img src="{{b?.path}}" class="cursor img-responsive images" alt="" (click)="onBrandClick(b)">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn1 m-auto d-block" data-toggle="modal"
+          data-target="#exampleModal1" (click)="BrandNext()" data-dismiss="modal" id="sgbrand" disabled>Next</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-xl modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title m-auto text-center" id="exampleModalLabel">Select Car Model</h5>
+      </div>
+      <div class="mcrossbtn">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container my-5">
+          <div class="row">
+            <div class="col-md-2 col-sm-3 col-4" *ngFor="let m of car_model; let i = index">
+              <img src="http://api.dealcars.in/{{m?.brand}}/{{m?.model}}/{{m?.model}} 1.jpg" class="cursor images img-responsive" alt="" (click)="onModelClick(m)">
+              <p class="mb-0" style="font-size: 13px;">{{m?.model}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn1 m-auto d-block" data-toggle="modal"
+          data-target="#exampleModal2" data-dismiss="modal" id="sgmodel" disabled>Next</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-xl modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title m-auto text-center" id="exampleModalLabel">Select Fuel Type</h5>
+      </div>
+      <div class="fcrossbtn">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="mbone">
+        <div class="container my-5" id="mbtwo">
+          <div class="row" id="mbthree">
+            <div class="col-4"  *ngFor="let f of car_fuel; let i = index">
+                <img src="{{f?.path}}" class="cursor img-responsive fimages" alt="" (click)="onFuelClick(f)" style="width: 50%;">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn1 m-auto d-block" (click)="fuelNextBtn()" data-dismiss="modal" id="sgfuel" disabled>Next</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+// @import "~swiper/css";
+// @import "~swiper/css/free-mode";
+// @import "~swiper/css/navigation";
+// @import "~swiper/css/thumbs";
+
+hr {
+    margin-top: 0rem;
+    border-top: 2px solid #5b2067;
+    width: 140px;
+}
+
+.imgslide {
+    height: 350px;
+    width: auto;
+    margin: auto;
+}
+
+@media(max-width:600px) {
+    .imgslide {
+        height: auto;
+    }
+}
+
+.Readmore {
+    float: right;
+    color: #5b2067;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.offertitle {
+    color: #5b2067;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.newsDesc {
+    font-size: 15px;
+}
+
+.btn1 {
+    background: #ff8f10;
+    font-size: 14px;
+    color: white;
+    width: 100%;
+}
+
+.color {
+    color: #5b2067;
+}
+
+
+.imgres {
+    height: 170px !important;
+    width: 100%;
+}

@@ -1,0 +1,290 @@
+<div class="container-fluid" style="margin-top: 6rem;">
+    <h5 class="color text-center font-weight-bold" style="margin-top:50px;" id="headingCC">AUTO DEAL CAR CATEGORIES</h5>
+    <hr>
+    <div class="cc-slides">
+        <mat-tab-group (selectedTabChange)="onTabClick($event)">
+            <mat-tab label="MUV">
+                <ng-template mat-tab-label>
+                    <img src="../../../../assets/categories-car-logo/muv.PNG" alt="muvimage">
+                    <div>MUV</div>
+                </ng-template>
+                <div *ngIf="loader" class="spinner-border text-primary m-auto d-block" role="status"></div>
+                <div class="container mt-5">
+                    <div>
+                        <swiper [config]="config" (slideChange)="onSlideChange()">
+                            <ng-template swiperSlide *ngFor="let c of car_category">
+                                <div class="card shadow" id="cccard">
+                                    <!-- <p class="p-2" style="font-size:13px;" *ngFor="let cr of c.colors">{{cr}}
+                                    </p> -->
+                                    <!-- <img src="{{c?.car_img}}" class="card-img-top images" alt="..."> -->
+                                    <img class="card-img-top images"
+                                        src="http://api.dealcars.in/{{c?.brand}}/{{c?.model}}/{{c?.model}} 1.jpg"
+                                        alt="{{c?.model}}">
+                                    <div class="card-body">
+                                        <h6 class="card-title color">{{trimString(c?.model,28)}}</h6>
+                                        <p class="card-text"><small> {{c?.price_print}}*</small></p>
+                                        <button type="submit" class="btn btn1 btn-sm m-auto d-block" id="ccdetailsbtn"
+                                            (click)="Viewcardetails(c)">VIEW
+                                            CAR</button>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </swiper>
+                        <h6 style="cursor: pointer; font-size: 13px; font-weight: 600; color: gray; letter-spacing: 0.5px; font-size: 13px; font-weight: 600; color: gray; letter-spacing: 0.5px;" class="ml-sm-1 mt-4" (click)="getbycategory('MUV')">View All MUV
+                            Cars
+                        </h6>
+
+                    </div>
+                </div>
+            </mat-tab>
+
+            <mat-tab label="SUV">
+                <ng-template mat-tab-label>
+                    <img src="../../../../assets/categories-car-logo/suv.PNG" alt="muvimage">
+                    <div>SUV</div>
+                </ng-template>
+                <div *ngIf="loader" class="spinner-border text-primary m-auto d-block" role="status"></div>
+                <div class="container mt-5">
+                    <div>
+                        <swiper [config]="config" (slideChange)="onSlideChange()">
+                            <ng-template swiperSlide *ngFor="let c of car_category">
+                                <div class="card shadow" id="cccard">
+                                    <!-- <p class="p-2" style="font-size:13px;" *ngFor="let cr of c.colors">{{cr}}
+                                    </p> -->
+                                    <!-- <img src="{{c?.car_img}}" class="card-img-top images" alt="..."> -->
+                                    <img class="card-img-top images"
+                                        src="http://api.dealcars.in/{{c?.brand}}/{{c?.model}}/{{c?.model}} 1.jpg"
+                                        alt="{{c?.model}}">
+                                    <div class="card-body">
+                                        <h6 class="card-title color">{{trimString(c?.model,28)}}</h6>
+                                        <p class="card-text"><small> {{c?.price_print}}*</small></p>
+                                        <button type="submit" class="btn btn1 btn-sm m-auto d-block" id="ccdetailsbtn"
+                                            (click)="Viewcardetails(c)">VIEW
+                                            CAR</button>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </swiper>
+                    </div>
+                    <h6 style="cursor: pointer; font-size: 13px; font-weight: 600; color: gray; letter-spacing: 0.5px;" class="ml-sm-1 mt-4" (click)="getbycategory('SUV')">View All SUV Cars
+                    </h6>
+
+                </div>
+
+            </mat-tab>
+
+            <mat-tab label="Roadster">
+                <ng-template mat-tab-label>
+                    <img src="../../../../assets/categories-car-logo/muv.PNG" alt="muvimage">
+                    <div>Roadster</div>
+                </ng-template>
+                <div *ngIf="loader" class="spinner-border text-primary m-auto d-block" role="status"></div>
+                <div class="container mt-5">
+                    <div>
+                        <swiper [config]="config" (slideChange)="onSlideChange()">
+                            <ng-template swiperSlide *ngFor="let c of car_category">
+                                <div class="card shadow" id="cccard">
+                                    <!-- <p class="p-2" style="font-size:13px;" *ngFor="let cr of c.colors">{{cr}}
+                                    </p> -->
+                                    <!-- <img src="{{c?.car_img}}" class="card-img-top images" alt="..."> -->
+                                    <img class="card-img-top images"
+                                        src="http://api.dealcars.in/{{c?.brand}}/{{c?.model}}/{{c?.model}} 1.jpg"
+                                        alt="{{c?.model}}">
+
+                                    <div class="card-body">
+                                        <h6 class="card-title color">{{trimString(c?.model,28)}}</h6>
+                                        <p class="card-text"><small> {{c?.price_print}}*</small></p>
+                                        <button type="submit" class="btn btn1 btn-sm m-auto d-block" id="ccdetailsbtn"
+                                            (click)="Viewcardetails(c)">VIEW
+                                            CAR</button>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </swiper>
+                    </div>
+                    <h6 style="cursor: pointer; font-size: 13px; font-weight: 600; color: gray; letter-spacing: 0.5px;" class="ml-sm-1 mt-4" (click)="getbycategory('Roadster')">View All
+                        ROADSTER
+                        Cars</h6>
+                </div>
+
+            </mat-tab>
+
+            <mat-tab label="Crossover">
+                <ng-template mat-tab-label>
+                    <img src="../../../../assets/categories-car-logo/crossover.PNG" alt="muvimage">
+                    <div>Crossover</div>
+                </ng-template>
+                <div *ngIf="loader" class="spinner-border text-primary m-auto d-block" role="status"></div>
+                <div class="container mt-5">
+                    <div>
+                        <swiper [config]="config" (slideChange)="onSlideChange()">
+                            <ng-template swiperSlide *ngFor="let c of car_category">
+                                <div class="card shadow" id="cccard">
+                                    <!-- <p class="p-2" style="font-size:13px;" *ngFor="let cr of c.colors">{{cr}}
+                                    </p> -->
+                                    <img class="card-img-top images"
+                                        src="http://api.dealcars.in/{{c?.brand}}/{{c?.model}}/{{c?.model}} 1.jpg"
+                                        alt="{{c?.model}}">
+                                    <!-- <img src="{{c?.car_img}}" class="card-img-top images" alt="..."> -->
+                                    <div class="card-body">
+                                        <h6 class="card-title color">{{trimString(c?.model,28)}}</h6>
+                                        <p class="card-text"><small> {{c?.price_print}}*</small></p>
+                                        <button type="submit" class="btn btn1 btn-sm m-auto d-block" id="ccdetailsbtn"
+                                            (click)="Viewcardetails(c)">VIEW
+                                            CAR</button>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </swiper>
+                    </div>
+                    <h6 style="cursor: pointer; font-size: 13px; font-weight: 600; color: gray; letter-spacing: 0.5px;" class="ml-sm-1 mt-4" (click)="getbycategory('Crossover')">View All
+                        CROSSOVER
+                        Cars</h6>
+
+                </div>
+
+            </mat-tab>
+
+            <mat-tab label="Estate">
+                <ng-template mat-tab-label>
+                    <img src="../../../../assets/categories-car-logo/estate.PNG" alt="muvimage">
+                    <div>Estate</div>
+                </ng-template>
+                <div *ngIf="loader" class="spinner-border text-primary m-auto d-block" role="status"></div>
+                <div class="container mt-5">
+                    <div>
+                        <swiper [config]="config" (slideChange)="onSlideChange()">
+                            <ng-template swiperSlide *ngFor="let c of car_category">
+                                <div class="card shadow" id="cccard">
+                                    <!-- <p class="p-2" style="font-size:13px;" *ngFor="let cr of c.colors">{{cr}}
+                                    </p> -->
+                                    <!-- <img src="{{c?.car_img}}" class="card-img-top images" alt="..."> -->
+                                    <img class="card-img-top images"
+                                        src="http://api.dealcars.in/{{c?.brand}}/{{c?.model}}/{{c?.model}} 1.jpg"
+                                        alt="{{c?.model}}">
+                                    <div class="card-body">
+                                        <h6 class="card-title color">{{trimString(c?.model,28)}}</h6>
+                                        <p class="card-text"><small> {{c?.price_print}}*</small></p>
+                                        <button type="submit" class="btn btn1 btn-sm m-auto d-block" id="ccdetailsbtn"
+                                            (click)="Viewcardetails(c)">VIEW
+                                            CAR</button>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </swiper>
+                    </div>
+                    <h6 style="cursor: pointer; font-size: 13px; font-weight: 600; color: gray; letter-spacing: 0.5px;" class="ml-sm-1 mt-4" (click)="getbycategory('Estate')">View All ESTATE
+                        Cars
+                    </h6>
+
+                </div>
+
+            </mat-tab>
+
+            <mat-tab label="Coupe">
+                <ng-template mat-tab-label>
+                    <img src="../../../../assets/categories-car-logo/coupe.PNG" alt="muvimage">
+                    <div>Coupe</div>
+                </ng-template>
+                <div *ngIf="loader" class="spinner-border text-primary m-auto d-block" role="status"></div>
+                <div class="container mt-5">
+                    <div>
+                        <swiper [config]="config" (slideChange)="onSlideChange()">
+                            <ng-template swiperSlide *ngFor="let c of car_category">
+                                <div class="card shadow" id="cccard">
+                                    <!-- <p class="p-2" style="font-size:13px;" *ngFor="let cr of c.colors">{{cr}}
+                                    </p> -->
+                                    <img class="card-img-top images"
+                                        src="http://api.dealcars.in/{{c?.brand}}/{{c?.model}}/{{c?.model}} 1.jpg"
+                                        alt="{{c?.model}}">
+                                    <!-- <img src="{{c?.car_img}}" class="card-img-top images" alt="..."> -->
+                                    <div class="card-body">
+                                        <h6 class="card-title color">{{trimString(c?.model,28)}}</h6>
+                                        <p class="card-text"><small> {{c?.price_print}}*</small></p>
+                                        <button type="submit" class="btn btn1 btn-sm m-auto d-block" id="ccdetailsbtn"
+                                            (click)="Viewcardetails(c)">VIEW
+                                            CAR</button>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </swiper>
+                    </div>
+                    <h6 style="cursor: pointer; font-size: 13px; font-weight: 600; color: gray; letter-spacing: 0.5px;" class="ml-sm-1 mt-4" (click)="getbycategory('Coupe')">View All COUPE
+                        Cars
+                    </h6>
+
+                </div>
+
+            </mat-tab>
+
+            <mat-tab label="Hatchback">
+                <ng-template mat-tab-label>
+                    <img src="../../../../assets/categories-car-logo/hatchback.PNG" alt="muvimage">
+                    <div>Hatchback</div>
+                </ng-template>
+                <div *ngIf="loader" class="spinner-border text-primary m-auto d-block" role="status"></div>
+                <div class="container mt-5">
+                    <div>
+                        <swiper [config]="config" (slideChange)="onSlideChange()">
+                            <ng-template swiperSlide *ngFor="let c of car_category">
+                                <div class="card shadow" id="cccard">
+                                    <!-- <p class="p-2" style="font-size:13px;" *ngFor="let cr of c.colors">{{cr}}
+                                    </p> -->
+                                    <!-- <img src="{{c?.car_img}}" class="card-img-top images" alt="..."> -->
+                                    <img class="card-img-top images"
+                                        src="http://api.dealcars.in/{{c?.brand}}/{{c?.model}}/{{c?.model}} 1.jpg"
+                                        alt="{{c?.model}}">
+                                    <div class="card-body">
+                                        <h6 class="card-title color">{{trimString(c?.model,28)}}</h6>
+                                        <p class="card-text"><small> {{c?.price_print}}*</small></p>
+                                        <button type="submit" class="btn btn1 btn-sm m-auto d-block" id="ccdetailsbtn"
+                                            (click)="Viewcardetails(c)">VIEW
+                                            CAR</button>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </swiper>
+                    </div>
+                    <h6 style="cursor: pointer; font-size: 13px; font-weight: 600; color: gray; letter-spacing: 0.5px;" class="ml-sm-1 mt-4" (click)="getbycategory('Hatchback')">View All
+                        HATCHBACK
+                        Cars</h6>
+                </div>
+
+            </mat-tab>
+
+            <mat-tab label="Sedan">
+                <ng-template mat-tab-label>
+                    <img src="../../../../assets/categories-car-logo/sedan.PNG" alt="muvimage">
+                    <div>Sedan</div>
+                </ng-template>
+                <div *ngIf="loader" class="spinner-border text-primary m-auto d-block" role="status"></div>
+                <div class="container mt-5">
+                    <div>
+                        <swiper [config]="config" (slideChange)="onSlideChange()">
+                            <ng-template swiperSlide *ngFor="let c of car_category">
+                                <div class="card shadow" id="cccard">
+                                    <!-- <p class="p-2" style="font-size:13px;" *ngFor="let cr of c.colors">{{cr}}
+                                    </p> -->
+                                    <!-- <img src="{{c?.car_img}}" class="card-img-top images" alt="..."> -->
+                                    <img class="card-img-top images"
+                                        src="http://api.dealcars.in/{{c?.brand}}/{{c?.model}}/{{c?.model}} 1.jpg"
+                                        alt="{{c?.model}}">
+                                    <div class="card-body">
+                                        <h6 class="card-title color">{{trimString(c?.model,28)}}</h6>
+                                        <p class="card-text"><small> {{c?.price_print}}*</small></p>
+                                        <button type="submit" class="btn btn1 btn-sm m-auto d-block" id="ccdetailsbtn"
+                                            (click)="Viewcardetails(c)">VIEW
+                                            CAR</button>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </swiper>
+                    </div>
+                    <h6 style="cursor: pointer; font-size: 13px; font-weight: 600; color: gray; letter-spacing: 0.5px;" class="ml-sm-1 mt-4 " (click)="getbycategory('Sedan')">View All SEDAN
+                        Cars
+                    </h6>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>

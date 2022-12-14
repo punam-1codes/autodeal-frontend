@@ -1,0 +1,36 @@
+.breadcrumb{
+    padding-left    : 0;
+    background-color: #fff;
+    li{
+        color    : #707070;
+        font-size: 14px;
+        a{
+            color      : #474747;
+            font-weight: 600;
+        }
+        i{
+            margin   : 0px 7px;
+            font-size: 14px;
+        }
+    }
+}
+
+.terms{
+    h4{
+        color      : #5B2067;
+        font-weight: 700;
+    }
+    h5{
+        color     : #474747;
+        margin-top: 10px;
+    }
+    ul{
+        margin-top: 10px;
+        li{
+            color        : #474747;
+            line-height  : 20px;
+            font-weight  : 500;
+            margin-bottom: 20px;
+        }
+    }
+}

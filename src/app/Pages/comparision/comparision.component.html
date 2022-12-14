@@ -1,0 +1,329 @@
+<div *ngFor="let cr of cardata">
+  <div *ngFor="let c of comparedata">
+    <section class="comparison1">
+      <div class="container-fluid">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb bg-white" style="font-size:13px;">
+            <li class="breadcrumb-item text-muted">Home</li> &nbsp;
+            <li><i class="fas fa-chevron-right"></i></li>&nbsp;
+            <li class="breadcrumb-item text-muted">New Cars</li>&nbsp;
+            <li><i class="fas fa-chevron-right"></i></li>&nbsp;
+            <li class="breadcrumb-item text-muted">Comapare Cars</li>&nbsp;
+            <li><i class="fas fa-chevron-right"></i></li>&nbsp;
+            <li class="breadcrumb-item text-dark active" aria-current="page">{{cr?.model}} vs {{c?.model}}</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="container">
+        <div>
+          <h5 class="color text-center font-weight-bold mt-5">{{cr?.model}} vs {{c?.model}}</h5>
+          <hr style="width: 280px !important;">
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-sm-4">
+            <div class="card card1">
+              <img class="card-img-top h-auto w-100"
+                src="http://api.dealcars.in/{{cr?.brand}}/{{cr?.model}}/{{cr?.model}} 1.jpg" alt="{{cr?.model}}">
+              <!-- <img class="card-img-top img-fluid" src="../../../assets/swift.webp" alt="Card image cap"> -->
+              <div class="card-body">
+                <h5 class="card-title">{{cr?.model}}</h5>
+                <!-- <p class="card-text">EX-Showroom Delhi</p> -->
+                <p class="card-text1">{{cr?.price_print}}*</p>
+                <div class="text-center">
+                  <button type="button" class="btn">VIEW OFFER</button>
+                </div>
+
+                <!-- <a href="#" class="btn btn-primary">VIEW OFFER</a> -->
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="card card1">
+              <img class="card-img-top h-auto w-100"
+                src="http://api.dealcars.in/{{c?.brand}}/{{c?.model}}/{{c?.model}} 1.jpg" alt="{{c?.model}}">
+              <!-- <img class="card-img-top img-fluid" src="../../../assets/hondacity.jpg" alt="Card image cap"> -->
+              <div class="card-body">
+                <h5 class="card-title">{{c?.model}}</h5>
+                <!-- <p class="card-text">EX-Showroom Delhi</p> -->
+                <p class="card-text1">{{c?.price_print}}*</p>
+                <div class="text-center">
+                  <button type="button" class="btn">VIEW OFFER</button>
+                </div>
+                <!-- <a href="#" class="btn btn-primary">VIEW OFFER</a> -->
+              </div>
+            </div>
+          </div>
+          <!-- <div class="col-sm-4">
+            <div class="card ">
+             <label *ngIf="uploadedImg==''" for="addfile" class="text-center" style="height: 160px; margin-top: 30px;">
+                <i class="fas fa-plus-circle"></i>
+              </label>
+              <div *ngIf="uploadedImg!=''">
+                <img class="card-img-top1" [src]="uploadedImg" alt="Card image cap">
+              </div>
+              <input class="inp" type="file" name="" id="addfile" (change)="handleFileInput($event.target.files)">
+              <div class="card-body">
+                <select class="form-control form-control-sm mt-4">
+                  <option selected>Select Budget</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+              <div class="card-body">
+                <select class="form-control form-control-sm">
+                  <option selected>Select City</option>
+                  <option value="1">Mumbai</option>
+                  <option value="2">Pune</option>
+                  <option value="3">Goa</option>
+                </select>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </section>
+    <br>
+    <section class="pt-4">
+      <div class="container">
+        <table class="table table-striped text-center table-sm-responsive">
+          <thead data-toggle="collapse" data-target="#accordion" aria-expanded="true" aria-controls="accordion">
+            <tr>
+              <th><i class="fas fa-th-large"></i> BASIC INFORMATION</th>
+              <th><i class="fas fa-car-alt"></i> {{cr?.model}}</th>
+              <th><i class="fas fa-car"></i> {{c?.model}}</th>
+            </tr>
+          </thead>
+
+          <tbody id="accordion" class="collapse show">
+            <tr>
+              <td>Model</td>
+              <td>{{cr?.model}}</td>
+              <td>{{c?.model}}</td>
+            </tr>
+            <tr>
+              <td>Varient</td>
+              <td>{{cr?.varient}}</td>
+              <td>{{c?.varient}}</td>
+            </tr>
+            <tr>
+              <td>Price</td>
+              <td>{{cr?.price_print}}</td>
+              <td>{{c?.price_print}}</td>
+            </tr>
+            <tr>
+              <td>Mileage</td>
+              <td>{{cr?.mileage_print}}</td>
+              <td>{{c?.mileage_print}}</td>
+            </tr>
+            <tr>
+              <td>Engine</td>
+              <td>{{cr?.factors_engine}}</td>
+              <td>{{c?.factors_engine}}</td>
+            </tr>
+            <tr>
+              <td>Transmission</td>
+              <td>{{cr?.transmission}}</td>
+              <td>{{c?.transmission}}</td>
+            </tr>
+            <tr>
+              <td>Fuel Type</td>
+              <td>{{cr?.fuel_type}}</td>
+              <td>{{c?.fuel_type}}</td>
+            </tr>
+            <tr>
+              <td> Seating Capacity</td>
+              <td>{{cr?.capacities_seating_capacity}}</td>
+              <td>{{c?.capacities_seating_capacity}}</td>
+            </tr>
+            <tr>
+              <td>Colour</td>
+              <td>{{cr.colors}}</td>
+              <td>{{c.colors}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="comparison3 pt-5">
+      <div class="container">
+        <table class="table table-striped text-center table-sm-responsive">
+          <thead data-toggle="collapse" data-target="#accordion1" aria-expanded="true" aria-controls="accordion1">
+            <tr>
+              <th><i class="fas fa-cog"></i> FACTORS</th>
+              <th><i class="fas fa-car-alt"></i> {{cr?.model}}</th>
+              <th><i class="fas fa-car"></i> {{c?.model}}</th>
+            </tr>
+          </thead>
+          <tbody id="accordion1" class="collapse show">
+            <tr>
+              <td>Body Type</td>
+              <td>{{cr?.factors_body_type}}</td>
+              <td>{{c?.factors_body_type}}</td>
+            </tr>
+            <tr>
+              <td>Segment</td>
+              <td>{{cr?.factors_segment}}</td>
+              <td>{{c?.factors_segment}}</td>
+            </tr>
+            <tr>
+              <td>No Of Gears</td>
+              <td>{{cr?.factors_no_of_gears}}</td>
+              <td>{{c?.factors_no_of_gears}}</td>
+            </tr>
+            <tr>
+              <td>Displacement(cc)</td>
+              <td>{{cr?.factors_displacement_cc}}</td>
+              <td>{{c?.factors_displacement_cc}}</td>
+            </tr>
+            <tr>
+              <td>Emission Standard</td>
+              <td>{{cr?.factors_emission_standard}}</td>
+              <td>{{c?.factors_emission_standard}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="comparison4 pt-5">
+      <div class="container">
+        <table class="table table-striped text-center table-sm-responsive">
+          <thead data-toggle="collapse" data-target="#accordion2" aria-expanded="true" aria-controls="accordion2">
+            <tr>
+              <th><i class="fas fa-cog"></i> PFERFORMANCE</th>
+              <th><i class="fas fa-car-alt"></i>{{cr?.model}}</th>
+              <th><i class="fas fa-car"></i>{{c?.model}}</th>
+            </tr>
+          </thead>
+          <tbody id="accordion2" class="collapse show">
+            <tr>
+              <td>Mileage</td>
+              <td>{{cr?.mileage_print}}</td>
+              <td>{{c?.mileage_print}}</td>
+            </tr>
+            <tr>
+              <td>Mileage City Highway_in_kmpl</td>
+              <td>{{cr?.performance_mileage_city_highway_in_kmpl}}</td>
+              <td>{{c?.performance_mileage_city_highway_in_kmpl}}</td>
+            </tr>
+            <tr>
+              <td>Peak Power</td>
+              <td>{{cr?.performance_peak_power_bhp_max_rpm}}</td>
+              <td>{{c?.performance_peak_power_bhp_max_rpm}}</td>
+            </tr>
+            <tr>
+              <td>Peak Torque</td>
+              <td>{{cr?.performance_peak_torque_nm_max_rpm}}</td>
+              <td>{{c?.performance_peak_torque_nm_max_rpm}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="comparison5 pt-5">
+      <div class="container">
+        <table class="table table-striped text-center table-sm-responsive">
+          <thead data-toggle="collapse" data-target="#accordion3" aria-expanded="true" aria-controls="accordion3">
+            <tr>
+              <th><i class="fas fa-cog"></i> DIMENSIONS & CAPACITY </th>
+              <th><i class="fas fa-car-alt"></i> {{cr?.model}}</th>
+              <th><i class="fas fa-car"></i>{{c?.model}}</th>
+            </tr>
+          </thead>
+          <tbody id="accordion3" class="collapse show">
+            <tr>
+              <td>Length (mm)</td>
+              <td>{{cr?.dimensions_length_mm}}</td>
+              <td>{{c?.dimensions_length_mm}}</td>
+            </tr>
+            <tr>
+              <td>Width (mm)</td>
+              <td>{{cr?.dimensions_width_mm}}</td>
+              <td>{{c?.dimensions_width_mm}}</td>
+            </tr>
+            <tr>
+              <td>Height (mm)</td>
+              <td>{{cr?.dimensions_height_mm}}</td>
+              <td>{{c?.dimensions_height_mm}}</td>
+            </tr>
+            <tr>
+              <td>Ground Clearance Laden (mm)</td>
+              <td>{{cr?.dimensions_ground_clearance_mm}}</td>
+              <td>{{c?.dimensions_ground_clearance_mm}}</td>
+            </tr>
+            <tr>
+              <td>Wheel Base (mm)</td>
+              <td>{{cr?.dimensions_weelbase_mm}}</td>
+              <td>{{c?.dimensions_weelbase_mm}}</td>
+            </tr>
+            <tr>
+              <td>Seating Capacity</td>
+              <td>{{cr?.capacities_seating_capacity}}</td>
+              <td>{{c?.capacities_seating_capacity}}</td>
+            </tr>
+            <tr>
+              <td>Boot Space (Litres)</td>
+              <td>{{cr?.dimensions_boot_space_l}}</td>
+              <td>{{c?.dimensions_boot_space_l}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="container mt-4">
+  <h5 class="color text-center font-weight-bold mt-5 text-uppercase">{{this.cardata.brand}} WITH
+    SIMILAR CARS</h5>
+  <hr style="width: 200px !important;">
+  <div *ngFor="let cr of cardata">
+    <swiper [config]="config">
+      <ng-template swiperSlide *ngFor="let c of car_comparison">
+        <div class="card shadow rounded">
+          <div class="card-body p-0">
+            <div class="row p-1">
+              <div class="col-6 pr-2 border_col">
+                <!-- <img src="{{c?.img1}}" class="img-responsive imgres" alt=""> -->
+                <!-- <p style="font-size: 12px;">{{colors}}</p> -->
+                <img class="img-responsive imgres"
+                  src="http://api.dealcars.in/{{cr?.brand}}/{{cr?.model}}/{{cr?.model}} 1.jpg" alt="{{cr?.model}}">
+                <div class="comp-details position">
+                  <p>{{cr?.price_print}}</p>
+                  <p>{{cr?.model}}</p>
+                </div>
+              </div>
+              <div class="col-6 pl-2">
+                <!-- <img src="{{c?.img2}}" class="img-responsive imgres" alt=""> -->
+                <!-- <p style="font-size: 12px;">{{c?.colors}}</p> -->
+                <img class="img-responsive imgres"
+                  src="http://api.dealcars.in/{{c?.brand}}/{{c?.model}}/{{c?.model}} 1.jpg" alt="{{c?.model}}">
+                <div class="comp-details">
+                  <p>{{c?.price_print}}</p>
+                  <p>{{c?.model}}</p>
+                </div>
+              </div>
+            </div>
+            <div style="position: relative;top: -70px" class="text-center">
+              <small class="border rounded-circle px-1 bg-light">vs</small>
+            </div>
+            <div style="cursor: pointer;" class="text-center m-0 w-100">
+              <h6 class="comp-text" (click)="comparebothcars(cr,c)">{{cr?.model}} vs {{c?.model}}</h6>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </swiper>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <app-offers></app-offers>
+</div>
+
+<div class="container mt-5">
+  <app-newssection></app-newssection>
+</div>

@@ -1,0 +1,663 @@
+// .btn {
+//     color           : #fff;
+//     padding         : 5px 25px;
+//     font-size       : 15px;
+//     box-shadow      : 0px 3px 5px 0px rgb(167 167 167 / 50%);
+//     font-weight     : 600;
+//     background-color: #FF8F10;
+// }
+
+// input[type=number]::-webkit-inner-spin-button,
+// input[type=number]::-webkit-outer-spin-button {
+//     -webkit-appearance: none;
+//     -moz-appearance   : none;
+//     appearance        : none;
+// }
+
+// .heading {
+//     color        : #5B2067;
+//     display      : inline-block;
+//     font-weight  : 700;
+//     border-bottom: 2px solid #5B2067;
+// }
+
+// .tabs {
+//     ul {
+//         margin-top   : 10px;
+//         box-shadow   : 0px 1px 2px 0px rgb(145 145 145 / 50%);
+//         border-bottom: none;
+
+//         li {
+//             a {
+//                 color         : #707070;
+//                 margin        : 0px 20px;
+//                 border        : none;
+//                 font-weight   : 700;
+//                 text-transform: uppercase;
+//             }
+
+//             a.active {
+//                 color        : #5B2067;
+//                 border-bottom: 2px solid #5B2067;
+//             }
+
+//         }
+
+//         .dropdown-menu {
+//             a {
+//                 margin     : 0;
+//                 padding    : 2px 6px;
+//                 font-size  : 13px;
+//                 font-weight: 500;
+//             }
+//         }
+//     }
+
+//     .share {
+//         top     : 5%;
+//         right   : 5%;
+//         position: absolute;
+
+//         a {
+//             color      : #707070;
+//             margin-left: 10px;
+//         }
+//     }
+
+//     .icon {
+//         margin: 20px 0;
+
+//         a {
+//             color : #707070;
+//             margin: 0 25px;
+//         }
+//     }
+
+//     .details {
+//         font-weight: 600;
+
+//         h4 {
+//             color     : #474747;
+//             margin-top: 30px;
+//         }
+
+//         a {
+//             color: #00589B;
+//         }
+
+//         p {
+//             color : #707070;
+//             margin: 0;
+//         }
+
+//         .btn {
+//             margin: 20px 0;
+//         }
+
+//         .emi-part {
+//             padding         : 20px;
+//             background-color: #EFEFEF;
+
+//             .btn {
+//                 float     : right;
+//                 margin-top: -50px;
+//             }
+//         }
+//     }
+// }
+
+// .key {
+//     .card-body {
+//         padding: 15px 0;
+
+//         i {
+//             color    : #5B2067;
+//             font-size: 45px;
+//         }
+
+//         p {
+//             margin-bottom: 0;
+//         }
+//     }
+// }
+
+// .price {
+//     .uptown {
+//         float      : right;
+//         color      : #474747;
+//         font-weight: 800;
+//     }
+
+//     .nav-tabs {
+//         border-bottom: none;
+
+//         li {
+//             margin: 0 20px;
+
+//             a {
+//                 color      : #707070;
+//                 border     : none;
+//                 font-weight: 600;
+//             }
+
+//             a.active,
+//             a:hover {
+//                 color                  : #fff;
+//                 background-color       : #5B2067;
+//                 border-top-left-radius : 20px;
+//                 border-top-right-radius: 20px;
+//             }
+//         }
+//     }
+
+//     .table {
+//         thead {
+//             background-color: #F2F2F2;
+
+//             td {
+//                 color      : #707070;
+//                 font-weight: 500;
+//             }
+//         }
+
+//         h6 {
+//             color        : #5B2067;
+//             font-size    : 20px;
+//             font-weight  : 700;
+//             margin-bottom: 5px;
+
+//         }
+
+//         h5 {
+//             color      : #5B2067;
+//             font-weight: 700;
+//         }
+
+//         P {
+//             color        : #707070;
+//             font-weight  : 600;
+//             margin-bottom: 0;
+
+//             strong {
+//                 color: #474747;
+//             }
+//         }
+
+//         a {
+//             color      : #00589B;
+//             font-weight: 600;
+//         }
+
+//         .btn {
+//             padding  : 5px 15px;
+//             font-size: 13px;
+//         }
+
+//         input {
+//             width : 20px;
+//             height: 20px;
+//         }
+
+//         input:focus {
+//             box-shadow: none;
+//         }
+//     }
+
+//     .table-striped tbody tr:nth-of-type(odd) {
+//         background-color: #fff;
+//     }
+
+//     .table-striped tbody tr:nth-of-type(even) {
+//         background-color: #F2F2F2;
+//     }
+// }
+
+// .mileage {
+//     p {
+//         color: #707070;
+//     }
+
+//     thead {
+//         color           : #707070;
+//         background-color: #F2F2F2;
+//     }
+
+//     table {
+//         h5 {
+//             color: #474747;
+//         }
+//     }
+// }
+
+// .colors {
+//     .color {
+//         width        : 50px;
+//         height       : 50px;
+//         margin       : auto;
+//         border       : 1px solid #707070;
+//         border-radius: 50%;
+//         cursor       : pointer;
+//     }
+
+//     .blue {
+//         background-color: #5D80A6;
+//     }
+
+//     .grey {
+//         background-color: #5F5E64;
+//     }
+
+//     .green {
+//         background-color: #619E2E;
+//     }
+
+//     .silver {
+//         background-color: #C3C2C0;
+//     }
+
+//     .white {
+//         background-color: #F6F5F3;
+//     }
+
+//     .red {
+//         background-color: #C13939;
+//     }
+// }
+
+// .spec {
+//     table {
+//         margin-top: 20px;
+
+//         thead {
+//             background-color: #F2F2F2;
+
+//             th {
+//                 color: #5B2067;
+//             }
+//         }
+//     }
+// }
+
+// .modal {
+//     .modal-content {
+//         border-radius: 10px;
+
+//         .modal-body {
+//             padding: 2rem;
+
+//             .cancel {
+//                 top             : 2%;
+//                 left            : 1%;
+//                 color           : #707070;
+//                 padding         : 0;
+//                 position        : absolute;
+//                 font-size       : 20px;
+//                 box-shadow      : none;
+//                 background-color: #fff;
+//             }
+
+//             .close {
+//                 top             : 2%;
+//                 width           : 30px;
+//                 right           : 1%;
+//                 color           : #fff;
+//                 height          : 30px;
+//                 position        : absolute;
+//                 font-size       : 17px;
+//                 border-radius   : 50%;
+//                 background-color: #707070;
+
+//                 span {
+//                     line-height: 20px;
+//                 }
+//             }
+
+//             h4 {
+//                 color      : #5B2067;
+//                 font-weight: 700;
+//             }
+
+//             p {
+//                 color: #707070;
+//             }
+
+//             .card {
+//                 border       : none;
+//                 box-shadow   : 0px 0px 5px rgb(137 137 137 / 50%);
+//                 border-radius: 5px;
+
+//                 h5 {
+//                     color        : #474747;
+//                     text-align   : center;
+//                     font-weight  : 700;
+//                     margin-bottom: 15px;
+//                 }
+
+//                 form {
+//                     label {
+//                         color: #474747;
+//                     }
+
+//                     .form-control {
+//                         border          : none;
+//                         background-color: #EFEFEF;
+//                     }
+
+//                     .form-control:focus {
+//                         box-shadow  : none;
+//                         border-color: #EFEFEF;
+//                     }
+
+//                     .form-control::placeholder {
+//                         color  : #707070;
+//                         opacity: 0.16;
+//                     }
+
+//                     a {
+//                         color      : #004071;
+//                         font-weight: 700;
+//                         cursor     : pointer;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// #testdrivelocation {
+//     button {
+//         top: 10% !important;
+//     }
+
+//     form {
+//         width: 70%;
+
+//         .input-group {
+//             box-shadow   : 0px 2px 5px rgb(143 143 143 / 50%);
+//             border-radius: 5px;
+
+//             .input-group-text,
+//             .form-control {
+//                 color           : #474747;
+//                 border          : none;
+//                 background-color: #EFEFEF;
+
+//                 .dot {
+//                     height          : 10px;
+//                     width           : 10px;
+//                     border-radius   : 50%;
+//                     background-color: #00D539;
+//                 }
+//             }
+
+//             .form-control:focus {
+//                 box-shadow: none;
+//             }
+//         }
+//     }
+// }
+
+// #thankyou {
+//     overflow-y: scroll;
+
+//     img {
+//         margin: 10px 0 20px;
+//     }
+
+//     h6,
+//     h5 {
+//         color      : #5B2067;
+//         font-weight: 700;
+//         margin     : 20px 0 0;
+
+//         span {
+//             color      : #707070;
+//             font-weight: 500;
+//         }
+//     }
+
+//     h6 {
+//         border-bottom : 1px solid #5B2067;
+//         display       : inline-block;
+//         padding-bottom: 10px;
+//     }
+
+//     p {
+//         color      : #707070;
+//         font-weight: 500;
+//     }
+// }
+
+// agm-map {
+//     width : 100%;
+//     height: 300px;
+//     margin: 0;
+// }
+
+// @media only screen and (min-width: 320px) and (max-width:600px) {
+//     .table {
+//         width     : 100%;
+//         display   : block;
+//         overflow-x: auto;
+//     }
+
+//     .col-sm-6 {
+//         width: 50%;
+//     }
+
+//     .tabs {
+//         ul {
+//             li {
+//                 a {
+//                     margin   : 0px;
+//                     padding  : 9px;
+//                     font-size: 14px;
+//                 }
+//             }
+//         }
+
+//         .btn {
+//             float     : unset !important;
+//             margin-top: 10px !important;
+//         }
+
+//         .details {
+//             .emi-part {
+//                 margin-bottom: 25px;
+//             }
+//         }
+
+//         .tab-pane {
+//             img {
+//                 margin-top: 20px;
+//             }
+//         }
+//     }
+
+//     .key {
+//         .card {
+//             margin-top: 20px;
+//         }
+//     }
+
+//     .price {
+//         .table {
+//             h6 {
+//                 font-size: 18px;
+//             }
+
+//             p {
+//                 font-size: 14px;
+//             }
+
+//             h5 {
+//                 font-size: 16px;
+//             }
+//         }
+//     }
+
+//     .mileage {
+//         table {
+//             h5 {
+//                 font-size: 16px;
+//             }
+//         }
+//     }
+
+//     .price {
+//         .nav-tabs {
+//             li {
+//                 margin: 0px 5px;
+//             }
+//         }
+//     }
+// }
+
+
+
+
+// .form-group {
+//     margin-bottom: 50px;
+
+// }
+
+// .picktime {
+//     color      : #474747;
+//     padding    : 10px;
+//     margin-left: 120px;
+//     margin-top : 20px;
+
+//     box-sizing      : border-box;
+//     background-color: #efefef;
+
+
+// }
+
+// .picktime .p {
+//     margin-left: 50px;
+// }
+
+// .picktimee {
+//     color      : #474747;
+//     padding    : 10px;
+//     margin-left: 120px;
+//     margin-top : 20px;
+
+//     box-sizing      : border-box;
+//     background-color: #efefef;
+// }
+
+// .picktimee .p {
+//     margin-left: 50px;
+// }
+
+// .card {
+//     padding: 10px;
+// }
+
+// .button {
+//     margin-top: 40px;
+// }
+
+// priyanka
+hr {
+    margin-top: 0rem;
+    border-top: 2px solid #5b2067;
+    width     : 140px;
+}
+
+.icon {
+    color    : #5b2067;
+    font-size: 35px;
+}
+
+.btn1 {
+    background: #ff8f10;
+    font-size : 14px;
+    color     : white;
+    width     : 100%;
+}
+
+.Readmore {
+    float      : right;
+    color      : #5b2067;
+    cursor     : pointer;
+    font-weight: bold;
+}
+
+.newsDesc {
+    font-size: 15px;
+}
+
+.color {
+    color: #5b2067;
+}
+
+.coloredrow {
+    background: #dcdcdca6;
+}
+
+.Carcolor {
+    width        : 50px;
+    height       : 50px;
+    margin       : auto;
+    border       : 1px solid gainsboro;
+    border-radius: 50%;
+    cursor       : pointer;
+}
+
+.tablewidth {
+    td {
+        width: 200px !important;
+    }
+}
+
+@media(min-width:600px){
+    .imgres{
+        height: 270px;
+        width: 100%;
+    }
+    .imgbrand{
+        height: 170px;
+        width: 100%;
+    }
+}
+
+ngb-rating {
+    font-size : 25px;
+    color     : darkorange;
+    margin-top: -8px;
+}
+.button {
+    margin-top: 40px;
+}
+
+.tycm{
+    text-transform: uppercase;
+    color:#5B2067;
+    font-weight: 600;
+}
+
+a{
+    color: #00589B !important;
+    font-weight: 600;
+}
+
+
+.locationtimeimages{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.locationtimetext{
+    display: grid;
+    justify-content: center;
+}
+
+
+#thanksyoumodelid{
+    overflow: auto;
+    max-height: 50rem;
+}

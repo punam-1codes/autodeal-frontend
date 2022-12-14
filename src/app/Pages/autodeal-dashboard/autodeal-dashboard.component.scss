@@ -1,0 +1,11 @@
+.fixedsidenav {
+    position: sticky !important;
+    top     : 0 !important;
+}
+
+.fixheader {
+    position: sticky !important;
+    top     : 0 !important;
+    z-index : 999;
+    background: white !important;
+}

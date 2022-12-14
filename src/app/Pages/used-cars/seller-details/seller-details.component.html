@@ -1,0 +1,84 @@
+<div class="container">
+    <div class="modal-header border-0">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="modalService.hide()">
+            <i class="bi bi-x-circle-fill"></i>
+        </button>
+    </div>
+    <!-- <h1>hello</h1> -->
+    <div class="modal-body">
+        <div class="container" *ngFor="let s of SellerDetail">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-6 mt-4">
+                    <img src="{{s.sellcar_img}}" style="height: 100%;width:100%" alt="">
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-6 details mt-5 pl-md-5">
+                    <h1 class="font-weight-bold">{{s?.model}}</h1>
+                    <div>
+                        <h4 class="font-weight-normal text-muted">{{s?.month}},{{s?.year}} | {{s?.kd_Done}}km |
+                            {{s?.transmission}} | {{s?.fueltype}}</h4>
+                    </div>
+                    <p class="pl-2"><i class="bi bi-geo-alt"></i>&nbsp; {{s?.city}}</p>
+                </div>
+            </div>
+
+            <div class="mt-3">
+                <div class="media my-2">
+                    <i class="bi bi-person-fill icon align-self-start mr-3"></i>
+                    <div class="media-body">
+                        <h5 class="font-weight-bold my-1"> {{s?.sellcaruser}} </h5>
+                    </div>
+                </div>
+                <div class="media my-2">
+                    <i class="bi bi-telephone-fill icon align-self-start mr-3"></i>
+                    <div  class="media-body">
+                        <h5 *ngIf="!loginwarn" class="text">{{s?.sellcarusernumber}}</h5>
+                        <div class="alert alert-danger" role="alert" *ngIf="loginwarn">
+                            <h5 class="text" id="blur">{{s?.sellcarusernumber}}</h5>
+                            <h5 class="text-danger">You have to Register/Login to see Mobile Number.</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="media my-2">
+                    <i class="bi bi-geo-alt-fill align-self-start mr-3" style="font-size:25px;color: gray;"></i>
+                    <div class="media-body">
+                        <h5 class="text">{{s?.city}}</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-3 text-center">
+                <!-- <button type="button" class="btn btn1 shadow m-auto d-block">Book a test drive</button> -->
+                <app-get-test-drive [getdata]="s" (click)="modalService.hide()"></app-get-test-drive>
+            </div>
+
+            <div class="mt-5">
+                <h2 class="font-weight-bold">Recommended Used Cars</h2>
+
+                <div class="mt-2">
+                    <div class="card shadow my-3"
+                        *ngFor="let r of RecommendedUsedCars| paginate: { itemsPerPage: 4, currentPage: p }">
+                        <div class="card-body p-0 pr-2">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-4 col-lg-4">
+                                    <img src="{{r.sellcar_img}}" alt="" style="height: 170px" class="img-fluid">
+                                </div>
+                                <div class="col-sm-12 col-md-8 col-lg-8 py-2 pl-5 pl-md-2">
+                                    <h4 class="text-secondary">
+                                        {{r?.model}} <i class="bi bi-heart-fill float-right Like_car"></i></h4>
+                                    <h5 class="font-weight-bold my-2">Rs.{{r?.estimated_price}}*</h5>
+                                    <p>{{r?.month}},{{r?.year}}|{{r?.kd_Done}}km|{{r?.transmission}}|{{r?.fueltype}}
+                                    </p>
+                                    <button type="button" class="btn btn1 font-weight-normal" data-dismiss="modal"
+                                        (click)="ViewCarDetails(r)">View Car
+                                        Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <pagination-controls (pageChange)="p = $event" class="float-right"></pagination-controls>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

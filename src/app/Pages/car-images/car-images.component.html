@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="mt-5" *ngFor="let c of cardata">
+        <swiper [config]="configCarImages" (slideChange)="onSlideChange()" [navigation]="{ clickable: true }">
+            <ng-template *ngFor="let s of slideimage" swiperSlide>
+                <div>
+                    <img class="img-fluid imgslide d-block"
+                        src="http://api.dealcars.in/{{c?.brand}}/{{c?.model}}/{{c?.model}} {{s}}.jpg"
+                        alt="{{c?.model}}">
+                </div>
+            </ng-template>
+        </swiper>
+    </div>
+
+    <div class="mt-2">
+        <div *ngFor="let c of cardata">
+            <h5 class="color text-trans text-center font-weight-bold mt-5">OTHER {{c?.brand}} CARS</h5>
+            <hr style="width: 180px !important;">
+        </div>
+        <swiper [config]="slideConfig" (slideChange)="onSlideChange()" [navigation]="{ clickable: true }">
+            <ng-template *ngFor="let c of cars" swiperSlide>
+                <div class="card shadow">
+                    <img src="http://api.dealcars.in/{{c?.brand}}/{{c?.model}}/{{c?.model}} 1.jpg"
+                        class="card-img-top imgres" alt="{{c?.model}}">
+                    <div class="card-body">
+                        <p class="card-text"><b>{{c?.model}}</b></p>
+                        <h6 class="card-title color m-0">{{c?.price_print}}*</h6>
+                        <p class="card-text"><small>Ex-showroom, Delhi</small></p>
+                    </div>
+                </div>
+            </ng-template>
+        </swiper>
+    </div>
+
+    <div class="container">
+        <app-offers></app-offers>
+    </div>
+
+    <div class="container mt-5">
+        <app-newssection></app-newssection>
+    </div>
+    
+</div>

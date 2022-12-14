@@ -1,0 +1,175 @@
+<div class="container-fluid">
+    <div class="row"  *ngFor="let sg of cardetailsCS">
+        <div class="col-sm-12 col-md-6 col-lg-6 mt-1">
+            <div class="carserviceimg">
+                <img class="img-fluid" src="http://api.dealcars.in/{{sg?.brand}}/{{sg?.model}}/{{sg?.model}} 1.jpg" alt="{{sg?.model}}" style="width:60%;">
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 mt-5">
+            <div>
+                <h3 class="title">{{sg.model}} <i class="fas fa-info-circle"></i></h3>
+                <ngb-rating [max]="5" [(rate)]="car_review" [readonly]="true">
+                </ngb-rating>
+                <span>
+                    13 Reviews |
+                    Write a review
+                </span>
+                <h5 class="title"><u>SERVICE GUIDE</u></h5>
+                <p class="title  mt-4">Car's Mileage</p>
+                <select name="" id="" style="padding: 10px; width: 25%;">
+                    <option *ngFor="let m of Mileage" value="{{m.mail}}">{{m?.mail}}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="sgbuttons">
+        <div class="col-md-6">
+            <button type="button" class="btn btn1 mt-2 float-md-right" routerLink="/">SEARCH YOUR DREAM CAR</button>
+        </div>
+        <div class="col-md-6">
+            <button type="button" class="btn btn1 mt-2 float-md-left" data-toggle="modal" data-target="#brandModel" data-backdrop="static">SELL YOUR OLD CAR</button>
+        </div>
+        
+    </div>
+</div>
+
+<div class="container mt-5">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">
+                    <h3>Part</h3>
+                </th>
+                <th scope="col" class="text-md-center">
+                    <h3>Service Guide</h3>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <h5>Cabin air filter <i class="fa fa-info-circle color1" aria-hidden="true"></i></h5>
+                </td>
+                <td>
+                    <h5 class="text-md-center">Inspect</h5>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h5>Engine oil <i class="fa fa-info-circle color1" aria-hidden="true"></i></h5>
+                </td>
+                <td>
+                    <h5 class="text-md-center">Change</h5>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h5>Oil filter <i class="fa fa-info-circle color1" aria-hidden="true"></i></h5>
+                </td>
+                <td>
+                    <h5 class="text-md-center">Inspect</h5>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h5>Battery <i class="fa fa-info-circle color1" aria-hidden="true"></i></h5>
+                </td>
+                <td>
+                    <h5 class="text-md-center">Inspect</h5>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h5>Cabin air filter <i class="fa fa-info-circle color1" aria-hidden="true"></i></h5>
+                </td>
+                <td>
+                    <h5 class="text-md-center">Replace</h5>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h5>Oil filter <i class="fa fa-info-circle color1" aria-hidden="true"></i></h5>
+                </td>
+                <td>
+                    <h5 class="text-md-center">Inspect</h5>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h5>Battery <i class="fa fa-info-circle color1" aria-hidden="true"></i></h5>
+                </td>
+                <td>
+                    <h5 class="text-md-center">Inspect</h5>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h5>Cabin air filter <i class="fa fa-info-circle color1" aria-hidden="true"></i></h5>
+                </td>
+                <td>
+                    <h5 class="text-md-center">Replace</h5>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h5>Oil filter <i class="fa fa-info-circle color1" aria-hidden="true"></i></h5>
+                </td>
+                <td>
+                    <h5 class="text-md-center">Inspect</h5>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h5>Battery <i class="fa fa-info-circle color1" aria-hidden="true"></i></h5>
+                </td>
+                <td>
+                    <h5 class="text-md-center">Inspect</h5>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="container mt-2">
+    <div>
+        <h5 class="color text-trans text-center font-weight-bold mt-5">OTHER MARUTI SUZUKI CARS</h5>
+        <hr style="width: 180px !important;">
+    </div>
+    <swiper [config]="slideConfig" (slideChange)="onSlideChange()" [navigation]="{ clickable: true }">
+        <ng-template *ngFor="let c of cars" swiperSlide>
+            <div class="card shadow">
+                <img src="{{c?.path}}" class="card-img-top imgres" alt="{{c?.model}}">
+                <div class="card-body">
+                    <p class="card-text"><b>{{c?.model}}</b></p>
+                    <h6 class="card-title color m-0">{{c?.price}}*</h6>
+                </div>
+            </div>
+        </ng-template>
+    </swiper>
+</div>
+
+<div class="container mt-3">
+    <div>
+        <h5 class="colortext-trans color text-center font-weight-bold mt-5">MARUTI SWIFT NEWS</h5>
+        <hr style="width: 150px !important;">
+        <div class="card shadow my-3" *ngFor="let c of carnews">
+            <div class="card-body p-0 pr-2">
+                <div class="row">
+                    <div class="col-sm-12 col-md-4 col-lg-4">
+                        <img src="{{c?.img}}" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-sm-12 col-md-8 col-lg-8 py-2 pl-5 pl-md-2">
+                        <h5 class="font-weight-bold">
+                            {{c?.heading}}</h5>
+                        <p>By <b style="color: #7a7979;">{{c?.publisher}}</b> {{c?.time}} </p>
+                        <p class="newsDesc" *ngIf="!c.showMore">{{trimString(c?.desc,300)}}</p>
+                        <p class="newsDesc" *ngIf="c.showMore">{{c?.desc}}</p>
+                        <a (click)="c.showMore = !c.showMore"> <span class="Readmore"
+                                [innerHtml]="c.showMore ? 'Read less' : 'Read More'"> </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

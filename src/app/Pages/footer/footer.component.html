@@ -1,0 +1,173 @@
+<footer class="mt-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="text-center">
+                    <h5 style="text-transform:uppercase;">Useful Links </h5>
+                </div>
+                <div class="border-right">
+                    <a (click)="pageRouteCU()">Contact Us </a>
+                    <a (click)="pageRouteAU()">About Us </a>
+                    <a (click)="pageRoutePP()">Privacy Policy </a>
+                    <a (click)="pageRouteTC()">Terms and Conditions </a>
+                    <a href="#">FAQ </a>
+                    <a href="#">Sitemap </a>
+                    <a href="#">Testimonials </a>
+                    <a href="#">Blog </a>
+                    <a href="#">Branches </a>
+                    <a (click)="pageRouteWH()">We're Hirings! </a>
+                    <a href="#">Become Our Partner </a>
+                    <a href="#">Need a Loan </a>
+                    <a href="#">Own a Franchise </a>
+                    <a href="#">RC Transfer Status </a>
+                    <a href="#">Auto Deal Finance </a>
+                    <a href="#">Auto Deal Franchise Partners </a>
+                    <a href="#">Investors </a>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-4 col-lg-4 ">
+                <div class="text-center">
+                    <h5 style="text-transform:uppercase;">Top Brands</h5>
+                </div>
+                <div class="border-right">
+                    <a (click)="goToBrand('Maruti')">Maruti Suzuki </a>
+                    <a (click)="goToBrand('Hyundai')">Hyundai </a>
+                    <a (click)="goToBrand('Honda')">Honda </a>
+                    <a (click)="goToBrand('Tata')">Tata </a>
+                    <a (click)="goToBrand('Toyota')">Toyota </a>
+                    <a (click)="goToBrand('Chevrolet')">Chevrolet </a>
+                    <a (click)="goToBrand('Ford')">Ford </a>
+                    <a (click)="goToBrand('Mahindra')">Mahindra </a>
+                    <a (click)="goToBrand('Skoda')">Skoda </a>
+                    <a (click)="goToBrand('Volkswagen')">Volkswagen </a>
+                    <a (click)="goToBrand('Nissan')">Nissan </a>
+                    <a (click)="goToBrand('Renault')">Renault </a>
+                    <a (click)="goToBrand('Fiat')">Fiat </a>
+                    <a (click)="goToBrand('MercedesBenz')">Mercedes Benz </a>
+                    <a (click)="goToBrand('Audi')">Audi </a>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="text-center">
+                    <h5 style="text-transform:uppercase;">Top cities </h5>
+                </div>
+                <div class="border-right">
+                <a href="#">Ahmedabad </a>
+                <a href="#">Bengaluru </a>
+                <a href="#">Chennai </a>
+                <a href="#">Gurgaon </a>
+                <a href="#">Hyderabad </a>
+                <a href="#">Kolkata </a>
+                <a href="#">Mumbai </a>
+                <a href="#">New Delhi </a>
+                <a href="#">Noida </a>
+                <a href="#">Pune </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row social">
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+                <h4 style="text-transform:uppercase;">Follow Us</h4>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-twitter-square"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-youtube-square"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-facebook-square"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-instagram-square"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+                <h4>Download Mobile App</h4>
+                <img src="../../../assets/App-Store.png" alt="" class="img-fluid" width="300">
+            </div>
+        </div>
+
+        <div class="row copyright">
+            <div class="col-sm-12 col-md-12 col-lg-12 border-top text-center mt-3 pt-2">
+                <p class="mb-0" style="margin: 2rem;">&copy; 2021 www.AutoDeal.com
+                    <label class="mb-0">|</label> All rights reserved
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="modal fade" id="login" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="fas fa-times"></span>
+                </button>
+                <h4>Login or Register for best Autodeal experience</h4>
+                <hr>
+                <form>
+                    <div class="form-group text-left">
+                        <label for="mobile">Mobile Number</label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">+91</div>
+                            </div>
+                            <input type="number" class="form-control" id="inlineFormInputGroup" placeholder="">
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#otp">Send OTP</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="otp" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="fas fa-times"></span>
+                </button>
+                <h4>Register for best Autodeal experience</h4>
+                <hr>
+                <p>OTP has been sent to <a href="#">98765643210 <i class="fas fa-pencil-alt"></i></a></p>
+                <form>
+                    <div class="form-group text-left">
+                        <label for="mobile">Name</label>
+                        <input type="text" class="form-control" placeholder="Enter your name">
+                    </div>
+                    <div class="form-group text-left">
+                        <label for="mobile">OTP Verify</label>
+                        <input type="text" class="form-control" placeholder="Please Enter OTP to verify">
+                        <a href="#" class="resend">Resend OTP</a>
+                    </div>
+                    <button type="button" class="btn btn-primary">Submit</button>
+
+                    <h6>OTP has been sent successfully</h6>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

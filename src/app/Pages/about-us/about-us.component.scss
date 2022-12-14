@@ -1,0 +1,152 @@
+.breadcrumb-item+.breadcrumb-item::before {
+    display: inline-block;
+    padding-right: 0.5rem;
+    content: ">";
+ 
+}
+.breadcrumb{
+    background-color: white;
+}
+a {
+    color:#818181;
+    text-decoration: none;
+    background-color: transparent;
+    font-weight: 500;
+}
+.para{
+    color: #5b2067;
+    font-size: 130%;
+    font-weight: bold;
+    padding-right: 10px;
+    margin: 1.5rem 0rem;
+}
+.Scale{
+    background-color: #EFEFEF;
+        
+}
+.card{
+    height: 150px;
+    text-align: center;
+}
+
+.ourGroupItem{
+
+    
+
+    padding: 20px;
+    }
+    .btn-primary{
+        color: #ff8f10;
+
+    }
+    .gpscale{
+        background-color: #EFEFEF;
+    }
+
+    
+
+.gpsection h1{
+    color: #6c3777;
+}
+.caro{
+    size: 1000px;
+    height: 100px;
+}
+.logo{
+    margin-top: 10px;
+}
+.family{
+    margin: -90px;
+    margin-left: 30px;
+
+}
+.section h1{
+    color:  #6c3777;
+    font-weight: bold;
+    font-size: 30px;
+    
+}
+.section p{
+    font-size: 14px;
+}
+.section vi{
+    font-size: 8px;
+}
+
+.owl-carousel .owl-item img {
+    display: block;
+    width: 170%;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #ff8f10;
+    border-color:#ff8f10;
+    width: 100px;
+}
+
+.vehicle p{
+    font-size: 14px;
+    
+}
+.vehicle vi{
+    font-size: 8px;
+}
+.vehicle h1{
+    color:  #6c3777;
+    font-weight: bold;
+    font-size: 30px;
+}
+.customer h1{
+    color:  #6c3777;
+    font-weight: bold;
+    font-size: 30px;
+    margin-right: 180px;
+}
+.customer p{
+    font-size: 14px;
+
+}
+.agi h1{
+    color:  #6c3777;
+    font-weight: bold;
+    font-size: 30px;
+    margin-right: 180px;
+
+}
+.agi p{
+    font-size: 14px;
+}
+.owner h1{
+    color:  #6c3777;
+    font-weight: bold;
+    font-size: 30px;
+    margin-right: 210px;
+
+}
+.owner p{
+    font-size: 14px;
+    margin-right: 210px;
+}
+
+.before h1{
+    color:  #6c3777;
+    font-weight: bold;
+    font-size: 30px;
+    margin-right: 215px;
+
+}
+.before p{
+    font-size: 14px;
+    margin-right: 90px;
+}
+.values{
+    padding: 15px;
+    margin-left: -20px;
+}
+
+.abouus-banner{
+    width: 100%;
+    height: 50%;
+    margin-bottom: 3rem;
+}

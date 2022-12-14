@@ -1,0 +1,23 @@
+.btn {
+    color           : #fff;
+    padding         : 5px 25px;
+    font-size       : 15px;
+    box-shadow      : 0px 3px 5px 0px #a7a7a780;
+    font-weight     : 600;
+    background-color: #FF8F10;
+}
+
+.color {
+    color: #5b2067;
+}
+
+.errDiv1{
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: gray;
+   font-size: 12px;
+  }

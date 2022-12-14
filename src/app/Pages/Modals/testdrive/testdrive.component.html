@@ -1,0 +1,58 @@
+<div class="container" *ngFor="let c of cardata">
+    <div class="modal-body">
+        <button type="button" class="close" (click)="modalService.hide()">
+            <span class="fas fa-times"></span>
+        </button>
+        <h4 class="color font-weight-bold">{{c?.model}}</h4>
+        <p class="text-muted">Provide your contact details for Test Drive,EMI options, Offers & Exchange
+            Benefits</p>
+        <div class="row">
+            <div class="col-sm-12 col-md-7 col-7">
+                <img class="img-fluid" src="http://api.dealcars.in/{{c?.brand}}/{{c?.model}}/{{c?.model}} 1.jpg"
+                    alt="{{c?.model}}">
+            </div>
+            <div class="col-sm-12 col-md-5 col-lg-5">
+                <div class="card shadow">
+                    <div class="card-body shadow">
+                        <h5 class="text-center font-weight-bold">REGISTER</h5>
+                        <form [formGroup]="TestdriveForm">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" class="form-control" placeholder="Enter Your Name"
+                                    formControlName="name">
+                                <div class="errDiv1"
+                                    *ngIf="TestdriveForm.controls['name'].hasError('required') && (TestdriveForm.controls['name'].dirty || isFormInvalid)">
+                                    Name is required *
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="mobilenumber">Contact No.</label>
+                                <input type="tel" maxlength="10" pattern="^\d{10}$" id="no" class="form-control"
+                                    placeholder="Enter Your Contact no." formControlName="mobilenumber">
+                                <div class="errDiv1"
+                                    *ngIf="TestdriveForm.controls['mobilenumber'].hasError('required') && (TestdriveForm.controls['mobilenumber'].dirty || isFormInvalid)">
+                                    Contact No. is required *
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="no">Email ID</label>
+                                <input type="email" id="no" class="form-control" placeholder="Enter Your Email ID"
+                                    formControlName="email">
+                                <div class="errDiv1"
+                                    *ngIf="TestdriveForm.controls['email'].hasError('required') && (TestdriveForm.controls['email'].dirty || isFormInvalid)">
+                                    Contact No. is required *
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn" type="submit" (click)="onSubmit()">SUBMIT</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

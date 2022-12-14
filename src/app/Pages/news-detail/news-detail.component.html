@@ -1,0 +1,276 @@
+<!-- <section class="tabs">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link" id="brand-tab" data-toggle="tab" href="#brand" role="tab"
+                            aria-controls="brand" aria-selected="true">Swift</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="Price-tab" data-toggle="tab" href="#Price" role="tab"
+                            aria-controls="Price" aria-selected="false">Price</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="compare-tab" data-toggle="tab" href="#compare" role="tab"
+                            aria-controls="compare" aria-selected="false">compare</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="Images-tab" data-toggle="tab" href="#Images" role="tab"
+                            aria-controls="Images" aria-selected="false">Images</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="specs-tab" data-toggle="tab" href="#specs" role="tab"
+                            aria-controls="specs" aria-selected="false">specs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab"
+                            aria-controls="reviews" aria-selected="false">user reviews</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="videos-tab" data-toggle="tab" href="#videos" role="tab"
+                            aria-controls="videos" aria-selected="false">videos</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            more
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">News</a>
+                            <a class="dropdown-item" href="#">Emi Calculator</a>
+                            <a class="dropdown-item" href="#">Car Service Guide</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<div class="container" *ngFor="let n of Newsdata">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="#">Home</a>
+                    </li>
+
+                    <li>
+                        <i class="fas fa-chevron-right"></i>
+                    </li>
+
+                    <li class="breadcrumb-item" aria-current="page">
+                        <a href="#">New Cars</a>
+                    </li>
+
+                    <li>
+                        <i class="fas fa-chevron-right"></i>
+                    </li>
+
+                    <li class="breadcrumb-item" aria-current="page">
+                        <a href="#">More</a>
+                    </li>
+
+                    <li>
+                        <i class="fas fa-chevron-right"></i>
+                    </li>
+
+                    <li class="breadcrumb-item" aria-current="page">
+                        <a href="#">News</a>
+                    </li>
+
+                    <li>
+                        <i class="fas fa-chevron-right"></i>
+                    </li>
+
+                    <li class="breadcrumb-item active" aria-current="page">{{n?.news_cartitle}}</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <section class="new-details">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 top-heading">
+                    <h5>{{n?.news_cartitle}}</h5>
+                    <label>Modified On {{n?.news_date| date:'dd-MMM-yyyy, hh:mm a'}} By {{n?.news_publisher}} for {{n?.model}}</label>
+                    <br>
+                    <span><i class="fas fa-eye"></i> 23464 Views</span>
+                </div>
+
+                <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    <h6 class="heading">It looks wallpaper-worthy with its Euro-inspired bumpers and gigantic rear wing
+                    </h6>
+                    <img src="http://api.dealcars.in/{{n?.brand}}/{{n?.model}}/{{n?.model}} 1.jpg" alt="" class="img-fluid imgresp">
+                    <br>
+                    <button class="btn">
+                        <i class="fas fa-images"></i> Gallery
+                    </button>
+
+                    <button class="btn">
+                        <i class="fas fa-comment-alt"></i> Reviews
+                    </button>
+                </div>
+
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                 <p>{{n?.news_cardescription}}</p>
+                    <img src="http://api.dealcars.in/{{n?.brand}}/{{n?.model}}/{{n?.model}} 2.jpg" alt="" class="img-fluid imgresp">
+
+                    <ul>
+                        <li>{{n?.model}} Sport Digitally Reimagined As A Widebody, Rear-engined Road-going Spaceship!
+                        </li>
+                        <li>This Modified Maruti Alto With Gull-wing Doors And Red Demon Eye Headlamps Looks Absolutely
+                            Menacing</li>
+                    </ul>
+
+                    <p>{{n?.news_cardescription}}</p>
+
+                    <img src="http://api.dealcars.in/{{n?.brand}}/{{n?.model}}/{{n?.model}} 3.jpg" alt="" class="img-fluid imgresp">
+
+                   
+                    <p class="mt-3">Does this sporty {{n?.model}} make your day, or does it grind your gears? Let us know in the comments.
+                    </p>
+
+                    <p class="color">
+                        <b>Image Source</b>
+                    </p>
+
+                    <p>
+                        <b>Read More on : <span class="color">{{n?.model}}</span></b>
+                    </p>
+
+                    <p class="text-center">
+                        <b>
+                            <span class="color">Renew {{n?.model}} Car Insurance</span> - Save Upto 75%* with Best
+                            Insurance
+                            Plans - (Insuranceautodeal.com)
+                        </b>
+                    </p>
+
+                    <hr>
+                </div>
+
+                <div class="col-sm-12 col-md-12 col-lg-12 comment">
+                    <div class="profile">
+                        <div>A</div>
+                    </div>
+                    <div class="published">
+                        <h6>Published by
+                            <br>{{n?.news_publisher}}
+                        </h6>
+                    </div>
+
+                    <div class="card mt-4 text-center">
+                        <div class="card-body">
+                            <form action="">
+                                <h6>WAS THIS ARTICLE HELPFUL ?</h6>
+                                <h5>Write your Comment on Maruti Swift</h5>
+
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-8 col-lg-9">
+                                        <div class="card">
+                                            <input type="text" class="form-control" placeholder="Write a comment here">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12 col-md-4 col-lg-3">
+                                        <button class="btn post-btn">Post Comment</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<section class="tabs mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <img src="../../../assets/swift.png" class="img-fluid" alt="product">
+                        <div class="share">
+                            <a href="#">
+                                <i class="fas fa-heart"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-share-alt"></i>
+                            </a>
+                        </div>
+
+                        <div class="icon text-center">
+                            <a href="#">
+                                <i class="fas fa-images"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-palette"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-play"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-6 col-lg-6 details">
+                        <h4>MARUTI SWIFT</h4>
+                        <h5>Rs.5.85 - 8.67 Lakh*</h5>
+                        <label>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star grey"></i>
+                            <span class="review">13 Reviews</span>
+                            <span class="rate">Rate This Car</span>
+                        </label>
+                        <p>
+                            <label class="border-right">
+                                Petrol
+                                <br>
+                                <b>23.2 kmpl</b>
+                            </label>
+
+                            <label>
+                                Transmission
+                                <br>
+                                <b>Manual/Automatic</b>
+                            </label>
+                        </p>
+                        <button class="btn">View Diwali Offers</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container mt-2">
+    <div>
+        <h5 class="color text-center font-weight-bold mt-5">MORE CAR OPTION TO CONSIDER</h5>
+        <hr style="width: 180px !important;">
+    </div>
+    <swiper [config]="config">
+        <ng-template swiperSlide *ngFor="let c of caroptions">
+            <div class="card shadow" style="height: 240px;">
+                <img src="{{c?.img}}" class="card-img-top imgres" alt="...">
+                <div class="card-body" (click)="MoreCarOption(c)">
+                    <p class="m-0 text-center"><b>{{c?.title}}</b></p>
+                </div>
+            </div>
+        </ng-template>
+    </swiper>
+</div>
+
+<app-confused></app-confused>
+
+<div class="container">
+    <app-offers></app-offers>
+</div>
+
+<app-india></app-india>

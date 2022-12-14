@@ -1,0 +1,54 @@
+<div class="container-fluid">
+    <h5 class="color text-center font-weight-bold">SEARCH BY</h5>
+    <hr>
+    <div>
+        <mat-tab-group>
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    Brand
+                </ng-template>
+                <div class="container my-5">
+                    <div class="row">
+                        <div class="col-md-2 col-lg-2 col-sm-3 col-4" *ngFor="let b of car_brands; let i = index">
+                            <img src="{{b?.path}}" class="cursor img-responsive" alt="" (click)="onBrandClick(b)">
+                        </div>
+                    </div>
+                   </div>
+            </mat-tab>
+
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    Budget
+                </ng-template>
+                <div class="container my-5">
+                <div class="row">
+                        <div class="col-md-3 col-lg-3 col-sm-3 col-4" *ngFor="let b of car_budget; let i = index">
+                            <div class="px-lg-5 px-md-3">
+                                <h6 class="font-weight-bold py-4 border rounded text-center cursor" (click)="onBudgetClick(b)">
+                                    {{b?.price}}
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                   </div>
+
+            </mat-tab>
+
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    Fuel
+                </ng-template>
+                <div class="container my-5">
+                    <div class="row">
+                        <div class="col-md-3 col-lg-3 col-sm-4 col-6" *ngFor="let f of Fuel; let i = index">
+                            <img class="m-auto d-block cursor" src="{{f?.path}}" alt="" (click)="onFuelClick(f)" id="sbfimg">
+                        </div>
+
+                    </div>
+                </div>
+            </mat-tab>
+
+        </mat-tab-group>
+
+    </div>
+</div>

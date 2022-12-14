@@ -1,0 +1,46 @@
+.example-tab-icon {
+    margin-right: 8px;
+}
+
+.md-tab.ng-scope.ng-isolate-scope.md-ink-ripple.md-active {
+    background-color: transparent;
+    color           : white;
+    font-weight     : 700;
+}
+
+.md-tab.ng-scope.ng-isolate-scope.md-ink-ripple {
+    background-color: transparent;
+    color           : white;
+    font-weight     : 700;
+}
+
+.imgres {
+    height: 170px;
+    width : 100%;
+}
+
+.slick-slide {
+    width     : 370px!important;
+    box-sizing: border-box;
+}
+
+hr {
+    margin-top: 0rem;
+    border-top: 2px solid #5b2067;
+    width     : 350px;
+}
+
+.color {
+    color: #5b2067;
+}
+
+ngb-rating {
+    font-size : 25px;
+    color     : darkorange;
+    margin-top: -8px;
+}
+
+.title{
+    font-size: 14px;
+    font-weight: 500;
+}

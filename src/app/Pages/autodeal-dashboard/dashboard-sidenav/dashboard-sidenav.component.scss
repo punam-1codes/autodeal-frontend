@@ -1,0 +1,99 @@
+.sidenav {
+    margin: 0px;
+    height: 75vh;
+}
+
+.sidenav h6 {
+    padding   : 5px;
+    color     : black;
+    display   : block;
+    background: none;
+    margin    : auto;
+    cursor    : pointer;
+    outline   : none;
+}
+
+
+i {
+    margin-right: 13px;
+    font-size   : 15px;
+}
+
+.active {
+    color      : #5b2067 !important;
+    font-weight: bold;
+}
+
+@media (max-width:767px) {
+    .sidenav {
+        width           : 100%;
+        background-color: #f5c8f566;
+        margin          : 0px;
+        height          : auto;
+        padding         : 5px 0px;
+    }
+
+    .sidenav h6 {
+        padding    : 6px 5px 7px 25px;
+        display    : initial;
+        height     : 0px;
+        margin-left: 0px;
+        font-size  : 25px;
+
+        i {
+            font-size: 20px;
+        }
+    }
+
+    .mobilenone {
+        display: none;
+    }
+
+    .logout {
+        position: absolute;
+        right   : 0;
+        padding : 0px !important;
+    }
+
+    .head {
+        padding: 5px !important;
+
+        i {
+            margin       : 0 !important;
+            background   : #373438 !important;
+            padding      : 10px 12px !important;
+            border-radius: 30px !important;
+            color        : white !important;
+            font-size    : 15px !important;
+        }
+    }
+}
+
+@media (min-width:768px) {
+    .logout {
+        position      : absolute;
+        bottom        : 0;
+        padding-bottom: 30px !important;
+    }
+
+    #menu {
+        padding-left: 15px !important;
+    }
+
+    .head {
+        background   : #5b2067 !important;
+        padding      : 5px 5px 7px 15px !important;
+        margin-top   : 20px !important;
+        color        : white !important;
+        margin-right : 25px !important;
+        border-radius: 10px !important;
+
+        i {
+            color        : #5b2067 !important;
+            background   : white !important;
+            padding      : 3px 4px !important;
+            border-radius: 20px !important;
+            font-size    : 12px !important;
+        }
+    }
+}

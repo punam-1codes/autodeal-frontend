@@ -1,0 +1,42 @@
+<div class="container-fluid">
+    <h5 class="color text-center font-weight-bold">POPULAR COMPARISONS</h5>
+    <hr>
+    <div class="container mt-5">
+        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig"
+            (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)"
+            (beforeChange)="beforeChange($event)">
+            <div ngxSlickItem *ngFor="let c of car_comparison" class="slide">
+                <div class="card shadow rounded h-auto">
+                    <div class="card-body p-0">
+                        <div class="row p-1">
+                            <div class="col-6 pr-2 border_col">
+                                <img src="{{c?.img1}}" class="img-responsive imgres" alt="">
+                                <div class="comp-details">
+                                    <p>&#8377; &nbsp; {{c?.price1}}</p>
+                                    <p>{{c?.carname1}}</p>
+                                </div>
+                            </div>
+                            <div class="col-6 pl-2">
+                                <img src="{{c?.img2}}" class="img-responsive imgres" alt="">
+                                <div class="comp-details">
+                                    <p>&#8377; &nbsp; {{c?.price2}}</p>
+                                    <p>{{c?.carname2}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="position: relative;top: -100px" class="text-center">
+                            <small class="border rounded-circle px-1 bg-light">vs</small>
+                        </div>
+                        <div class="text-center">
+                            <h6 class="comp-text">{{c?.carname1}} vs {{c?.carname2}}</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </ngx-slick-carousel>
+
+        <p><small>Compare Cars</small></p>
+
+    </div>
+</div>

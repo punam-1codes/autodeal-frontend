@@ -1,0 +1,121 @@
+.btn1 {
+    background: #ff8f10;
+    font-size : 14px;
+    color     : white;
+    width     : 100%;
+}
+
+.heading{
+    color        : #5B2067;
+    display      : inline-block;
+    font-weight  : 700;
+    border-bottom: 2px solid #5B2067;
+}
+
+a{
+    color: #00589B !important;
+    font-weight: 600;
+}
+
+.coloredrow{
+    background: #dcdcdca6;
+}
+
+.color {
+    color: #5b2067;
+}
+
+hr {
+    margin-top: 0rem;
+    border-top: 2px solid #5b2067;
+    width     : 140px;
+}
+
+.service-guide{
+    .nav-tab{
+        border: 1px solid #dee2e6;
+    }
+    .first-table{
+        th{
+            color      : #5B2067;
+            font-weight: 700;
+        }
+        td{
+            color      : #707070;
+            font-weight: 500;
+        }
+    }
+    .nav{
+        box-shadow: 1px 0px 1px #b3b3b380;
+        height: 100%;
+        padding: 15px 0;
+        a{
+            color      : #707070;
+            font-weight: 700;
+        }
+        a.active{
+            color           : #fff !important;
+            border-radius   : 0;
+            background-color: #5B2067;
+        }
+    }
+    .tab-content{
+        height    : 250px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        ul{
+            padding: 15px 0;
+            li{
+                color        : #707070;
+                list-style   : none;
+                font-weight  : 500;
+                margin-bottom: 15px;
+            }
+        }
+    }
+    .tab-content::-webkit-scrollbar {
+        width: 5px;
+    }
+      
+    .tab-content::-webkit-scrollbar-track {
+        background: #fff; 
+    }
+       
+    .tab-content::-webkit-scrollbar-thumb {
+        background: #8F8F8F;
+        border-radius: 30px; 
+    }
+}
+
+.other{
+    padding: 40px 0;
+    .card{
+        margin       : 10px;
+        border       : none;
+        box-shadow   : 0px 0px 5px #95959580;
+        border-radius: 5px;
+        .card-body{
+            padding       : 0;
+            padding-bottom: 10px;
+            img{
+                height                 : 200px;
+                border-top-left-radius : 5px;
+                border-top-right-radius: 5px;
+            }
+            h6{
+                color : #474747;
+                margin: 15px 0 0 15px;
+            }
+
+            h5{
+                color : #5B2067;
+                margin: 8px 0 0px 15px;
+            }
+
+            span{
+                color : #707070;
+                margin: 0 0 0 15px;
+            }
+        }
+    }
+}

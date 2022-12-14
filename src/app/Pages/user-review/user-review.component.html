@@ -1,0 +1,135 @@
+<section class="tabs">
+    <div class="container">
+        <div class="row" *ngFor="let c of cardata">
+            <div class="col-sm-12 col-md-7 col-lg-7">
+                <div class="float-right mt-5">
+                    <img src="https://img.icons8.com/ios-glyphs/24/000000/like--v1.png" />
+                    <img src="https://img.icons8.com/material-sharp/24/000000/share.png" />
+                </div>
+                <div>
+                    <img src="{{colors}}" class="img-fluid">
+                    <img class="img-fluid imgcar"
+                        src="http://api.dealcars.in/{{c?.brand}}/{{c?.model}}/{{c?.model}} 1.jpg" alt="{{c?.model}}">
+                    <!-- <p class="mt-5">{{colors}}</p> -->
+                </div>
+                <div style="justify-content: space-evenly" class="d-flex">
+                    <a><img src="https://img.icons8.com/material-sharp/25/000000/image-gallery.png" /></a>
+                    <a><img src="https://img.icons8.com/material-outlined/25/000000/paint-palette.png" /></a>
+                    <a><img
+                            src="https://img.icons8.com/external-prettycons-lineal-prettycons/25/000000/external-youtube-multimedia-prettycons-lineal-prettycons.png" /></a>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-5 col-lg-5 mt-5">
+                <div>
+                    <h4 class="text-muted">{{c?.model}}</h4>
+                    <h5>{{c?.price_print}}*</h5>
+                    <div class="d-flex">
+                        <ngb-rating [max]="5" [(rate)]="rating" [readonly]="true">
+                        </ngb-rating>
+                        <span>
+                            13 Reviews
+                        </span>
+                    </div>
+                    <a href="#">Get on Road Price</a>
+                    <p>*Ex-showroom Price in <a href="#">New Delhi</a></p>
+                    <button type="button" style="width: auto !important;" class="btn btn1 btn-sm mt-2"
+                        (click)="AddUserReview(c)">
+                        Write your review
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<div *ngFor="let c of cardata">
+    <h5 class="color text-trans text-center font-weight-bold mt-5">{{c?.model}} USER REVIEWS</h5>
+    <hr style="width: 200px !important;">
+</div>
+<section class="user">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="card  bg-light"
+                    style="border: 0.5px solid black; margin: 15px 0px 0px 0px; border-radius: 8px;">
+                    <div class="card-body" *ngFor="let ur of userReviews" style="padding: 20px 40px 0px 40px;">
+                        <h6 style=" font-weight: 500;">{{ur?.user_title}}</h6>
+                        <div>
+                            <ngb-rating [max]="5" [(rate)]="rating" [readonly]="true"></ngb-rating>
+                        </div>
+                        <p class="text-secondary">{{ur.updatedAt | date:'dd/MM/yyyy h:mm a'}} | Autodeal</p>
+                        <p class="text-dark font-weight-normal" *ngIf="!ur.showMore">{{trimString(ur?.user_review,200)}}
+                        </p>
+                        <p class="text-dark font-weight-normal" *ngIf="ur.showMore"> {{ur?.user_review}}</p>
+                        <a (click)="ur.showMore = !ur.showMore"> <span class="Readmore"
+                                [innerHtml]="ur.showMore ? 'Read less' : 'Read More'"> </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <h5 class="color text-center font-weight-bold mt-5">USER REVIEWS ON SIMILAR CARS</h5>
+    <hr style="width: 200px !important;">
+    <div class="mt-2">
+        <swiper [config]="config">
+            <ng-template swiperSlide *ngFor="let s of SimilarReview">
+                <div class="card shadow rounded">
+                    <img src="{{s?.img}}" class="card-img-top img-responsive imgres" alt="">
+                    <div class="card-body">
+                        <h6>Maruti Suzuki Baleno</h6>
+                        <ngb-rating [max]="5" [(rate)]="rating" [readonly]="true"></ngb-rating>
+                        <span><small> 13 reviews</small></span>
+                        <h6 style="color: #5b2067;"><strong>₹ 5.85 - 8.67 LAKH*</strong></h6>
+                        <p class="m-0"><small style="padding-top: 1rem;">Onwards</small> </p>
+                    </div>
+                </div>
+            </ng-template>
+        </swiper>
+    </div>
+</div>
+
+<div class="container">
+    <app-offers></app-offers>
+</div>
+
+<section class="mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                <h5 class="color text-center font-weight-bold mt-5">GET OFFERS ON {{this.cardata.brand}} AND
+                    SIMILAR CARS</h5>
+                <hr style="width: 300px !important;">
+                <div class="container mt-5">
+                    <swiper [config]="config">
+                        <ng-template swiperSlide *ngFor="let c of car_comparison">
+                            <div class="card shadow">
+                                <div>
+                                    <img src="http://api.dealcars.in/{{c?.brand}}/{{c?.model}}/{{c?.model}} 1.jpg"
+                                        class="card-img-top img-responsive imgres" alt="{{c?.model}}">
+                                    <div class="card-body">
+                                        <h6>{{c?.model}}</h6>
+                                        <h6 class="color m-0"><strong>{{c?.price_print}}*</strong></h6>
+                                        <p class="mt-0"><small>Ex-showroom, Delhi</small> </p>
+                                        <div class="mt-3">
+                                            <button type="submit" class="btn btn-sm m-auto d-block">VIEW
+                                                OFFER</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </swiper>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container mt-5">
+    <app-newssection></app-newssection>
+</div>

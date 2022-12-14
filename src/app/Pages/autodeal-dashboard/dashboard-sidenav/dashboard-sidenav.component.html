@@ -1,0 +1,22 @@
+<div class="sidenav" style="height:400px;">
+        <div class="sidenav-demo">
+                <div id="menu">
+                        <h6 class="head"><i class="fas fa-user"></i><span class="mobilenone">Autodeal</span>
+                        </h6>
+                        <h6 routerLinkActive="active" [routerLink]="['/dashboard/myorders']"
+                                class="pt-md-4"><i class="fas fa-shopping-bag"></i><span class="mobilenone">My
+                                        Orders</span> </h6>
+                        <h6 routerLinkActive="active" [routerLink]="['/dashboard/myvehicle']"
+                                class="pt-md-3"><i class="fas fa-car-alt"></i><span class="mobilenone">My
+                                        Vehicles</span></h6>
+                        <h6 routerLinkActive="active" [routerLink]="['/dashboard/profilesettings']"
+                                class="pt-md-3">
+                                <i class="fas fa-cog"></i><span class="mobilenone">Profile Settings</span>
+                        </h6>
+
+                        <h6 class="pt-md-5 logout">
+                                <i class="fas fa-sign-out-alt"></i><span class="mobilenone"  (click)="logoutdash()">Logout</span>
+                        </h6>
+                </div>
+        </div>
+</div>

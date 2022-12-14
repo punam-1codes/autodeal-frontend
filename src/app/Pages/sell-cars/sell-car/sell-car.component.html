@@ -1,0 +1,610 @@
+<div class="container">
+    <div class="sc-heading">
+        <h2><b>SELL YOUR CAR</b></h2>
+    </div>
+    <hr>
+    <div class="sc-cd">
+        <h6>Please fill the deatils in the below form to send your request</h6>
+        <h4 class="sc-cd-title"><b>CAR DETAILS</b></h4>
+        <form  [formGroup]="sellcarform" (ngSubmit)="sellCarSubmit()">
+
+        <div class="car-bmv" id="tbspace">
+            <div class="car-bmv-title">
+                <h6>Your Car*</h6>
+            </div>
+            <div>
+                <select class="form-control" [(ngModel)]="selectedBrandNG" (change)="getAllModelsSC()" formControlName="brandSC"  required="" >
+                    <option disabled selected value="undefined">{{selectBrand}}</option>
+                    <option  *ngFor="let brandSC of allBrands" [value]="brandSC._id">{{brandSC._id}}</option>
+                </select>
+            </div>
+            <div class="car-bmv-model">
+                <select class="form-control" [(ngModel)]="selectedModelNG" (change)="getAllVarientSC()" formControlName="modelSC"  required="" >
+                    <option disabled selected value="undefined">{{selectModel}}</option>
+                    <option  *ngFor="let modelSC of allModels" [value]="modelSC.model">{{modelSC.model}}</option>
+                </select>
+            </div>
+            <div>
+                <select class="form-control" [(ngModel)]="selectedVarientNG" (change)="getSellCar()" formControlName="varientSC"  required="" >
+                    <option disabled selected value="undefined">{{selectVarient}}</option>
+                    <option  *ngFor="let varientSC of allVarient" [value]="varientSC.varient">{{varientSC.varient}}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="car-my" id="tbspace">
+            <div class="car-bmv-title">
+                <h6>Make Year*</h6>
+            </div>
+            <div class="car-my-month">
+                <select class="form-control" [(ngModel)]="selectedMonthNG" (change)="getMonthSC()" formControlName="monthSC"  required="" >
+                    <option disabled selected value="undefined">{{selectMonth}}</option>
+                    <option  *ngFor="let monthsSC of allMonth" [value]="monthsSC._id">{{monthsSC._id}}</option>
+                </select>
+            </div>
+            <div>
+                <select class="form-control" [(ngModel)]="selectedYearNG" (change)="getYearSC()" formControlName="yearSC"  required="" >
+                    <option disabled selected value="undefined">{{selectYear}}</option>
+                    <option  *ngFor="let yearSC of allYear" [value]="yearSC._id">{{yearSC._id}}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="car-owner" id="tbspace">
+            <div class="car-bmv-title">
+                <h6>Owner*</h6>
+            </div>
+            <div class="car-my-month">
+                <select class="form-control" [(ngModel)]="selectedOwnerNG" (change)="getOwnerSC()" formControlName="ownerSC"  required="">
+                    <option disabled selected value="undefined">{{selectOwner}}</option>
+                    <option  *ngFor="let ownerSC of allOwner" [value]="ownerSC._id">{{ownerSC._id}}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="car-color" id="tbspace">
+            <div class="car-bmv-title">
+                <h6>Colour</h6>
+            </div>
+            <input type="text" formControlName="colorSC">
+        </div>
+
+
+        <div class="car-km" id="tbspace">
+            <div class="car-bmv-title">
+                <h6>KM Done</h6>
+            </div>
+            <input type="number" formControlName="kdDoneSC">
+        </div>
+
+        <div class="car-city" id="tbspace">
+            <div class="car-bmv-title">
+                <h6>City*</h6>
+            </div>
+            <div class="car-city-name">
+                <select class="form-control" [(ngModel)]="selectedCityNG" (change)="getCitySC()" formControlName="citySC"  required="" >
+                    <option disabled selected value="undefined">{{selectCity}}</option>
+                    <option  *ngFor="let citySC of allCity" [value]="citySC._id">{{citySC._id}}</option>
+                </select>
+            </div>
+        </div>
+
+
+        <div class="car-rno" id="tbspace">
+            <div class="car-bmv-title">
+                <h6>Registration No.</h6>
+            </div>
+            <input type="text" formControlName="registrationNoSC">
+        </div>
+
+        <div class="car-rat" id="tbspace">
+            <div class="car-bmv-title">
+                <h6>Registration At</h6>
+            </div>
+            <input type="text" formControlName="registrationAtSC">
+        </div>
+
+        <div class="car-tax" id="tbspace">
+            <div class="car-bmv-title">
+                <h6>Life Time Tax</h6>
+            </div>
+            <div class="lttinputlabels">
+
+                  <input type="radio"  value="Individual" name="lifeTimeTaxSC" formControlName="lifeTimeTaxSC"  class="radioinputs" >
+                  <label for="Individual" class="radiolabel">Individual</label>
+
+                  <input type="radio" value="Corporate" name="lifeTimeTaxSC" formControlName="lifeTimeTaxSC"  class="radioinputs">
+                  <label for="Corporate" class="radiolabel">Corporate</label>
+
+            </div>
+        </div>
+
+        <div class="car-insurance" id="tbspace">
+            <div class="car-bmv-title">
+                <h6>Car Insurance</h6>
+            </div>
+            <div  class="ciinputlabels">                  
+                  <input type="radio" value="Comprehensive" name="carInsuranceSC" formControlName="carInsuranceSC"  class="radioinputs">
+                  <label for="Comprehensive" class="radiolabel">Comprehensive</label>
+
+                  <input type="radio" value="Third Party" name="carInsuranceSC"  formControlName="carInsuranceSC"  class="radioinputs">
+                  <label for="Third Party" class="radiolabel">Third Party</label>
+
+                  <input type="radio" value="No Insurance" name="carInsuranceSC"  formControlName="carInsuranceSC"  class="radioinputs">
+                  <label for="No Insurance" class="radiolabel">No Insurance</label>
+            </div>
+        </div>
+
+        <div class="car-ivt" id="tbspace">
+            <div class="car-bmv-title">
+                <h6>Insurance Valid Till*</h6>
+            </div>
+            <div>
+                <input placeholder="DD\MM\YYYY" class="text-center inputdate" type="text"
+                        onfocus="(this.type='date')" id="dateown" [(ngModel)]="insuranceValidDate" (click)="getIVD()"  formControlName="insuranceValidTillSC" required="">
+            </div>
+        </div>
+
+        <div class="car-ep" id="tbspace">
+            <div class="car-bmv-title">
+                <h6>Estimated Price(₹)</h6>
+            </div>
+            <div>
+                <input type="number" formControlName="estimatedPriceSC">
+            </div>
+        </div>
+
+        <div class="car-accidentail" id="tbspace">
+            <div class="car-bmv-title">
+                <h6>Is car accidental?</h6>
+            </div>
+            <div>
+                  <input type="radio" value="Yes" name="isCarAccidentalSC" formControlName="isCarAccidentalSC"   class="radioinputs">
+                  <label for="Yes" class="radiolabel" id="car-accidentail-id">Yes</label>
+
+                  <input type="radio" value="No" name="isCarAccidentalSC" formControlName="isCarAccidentalSC"  class="radioinputs">
+                  <label for="No" class="radiolabel" id="car-accidentail-id">No</label>
+
+
+            </div>
+        </div>
+
+        <div class="car-fc" id="tbspace">
+            <div class="car-bmv-title">
+                <h6>Is car flood-affected?</h6>
+            </div>
+            <div>
+
+                  <input type="radio" value="Yes" name="isCarFloodAffectedSC" formControlName="isCarFloodAffectedSC"   class="radioinputs">
+                  <label for="Yes" class="radiolabel" id="flood-affected-id">Yes</label>
+
+                  <input type="radio" value="No" name="isCarFloodAffectedSC" formControlName="isCarFloodAffectedSC"  class="radioinputs">
+                  <label for="No" class="radiolabel" id="flood-affected-id">No</label>
+
+            </div>
+        </div>
+
+        <hr>
+
+        <!--Installed Features-->
+        <h4 class="if-title"><b>INSTALLED FEATURES</b></h4>
+        <div class="ifcontainer">
+            <div class="ifcontainer-sub">
+                <div>
+                    <div class="iftext"><h5>Safety & Security</h5></div>
+                    <div *ngFor="let data of ssArray; let i=index" class="ifcheckbox">
+                        <label>
+                          <input type="checkbox" [value]="data.value" (change)="onCheckboxChange($event)" class="checkboxinputs" />
+                          {{data.name}}
+                        </label>
+                      </div>
+                </div>
+
+                <div class="cc-checkbox">
+                    <div class="iftext"><h5>Comfort & Convenience</h5></div>
+                    <div *ngFor="let data2 of ccArray; let i=index" class="ifcheckbox">
+                        <input type="checkbox" [value]="data2.value" (change)="onCheckboxChangeCC($event)" class="checkboxinputs" />
+                          {{data2.name}}
+                    </div>
+                </div>
+
+                <div>
+                    <div class="iftext"><h5>Other features</h5></div>
+                    <div *ngFor="let dataof of ofArray; let i=index" class="ifcheckbox">
+                        <input type="checkbox" [value]="dataof.value" (change)="onCheckboxChangeOF($event)" class="checkboxinputs" />
+                          {{dataof.name}}
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <hr>
+
+        <h4 class="car-condition-top-title"><b>CAR CONDITION</b></h4>
+        <div class="car-condition">
+            <div>
+                <div class="car-condition-heading">
+                    <div class="sstext"><h5 class="car-condition-title">Safety & Security</h5></div>
+                    <div class="ssradiobtn"><h5 class="car-condition-title">Excellent</h5></div>
+                    <div class="ssradiobtn"><h5 class="car-condition-title">Good</h5></div>
+                    <div class="ssradiobtn"><h5 class="car-condition-title">Fair</h5></div>
+                    <div class="ssradiobtn"><h5 class="car-condition-title">Poor</h5></div>
+                </div>
+
+                <div class="ac-div" >
+                    <h6 class="cctitles">Air Conditioning</h6>
+
+                    <input type="radio" value="Excellent" name="airConditioningSC" formControlName="airConditioningSC"  class="ccinputs">
+                    
+  
+                    <input type="radio" value="Good" name="airConditioningSC" formControlName="airConditioningSC"  class="ccinputs">
+                    
+
+                    <input type="radio" value="Fair" name="airConditioningSC" formControlName="airConditioningSC"  class="ccinputs">
+                    
+  
+                    <input type="radio" value="Poor" name="airConditioningSC" formControlName="airConditioningSC"  class="ccinputs">
+                </div>
+
+                <div class="bc-div">
+                    <h6 class="cctitles">Battery Condition</h6>
+
+                    <input type="radio" value="Excellent" name="batteryConditioningSC" formControlName="batteryConditioningSC"  class="ccinputs">
+                    
+  
+                    <input type="radio" value="Good" name="batteryConditioningSC" formControlName="batteryConditioningSC"  class="ccinputs">
+                    
+
+                    <input type="radio" value="Fair" name="batteryConditioningSC" formControlName="batteryConditioningSC"  class="ccinputs">
+                    
+  
+                    <input type="radio" value="Poor" name="batteryConditioningSC" formControlName="batteryConditioningSC"  class="ccinputs">
+                </div>
+
+                <div class="brakesc-div">
+                    <h6 class="cctitles">Brakes Condition</h6>
+                    <input type="radio" value="Excellent" name="brakesConditioningSC" formControlName="brakesConditioningSC"  class="ccinputs">
+                    
+  
+                    <input type="radio" value="Good" name="brakesConditioningSC" formControlName="brakesConditioningSC"  class="ccinputs">
+                    
+
+                    <input type="radio" value="Fair" name="brakesConditioningSC" formControlName="brakesConditioningSC"  class="ccinputs">
+                    
+  
+                    <input type="radio" value="Poor" name="brakesConditioningSC" formControlName="brakesConditioningSC"  class="ccinputs">
+                </div>
+
+                <div class="care-div">
+                    <h6 class="cctitles">Car Electricals</h6>
+                    <input type="radio" value="Excellent" name="carElectricalsSC" formControlName="carElectricalsSC"  class="ccinputs">
+                    
+  
+                    <input type="radio" value="Good" name="carElectricalsSC" formControlName="carElectricalsSC"  class="ccinputs">
+                    
+
+                    <input type="radio" value="Fair" name="carElectricalsSC" formControlName="carElectricalsSC"  class="ccinputs">
+                    
+  
+                    <input type="radio" value="Poor" name="carElectricalsSC" formControlName="carElectricalsSC"  class="ccinputs">
+                </div>
+
+                <div class="carengine-div">
+                    <h6 class="cctitles">Car Engine</h6>
+                    <input type="radio" value="Excellent" name="carEnginesSC" formControlName="carEnginesSC"  class="ccinputs">
+                    
+  
+                    <input type="radio" value="Good" name="carEnginesSC" formControlName="carEnginesSC"  class="ccinputs">
+                    
+
+                    <input type="radio" value="Fair" name="carEnginesSC" formControlName="carEnginesSC"  class="ccinputs">
+                    
+  
+                    <input type="radio" value="Poor" name="carEnginesSC" formControlName="carEnginesSC"  class="ccinputs">
+                </div>
+
+                <div class="seatc-div">
+                    <h6 class="cctitles">Seat Condition</h6>
+                    <input type="radio" value="Excellent" name="seatConditionSC" formControlName="seatConditionSC"  class="ccinputs">
+                    
+  
+                    <input type="radio" value="Good" name="seatConditionSC" formControlName="seatConditionSC"  class="ccinputs">
+                    
+
+                    <input type="radio" value="Fair" name="seatConditionSC" formControlName="seatConditionSC"  class="ccinputs">
+                    
+  
+                    <input type="radio" value="Poor" name="seatConditionSC" formControlName="seatConditionSC"  class="ccinputs">
+                </div>
+
+                <div class="sun-div">
+                    <h6 class="cctitles">Sunspensions</h6>
+                    <input type="radio" value="Excellent" name="sunspensionsSC" formControlName="sunspensionsSC"  class="ccinputs">
+                    
+  
+                    <input type="radio" value="Good" name="sunspensionsSC" formControlName="sunspensionsSC"  class="ccinputs">
+                    
+
+                    <input type="radio" value="Fair" name="sunspensionsSC" formControlName="sunspensionsSC"  class="ccinputs">
+                    
+  
+                    <input type="radio" value="Poor" name="sunspensionsSC" formControlName="sunspensionsSC"  class="ccinputs">
+                </div>
+
+                <div class="tyresc-div">
+                    <h6 class="cctitles">Tyres Conamon</h6>
+                    <input type="radio" value="Excellent" name="tyresConamonSC" formControlName="tyresConamonSC"  class="ccinputs">
+                    
+  
+                    <input type="radio" value="Good" name="tyresConamonSC" formControlName="tyresConamonSC"  class="ccinputs">
+                    
+
+                    <input type="radio" value="Fair" name="tyresConamonSC" formControlName="tyresConamonSC"  class="ccinputs">
+                    
+  
+                    <input type="radio" value="Poor" name="tyresConamonSC" formControlName="tyresConamonSC"  class="ccinputs">
+                </div>
+
+                <div class="interc-div">
+                    <h6 class="cctitles">Intenor Condition</h6>
+                    <input type="radio" value="Excellent" name="intenorConditionSC" formControlName="intenorConditionSC"  class="ccinputs">
+                    
+  
+                    <input type="radio" value="Good" name="intenorConditionSC" formControlName="intenorConditionSC"  class="ccinputs">
+                    
+
+                    <input type="radio" value="Fair" name="intenorConditionSC" formControlName="intenorConditionSC"  class="ccinputs">
+                    
+  
+                    <input type="radio" value="Poor" name="intenorConditionSC" formControlName="intenorConditionSC"  class="ccinputs">
+                </div>
+
+                <div class="extc-div">
+                    <h6 class="cctitles">Exterior Condition</h6>
+                    <input type="radio" value="Excellent" name="exteriorConditionSC" formControlName="exteriorConditionSC"  class="ccinputs">
+                    
+  
+                    <input type="radio" value="Good" name="exteriorConditionSC" formControlName="exteriorConditionSC"  class="ccinputs">
+                    
+
+                    <input type="radio" value="Fair" name="exteriorConditionSC" formControlName="exteriorConditionSC"  class="ccinputs">
+                    
+  
+                    <input type="radio" value="Poor" name="exteriorConditionSC" formControlName="exteriorConditionSC"  class="ccinputs">
+                </div>
+
+
+                <div class="oacc-div">
+                    <h6 class="cctitles">Over All Car Condition</h6>
+                    <input type="radio" value="Excellent" name="overAllCarConditionSC" formControlName="overAllCarConditionSC"  class="ccinputs">
+                    
+  
+                    <input type="radio" value="Good" name="overAllCarConditionSC" formControlName="overAllCarConditionSC"  class="ccinputs">
+                    
+
+                    <input type="radio" value="Fair" name="overAllCarConditionSC" formControlName="overAllCarConditionSC"  class="ccinputs">
+                    
+  
+                    <input type="radio" value="Poor" name="overAllCarConditionSC" formControlName="overAllCarConditionSC"  class="ccinputs">
+                </div>
+
+
+                <div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+
+        <h4 class="ai-div-title"><b>ADDITIONAL INFORMATION</b></h4>
+        <div>
+            <div class="ai-div">
+                <div class="ai-div-sub">
+                    <h6>
+                        <b>Available Warranties (If Any)</b>
+                        (e.g. Life warranty on wheels two free services remaining etc.)
+                    </h6>
+                </div>
+                <textarea rows = "5" cols = "60"  placeholder="Write..." name="availableWarrantiesSC" formControlName="availableWarrantiesSC" class="additionalinfotextbox"></textarea>
+            </div>
+
+            <div class="ai-div">
+                <div class="ai-div-sub">
+                    <h6>
+                        <b>Major Modifications (If Any)</b>
+                        (e.g. Upgraded Wheels, High performance filters etc)
+                    </h6>
+                </div>
+                <textarea rows = "5" cols = "60"  placeholder="Write..." name="majorModificationsSC" formControlName="majorModificationsSC" class="additionalinfotextbox"></textarea>
+            </div>
+
+            <div class="ai-div">
+                <div class="ai-div-sub">
+                    <h6>
+                        <b>Special Note (If Any)</b>
+                        (Adding a special note helps generate trust and create authenticity about the car, among customers.)
+                    </h6>
+                </div>
+                <textarea rows = "5" cols = "60"  placeholder="Write..." name="specialNoteSC" formControlName="specialNoteSC" class="additionalinfotextbox"></textarea>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <h4 class="ci-div-title"><b>CONTACT INFORMATION</b></h4>
+        <div>
+            <div class="ci-div">
+                <div class="ci-div-sub">
+                    <h5>Name*</h5>
+                </div>
+                <input type="text"  name="nameSC" formControlName="nameSC" required="">
+            </div>
+
+            <div class="ci-div">
+                <div class="ci-div-sub">
+                    <h5>Mobile*</h5>
+                    <span>(10 digits number)</span>
+                </div>
+                <input  type="tel" maxlength="10" pattern="^\d{10}$" name="mobileSC" formControlName="mobileSC" required="" class="mobileno">
+            </div>
+
+            <div class="ci-div">
+                <div class="ci-div-sub">
+                    <h5>Email*</h5>
+                </div>
+                <input type="email"  name="emailSC" formControlName="emailSC" required="">
+            </div>
+        </div>
+
+        <!-----SUBMIT BUTTON -->
+        <div class="subbtn-div">
+            <button type="submit"  [disabled]="sellcarform.invalid" class="submitBtn"   data-toggle="modal" data-target="#thankyou"   data-dismiss="modal" data-backdrop="static">Submit</button>
+        </div>
+
+       </form>
+    </div>
+
+    <hr>
+
+    <!--Latest Review-->
+    <div class="lr-container">
+        <div class="lr-title">
+            <h4><b>LATEST REVIEWS</b></h4>
+            <hr class="lr-hr-line">
+        </div>
+        
+        <div class="lr-card-div">
+            <swiper [config]="config">
+                <ng-template swiperSlide *ngFor="let  c of carReviews">
+                    <div class="card  h-auto" style="border-radius: 10px;">
+                        <div class="card-body p-1" style="height: 28rem; margin: 0rem 0.8rem; ">
+                            <div class="lr-model">
+                                <h5>{{c?.cr_car_model}}</h5>
+                            </div>
+                            <div class="lr-rating">
+                                <ngb-rating [max]="5" [(rate)]="c.cr_star" [readonly]="true"></ngb-rating>
+                            </div>
+                            <div class="lr-static-text">
+                                <h5><b>Live free live young</b></h5>
+                            </div>
+                            <div class="lr-description-main">
+                                <div class="lr-description">
+                                    <h6><b>{{trimString(c?.cr_description,150)}}</b></h6>
+                                </div>
+                                <p class="lr-readmore"><small><b>Read More</b></small></p>
+                            </div>
+                            
+                            <hr >
+                            <div>
+                                <h6><b>By {{c?.cr_customer_name}}</b></h6>
+                                <p>On: {{c?.createdAt}} | views 162</p>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </swiper>
+        </div>
+    </div>
+
+
+    <!--social card-->
+    <div class="socialcard-container">
+        <div class="socialcards">
+            <img src="../../../../assets/social-card/earth.PNG" class="socialcards-img">
+            <div class="socialcards-texts">
+                <h6><b>INDIA'S #1</b></h6>
+                <p>Largest Auto Porta</p>
+            </div>
+        </div>
+        
+        <div class="socialcards">
+            <img src="../../../../assets/social-card/cars.PNG" class="socialcards-img">
+            <div class="socialcards-texts">
+                <h6><b>INDIA'S #1</b></h6>
+                <p>Largest Auto Porta</p>
+            </div>
+        </div>
+
+        <div class="socialcards">
+            <img src="../../../../assets/social-card/tag.PNG" class="socialcards-img">
+            <div class="socialcards-texts">
+                <h6><b>INDIA'S #1</b></h6>
+                <p>Largest Auto Porta</p>
+            </div>
+        </div>
+
+        <div class="socialcards">
+            <img src="../../../../assets/social-card/split-car.PNG" class="socialcards-img">
+            <div class="socialcards-texts">
+                <h6><b>INDIA'S #1</b></h6>
+                <p>Largest Auto Porta</p>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+
+
+<div>
+
+<div class="modal fade" id="thankyou" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content"  style="background-color: white; height: 100%; padding: 2rem 4rem;">
+          <div class="closebtn">
+            <button type="button" class="closecrossbtn" data-dismiss="modal" aria-label="Close" (click)="crossBtnOtp()">
+                <span class="fas fa-times"></span>
+            </button>
+          </div>
+          <div>
+            <div class="username">
+                <h2 class="usernametext"><b>THANKS YOU, {{sellcarusername}}!</b></h2>
+                <p class="usernamesubtext">A car consultant would get in touch with you shortly with assistance on your sell</p>
+            </div>
+
+            <div class="usercarimg">
+                <img src="http://api.dealcars.in/{{sellcarbrand}}/{{sellcarmodel}}/{{sellcarmodel}} 1.jpg" class="carimg" alt="{{sellcarmodel}}">
+            </div>
+
+            <div class="userthanksmsg">
+                <h4 class="thanksmsg"><b>THANK'S FOR REGISTRATION!</b></h4>
+                <hr class="thanksmsgline">
+            </div>
+
+            <div class="cardetails">
+                <h4 class="cardetailstitle"><b>{{sellcarmodel}}</b></h4>
+                <p class="cardetailssubtitle">Estimated Price  {{sellcarestimatedprice}}, Make Year  {{sellcarmakeyear}}, KM Done  {{sellcarkmdone}}</p>
+            </div>
+
+            <div class="cardservice">
+                <h4 class="cardservicetitle"><b>OTHER SERVICES</b></h4>
+                <div class="cardserviceimgs">
+                    <img _ngcontent-npl-c27="" src="../../../assets/banner.png" alt="banner" class="img-fluid"
+                    style="margin:1rem 0rem;">
+            
+                    <img _ngcontent-npl-c27="" src="../../../assets/banner.png" alt="banner" class="img-fluid"
+                    style="margin:1rem 0rem;">
+                </div>
+            </div>
+
+            <!-- <div class="backtohomebtn">
+                <button (click)="backToHome()" class="bthbtn">BACK TO HOME</button>
+            </div> -->
+          </div>
+        </div>
+
+       
+
+    </div>
+</div>
+
+
+</div>

@@ -1,0 +1,534 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="#">Home</a>
+                    </li>
+
+                    <li>
+                        <i class="fas fa-chevron-right"></i>
+                    </li>
+
+                    <li class="breadcrumb-item" aria-current="page">
+                        <a href="#">Brand</a>
+                    </li>
+
+                    <li>
+                        <i class="fas fa-chevron-right"></i>
+                    </li>
+
+                    <li class="breadcrumb-item active" aria-current="page">{{brand_name}}</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<section class="brand-details">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="heading">All {{brand_name}} cars in india
+                            <select class="form-control" name="brandname" id="brandnameid" [(ngModel)]="selectedLevel"
+                                (change)="getcarbybrands()" style="width: 15% !important;">
+                                <option class="dropdown-item" disabled selected value="undefined">Change Brand</option>
+                                <option value="Hyundai">Hyundai</option>
+                                <option value="Datsun">Datsun</option>
+                                <option value="Rolls Royce">Rolls Royce</option>
+                                <option value="Lamborghini">Lamborghini</option>
+                                <option value="Porsche">Porsche</option>
+                                <option value="Nissan">Nissan</option>
+                                <option value="MercedesBenz">MercedesBenz</option>
+                                <option value="Mahindra">Mahindra</option>
+                                <option value="Audi">Audi</option>
+                                <option value="Kia">Kia</option>
+                                <option value="Skoda">Skoda</option>
+                                <option value="Volkswagen">Volkswagen</option>
+                                <option value="Ferrari">Ferrari</option>
+                                <option value="Maserati">Maserati</option>
+                                <option value="Bentley">Bentley</option>
+                                <option value="Aston Martin">Aston Martin</option>
+                                <option value="Isuzu">Isuzu</option>
+                                <option value="Volvo">Volvo</option>
+                                <option value="Honda">Honda</option>
+                                <option value="Maruti">Maruti</option>
+                                <option value="Tata">Tata</option>
+                                <option value="Ford">Ford</option>
+                                <option value="Renault">Renault</option>
+                                <option value="BMW">BMW</option>
+                                <option value="MG">MG</option>
+                                <option value="Jeep">Jeep</option>
+                                <option value="Jaguar">Jaguar</option>
+                                <option value="MINI">MINI</option>
+                                <option value="Lexus">Lexus</option>
+                            </select>
+                        </h5>
+                        <p class="para">Hyundai car price starts at Rs. 4.76 Lakh for Santro and goes upto Rs. 27.47
+                            Lakh for Tucson. In total Hyundai sells 13 new cars models powered by Petrol Engines, Diesel
+                            Engines, CNG Engines and Electric Engines along with automatic transmission options, Hyundai
+                            Creta is among the popular SUV cars in india, Hyundai i20 is among the top Hatchback cars in
+                            india and Hyundai Verna is among the top Sedan cars in india auto market. Apart from this
+                            Hyundai is planning to launch 3 Upcoming acrs in india which includes Nexo, Palisade and
+                            Sonata. Select a Hyundai car to know the latest price, offers at dealer showroom in your
+                            city, specifications, pictures, mileage, user reviews form car owners and unbiased reviews
+                            by our auto experts </p>
+
+                        <h5 class="heading">{{brand_name}} Cars Price (OCtober 2022) in India </h5>
+                       <div class="table-body">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <!--<th *ngFor="let c of car_brand">{{c?.brand}} Car Model</th>-->
+                                    <th>{{brand_name}} Car Model</th>
+                                    <th>Ex-showroom Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let c of car_brand">
+                                    <td>{{c?.model}}</td>
+                                    <td>{{c?.price_print}}*</td>
+                                </tr>
+                                <!-- <tr>
+                                    <td>Hyundai i20</td>
+                                    <td>Rs. 23.79 - 23.97 Lakh</td>
+                                </tr>
+                                <tr>
+                                    <td>Hyundai Venue</td>
+                                    <td>Rs. 22.69 - 27.47 Lakh</td>
+                                </tr>
+                                <tr>
+                                    <td>Hyundai Verna</td>
+                                    <td>Rs. 23.79 - 23.97 Lakh</td>
+                                </tr>
+                                <tr>
+                                    <td>Hyundai Elantra</td>
+                                    <td>Rs. 17.86 - 21.13 Lakh</td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                       </div>
+
+                        <h5 class="heading">About {{brand_name}}</h5>
+                        <p>Hyundai is one of Korea's top carmakers and is the second largest in india. It is also the
+                            largest exporter of cars from the country, exporting to around 88 countries across Africa,
+                            Middle East, Latin America, Australia and Asia Pacific. It currently has 493 dealer and more
+                            than 1,309 service points across India. In recent times, Hyundai has had a strong run in the
+                            compact SUV segment with the Venue and Creta SUVs. It also has had plenty of new cars in the
+                            form of the Elantra facelift, Aura compact sedan as well as the Grand i10 Nios
+                            hatchback.2020 has started off with more unveils like the next-gen Creta and the Tucson
+                            facelift at Auto Expo 2020. Even more models are in the pipeline in the form of the Verna
+                            facelift and the next-gen i20 that will debut at 2020 Geneva Motor Show. </p>
+
+                    </div>
+                    <div class="card-footer text-center">
+                        <a>Read less <i class="fas fa-chevron-down"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-12 col-lg-12 mt-4 ">
+                <div class="car-models">
+                    <h5>{{brand_name}} CAR MODELS 2022</h5>
+                </div>
+
+                <div class="row hyundai-car-details" style="box-shadow: 0px 2px 10px rgb(0 0 0 / 10%);"
+                    *ngFor="let cl of carslist | slice:1 | paginate: { itemsPerPage: 10, currentPage: p }">
+                    <div class="col-sm-12 col-md-8 col-lg-8 car-details">
+                        <div class="row" style="    margin: 1rem 0rem;">
+                            <div class="col-sm-12 col-md-5 col-lg-5 ">
+                                <!-- <img src="../../../assets/santro.jpg" class="img-fluid"> -->
+                                <img class="img-fluid"
+                                    src="http://api.dealcars.in/{{cl?.brand}}/{{cl?.model}}/{{cl?.model}} 1.jpg"
+                                    alt="{{cl?.model}}">
+                            </div>
+
+                            <div class="col-sm-12 col-md-7 col-lg-7 ">
+                                <h5>{{cl?.varient}}</h5>
+                                <h6><small>{{cl?.model}}</small></h6>
+                                <!-- <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star grey"></i> -->
+                                <div *ngFor="let star of starArray" style="font-size: larger;">
+                                    <ngb-rating [max]="5" [(rate)]="star.startvalue" [readonly]="true" style="color: #fd8e00;"></ngb-rating>
+                                    <span><small>500 User Reviews</small></span>
+                                </div>
+                                <!-- <span>500 User Reviews</span> -->
+                                <h5 class="price">{{cl?.price_print}}</h5>
+                                <p style="font-weight: initial;">Avg. Ex-Showroom Price</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-lg-4 text-center check-road-price" style="margin: 50px 0rem;">
+                        <p style="font-size: larger;font-weight: 300;">{{cl?.factors_body_type}} | {{cl?.fuel_type}} | {{cl?.transmission}}</p>
+                        <button class="btn btn-check" (click)="ViewcardetailsBD(cl)">Check on road price</button>
+                    </div>
+                </div>
+                <pagination-controls (pageChange)="p = $event" class="float-right" style="margin: 30px 0rem;"></pagination-controls>
+
+                <!-- <div class="row hyundai-car-details">
+                    <div class="col-sm-12 col-md-8 col-lg-8 car-details">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-5 col-lg-5">
+                                <img src="../../../assets/nios.jpg" class="img-fluid">
+                            </div>
+
+                            <div class="col-sm-12 col-md-7 col-lg-7 ">
+                                <h5>Hyundai Santro</h5>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star grey"></i>
+                                <span>500 User Reviews</span>
+                                <h5 class="price">₹ 4.77 - 6.45 Lakh</h5>
+                                <p>Avg. Ex-Showroom Price</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-lg-4 text-center check-road-price">
+                        <p>Hatchback | Petrol,CNG | Manual, AMT</p>
+                        <button class="btn btn-check">Check on road price</button>
+                    </div>
+                </div>
+
+                <div class="row hyundai-car-details">
+                    <div class="col-sm-12 col-md-8 col-lg-8 car-details">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-5 col-lg-5">
+                                <img src="../../../assets/santro.jpg" class="img-fluid">
+                            </div>
+
+                            <div class="col-sm-12 col-md-7 col-lg-7 ">
+                                <h5>Hyundai Santro</h5>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star grey"></i>
+                                <span>500 User Reviews</span>
+                                <h5 class="price">₹ 4.77 - 6.45 Lakh</h5>
+                                <p>Avg. Ex-Showroom Price</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-lg-4 text-center check-road-price">
+                        <p>Hatchback | Petrol,CNG | Manual, AMT</p>
+                        <button class="btn btn-check">Check on road price</button>
+                    </div>
+                </div>
+
+                <div class="row hyundai-car-details">
+                    <div class="col-sm-12 col-md-8 col-lg-8 car-details">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-5 col-lg-5">
+                                <img src="../../../assets/nios.jpg" class="img-fluid">
+                            </div>
+
+                            <div class="col-sm-12 col-md-7 col-lg-7 ">
+                                <h5>Hyundai Santro</h5>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star grey"></i>
+                                <span>500 User Reviews</span>
+                                <h5 class="price">₹ 4.77 - 6.45 Lakh</h5>
+                                <p>Avg. Ex-Showroom Price</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-lg-4 text-center check-road-price">
+                        <p>Hatchback | Petrol,CNG | Manual, AMT</p>
+                        <button class="btn btn-check">Check on road price</button>
+                    </div>
+                </div>
+
+                <div class="row hyundai-car-details">
+                    <div class="col-sm-12 col-md-8 col-lg-8 car-details">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-5 col-lg-5">
+                                <img src="../../../assets/santro.jpg" class="img-fluid">
+                            </div>
+
+                            <div class="col-sm-12 col-md-7 col-lg-7 ">
+                                <h5>Hyundai Santro</h5>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star grey"></i>
+                                <span>500 User Reviews</span>
+                                <h5 class="price">₹ 4.77 - 6.45 Lakh</h5>
+                                <p>Avg. Ex-Showroom Price</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-lg-4 text-center check-road-price">
+                        <p>Hatchback | Petrol,CNG | Manual, AMT</p>
+                        <button class="btn btn-check">Check on road price</button>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="comparision">
+    <!-- <app-car-comparison></app-car-comparison> -->
+
+
+    <div class="container-fluid" style="margin-bottom: 1rem;">
+        <h6 class="color text-center font-weight-bold" style="text-transform: uppercase; font-size: larger;">
+            {{brand_name}} CARS COMPARISONS</h6>
+        <hr class="compare-hr">
+        <div class="container mt-5" style="margin-top: 1.5rem !important;">
+            <swiper [config]="config">
+                <ng-template swiperSlide *ngFor="let cr of carslist ; let i=index">
+                    <div class="card shadow rounded h-auto">
+                        <div class="card-body p-0">
+                            <div class="row p-1">
+                                <div class="col-6 pr-2 border_col">
+                                    <img class="img-responsive imgres"
+                                        src="http://api.dealcars.in/{{cr?.brand}}/{{cr?.model}}/{{cr?.model}} 1.jpg"
+                                        alt="{{cr?.model}}" style="height: 94px;">
+                                    <div class="comp-details">
+                                        <p>&#8377; &nbsp; {{cr?.price}} Lakh</p>
+                                        <p style="font-size: 65%"><strong>{{trimString(cr?.model,20) }}</strong></p>
+                                        <p style="font-weight: lighter;">Onwords</p>
+                                    </div>
+                                </div>
+                                <!-- <img src="{{c?.img2}}" class="img-responsive imgres" alt=""> -->
+                                <div class="col-6 pl-2">
+
+                                    <img class="img-responsive imgres"
+                                        src="http://api.dealcars.in/{{store_compareData[i]?.brand}}/{{store_compareData[i]?.model}}/{{store_compareData[i]?.model}} 1.jpg"
+                                        alt="{{store_compareData[i]?.model}}" style="height: 94px;">
+                                    <div class="comp-details">
+                                        <p>&#8377; &nbsp; {{store_compareData[i]?.price}} Lakh</p>
+                                        <p style="font-size: 65%">
+                                            <strong>{{trimString(store_compareData[i]?.model,20)}}</strong></p>
+                                        <p style="font-weight: lighter;">Onwords</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="position: relative;top: -100px" class="text-center">
+                                <small class="border rounded-circle px-1 bg-light">vs</small>
+                            </div>
+                            <div class="text-center">
+                                <h6 class="comp-text" (click)="comparebothcarsBD(cr,store_compareData[i])">Compare
+                                    {{cr?.model}} vs {{store_compareData[i]?.model}}</h6>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </swiper>
+        </div>
+    </div>
+</section>
+
+<section class="brands">
+    <div class="container">
+        <div class="row brand-card">
+            <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                <h5 class="heading">Search cars by top brands</h5>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12 " >
+                <!-- <owl-carousel-o [options]="customOptions">
+                    <ng-template carouselSlide *ngFor="let bi of allBrandPictures" >
+                        <div class="ourGroupItem ">
+                            <div class="card">
+                                <div class="card-body">
+                                    <img src="{{bi?.path}}" alt="" class="img-fluid" style="height: 100px; width:100px" (click)="onBrandClick(bi)">
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="ourGroupItem">
+                            <div class="card">
+                                <div class="card-body">
+                                    <img src="../../../assets/logo/audi.png" alt="img 1" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="ourGroupItem">
+                            <div class="card">
+                                <div class="card-body">
+                                    <img src="../../../assets/logo/lamborgini.png" alt="img 1" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="ourGroupItem">
+                            <div class="card">
+                                <div class="card-body">
+                                    <img src="../../../assets/logo/BMW.png" alt="img 1" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="ourGroupItem">
+                            <div class="card">
+                                <div class="card-body">
+                                    <img src="../../../assets/logo/tata.png" alt="img 1" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="ourGroupItem">
+                            <div class="card">
+                                <div class="card-body">
+                                    <img src="../../../assets/logo/honda.png" alt="img 1" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template> 
+
+                </owl-carousel-o> -->
+
+                <swiper [config]="configThreeBrandsBD" style="width: 100%;">
+                    <ng-template swiperSlide *ngFor="let bi of allBrandPictures">
+                        <div class="ourGroupItem ">
+                            <div class="card">
+                                <div class="card-body">
+                                    <img src="{{bi?.path}}" alt="" class="img-fluid" style="height: 120px; width:120px"
+                                        (click)="onBrandClick(bi)">
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </swiper>
+
+                <div class="col-sm-12 col-md-4 col-lg-3 text-center mt-4" style="height: 3rem;">
+                    <h5 class="view-bottom" routerLink="/">View All Car Brands <i class="fas fa-chevron-down"></i></h5>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- <app-newssection></app-newssection> -->
+<!-- <section class="news" *ngIf="car_newsNS.length!=0">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                <h5 class="heading"
+                    style="letter-spacing: 1px; border-bottom: 2px solid #5b2067;text-transform: uppercase;display: inline-block; padding: 7px 0px; color: #5b2067;     font-weight: 700; margin-bottom: 1.5rem;">
+                    {{brandNews}} in news</h5>
+            </div>
+
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="card" *ngFor="let n of car_newsNS" style="margin-bottom: 1rem;">
+                    <div class="card-body" style=" box-shadow: 0px 2px 4px 0px #5c5c5c80;">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-4 col-lg-4 pl-0">
+                                <img src="../../../assets/swift.webp" alt="" class="img-fluid" style="max-height: 230px; width: 355px !important;">
+                                <img class="img-fluid"
+                                    src="http://api.dealcars.in/{{n?.brand}}/{{n?.model}}/{{n?.model}} 1.jpg"
+                                    alt="{{n?.model}}" style="max-height: 230px; width: 355px !important;">
+                            </div>
+
+                            <div class="col-sm-12 col-md-8 col-lg-8" style="margin: 1rem 0px;">
+                                <h5 style="font-weight: 600; color: #4e4e4e; font-size: larger;">{{n.news_cartitle}}
+                                </h5>
+                                <p style="font-size: large;">By <b
+                                        style="color: #7a7979; font-weight: 500;">{{n.news_publisher}}</b>
+                                    {{n.news_date}}</p>
+                                <p style="font-size: medium;">{{n.news_cardescription}}</p>
+                                <a style="font-weight: bolder; margin-top: inherit; font-size: large; display: flex; justify-content: end; color: #5b2067;">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-4 col-lg-4 text-center mt-4">
+                <h5 class="view">View All Varients</h5>
+            </div>
+        </div>
+    </div>
+</section> -->
+<div class="container mt-5">
+    <app-newssection></app-newssection>
+</div>
+
+
+<section class="videos">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                <h5 class="heading"> {{brandNews}}  Videos</h5>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 2rem;">
+            <div class="col-sm-12 col-md-7 col-lg-7 left-side">
+                <iframe width="100%" height="380" src="https://www.youtube.com/embed/Ag6prkgmeKs"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                <h5>Maruti Has Sold More Than 25 Lakh Swifts In India!</h5>
+                <p>Maruti Has Sold More Than 25 Lakh Swifts In India! </p>
+            </div>
+
+            <div class="col-sm-12 col-md-5 col-lg-5 right-side">
+                <div class="row">
+                    <div class="col-sm-12 col-md-4 col-lg-4 px-0">
+                        <img src="../../../assets/swift.webp" alt="" class="img-fluid">
+                    </div>
+
+                    <div class="col-sm-12 col-md-8 col-lg-8">
+                        <h6>Maruti Has Sold More Than 25 Lakh Swifts In India </h6>
+                        <p>Auto Deal</p>
+                        <p>
+                            <span>323535 Views</span>
+                            <span>30 Days ago</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-4 col-lg-4 px-0">
+                        <img src="../../../assets/swift.jpg" alt="" class="img-fluid">
+                    </div>
+
+                    <div class="col-sm-12 col-md-8 col-lg-8">
+                        <h6>Maruti Has Sold More Than 25 Lakh Swifts In India </h6>
+                        <p>Auto Deal</p>
+                        <p>
+                            <span>323535 Views</span>
+                            <span>30 Days ago</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-4 col-lg-4 px-0">
+                        <img src="../../../assets/swift.webp" alt="" class="img-fluid">
+                    </div>
+
+                    <div class="col-sm-12 col-md-8 col-lg-8">
+                        <h6>Maruti Has Sold More Than 25 Lakh Swifts In India </h6>
+                        <p>Auto Deal</p>
+                        <p>
+                            <span>323535 Views</span>
+                            <span>30 Days ago</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,149 @@
+
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" style="margin-left: 2.5rem;">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">ContactUs</li>
+    </ol>
+</nav>
+  <div class="container-fluid">
+    <div class="row" >
+      <div class="col-sm-12 col-md-12 col-lg-12 phead" >CONTACT US</div>
+    </div>
+  
+<div class="row">
+  <div class="col-sm-12 col-md-6 col-lg-6">
+    
+  <p class="parahead">For urgent inquires, you may call us directly. Please call the number<br>
+    appropriate to your query.</p>
+
+   <p class="para">Dealership Inquiries, please call 18002701249</p>
+
+   <p class="para">If you have bought a car or are looking to buy a car,please mail<br>
+  customerservice@autodeal.com</p>
+
+<p class="para">If your car is listed for sale on autodeal.com, please mail<br>
+  customerservice@autodeal.com</p>
+
+<p class="para">For Advertising queries, please contact Anand Mohan on<br>
+  anand@autodeal.com.</p>
+
+<p class="para">For Editorial contact and press releases, please contact Vikrant on <br>
+  vikrant@autodeal.com</p>
+
+<p class="para">In case of any inquiry,feedback or request, please use the form below<br>
+  to contact us.We will get back to you as soon as possible.</p>
+  </div>
+  <div class="col-sm-12 col-md-6 col-lg-6">
+    <div class="card " style="height:590px;">
+      <div class="card-body">
+          <form class="was-validated" [formGroup]="getForm" (ngSubmit)="onSubmitCUS()">
+              
+              <div class="form-group">
+                  <label for="fullname">Full Name </label><br>
+                  <input type="text"  class="form-control heightofinput" placeholder="Enter Your Name" formControlName="fullname" required="">
+                  <!-- <div class="valid-feedback">valid</div> -->
+                  <!-- <div class="invalid-feedback">Invalid fullname</div> -->
+              </div>
+
+              <div class="form-group">
+                <label for="mobile">Phone  </label><br>
+                <input type="tel" maxlength="10" pattern="^\d{10}$"  class="form-control heightofinput" placeholder="Enter Your Contact Number" formControlName="mobile" required="">
+                <!-- <div class="valid-feedback">valid</div> -->
+                <!-- <div class="invalid-feedback">Invalid mobile number</div> -->
+              </div>
+
+              <div class="form-group">
+              <label for="email">Contact Email </label><br>
+              <input type="email"  class="form-control heightofinput" placeholder="Enter Your Email ID" formControlName="email" required="">
+              <!-- <div class="valid-feedback">valid</div> -->
+              <!-- <div class="invalid-feedback">Invalid email</div> -->
+              </div>
+
+              <div class="form-group">
+              <label for="subject">Subject </label><br>
+              <input type="text"  class="form-control heightofinput" placeholder="Enter Your Subject Topic" formControlName="subject" required="" (keyup)="subjectValue($event)">
+              <!-- <div class="valid-feedback">valid</div> -->
+              <!-- <div class="invalid-feedback">Invalid subject name</div> -->
+              </div>
+
+              <div id="securityDiv" style="display:block;">
+                
+                  <div class="form-group">
+                    <label for="securitycapcha">Security Check </label><br>
+                    <input type="text"  class="form-control heightofinput" placeholder="Please Enter Security Capcha" formControlName="securitycapcha" required="" (keyup)="verifyCapcha($event)">
+                    <div style="text-align: center; font-size: small;">{{msg}}</div>
+                    </div>
+  
+                    <div class="form-group">
+                    <label style="font-size: small;"><span style="background: black;color: white;font-size: x-large; margin: 1rem;">{{newCapcha}}</span> Please type code in security capcha</label><br>
+                  </div>
+
+              </div>
+
+              <div class="form-group text-center" style="position: absolute;">
+              <button class="btn btn-primary mr-4"  type="submit" class="btn btn-primary" style="position: relative; margin-left: 9rem;" [disabled]="getForm.invalid" id="subBtn" disabled>SUBMIT</button>
+              </div>
+              
+          </form>
+
+
+
+      </div>
+  </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+<!-- <div class="row">
+  <div class="col-md-8">
+<div class ="card">
+ <div class="form-group">
+   <label for="username">Full Name</label>
+   <input type="text" id="username" class="form-control" placeholder="Enter Your Name" formControlName="username">
+</div>
+
+<div class="form-group">
+ <label for="username">Phone</label>
+ <input type="text" id="username" class="form-control" placeholder="Enter Your Phone Number" formControlName="username">
+</div>
+
+<div class="form-group">
+ <label for="username">Contact Email</label>
+ <input type="text" id="username" class="form-control" placeholder="Enter Your Email-ID" formControlName="username">
+</div>
+
+<div class="form-group">
+ <label for="username">Subject</label>
+ <input type="text" id="username" class="form-control" placeholder="Your Username" formControlName="username">
+</div>
+
+<div class="form-group">
+ <label for="username">Security Check</label>
+ <input type="text" id="username" class="form-control" placeholder="" formControlName="username">
+
+</div> -->
+<!-- <div class="form-group">
+ <label for="username">Security Check</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="username">Type Code</label>
+ <input type="text" id="username" class="form-control" placeholder="Your Username" formControlName="username">
+</div>
+<div class="form-group">
+ <label for="username">Please type these letters below</label>
+ 
+</div>
+<br>
+
+<div class="text-center">
+
+ <button class="btn btn-warning">SUBMIT</button>
+</div> --> 
+
+
+
+
+
+
